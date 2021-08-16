@@ -8,14 +8,17 @@ terraform {
 
 provider "google" {
   version = "3.5.0"
-
-  project = "qwiklabs-gcp-01-e28e43b727e9"
+  project = "tf-trials-323004"
   region  = "us-central1"
-  zone    = "us-central1-c"
+  zone    = "us-central1-a"
 }
 
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
+}
+
+resource "google_compute_address" "vm_static_ip" {
+  name = "terraform-static-ip"
 }
 
 resource "google_compute_instance" "vm_instance" {
@@ -32,11 +35,8 @@ resource "google_compute_instance" "vm_instance" {
   network_interface {
     network = google_compute_network.vpc_network.name
     access_config {
-      nat_ip = google_compute_address.vm_static_ip.address
+//      nat_ip = google_compute_address.vm_static_ip.address
     }
   }
 }
 
-resource "google_compute_address" "vm_static_ip" {
-  name = "terraform-static-ip"
-}
