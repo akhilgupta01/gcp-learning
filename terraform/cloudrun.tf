@@ -23,5 +23,6 @@ resource "google_cloud_run_service" "crs-hello-world" {
     percent = 100
     latest_revision = true
   }
+  depends_on = [google_cloud_run_service_iam_binding.binding]
 }
 
