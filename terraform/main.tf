@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket="${var.project_id}-tfstate"
+    bucket="cloud-run-trials-tfstate"
   }
   required_providers {
     google = {
