@@ -13,7 +13,7 @@ variable "zone"{
 variable "project_id"{
   type=string
   description = "Project Id"
-  default = "tf-trials-323004"
+  default = "cloud-run-trials"
 }
 
 variable "create_vm_instances"{
