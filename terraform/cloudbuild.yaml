@@ -30,6 +30,3 @@ steps:
       - '-no-color'
       - '-input=false'
       - './terraform'
-
-options:
-  logging: CLOUD_LOGGING_ONLY
