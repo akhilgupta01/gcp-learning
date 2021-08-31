@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket=var.project_id + "-tfstate"
+    bucket="${var.project_id}-tfstate"
   }
   required_providers {
     google = {
