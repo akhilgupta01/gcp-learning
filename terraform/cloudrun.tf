@@ -14,6 +14,7 @@ resource "google_cloud_run_service" "crs-hello-world" {
       containers {
         image = "gcr.io/cloudrun/hello"
       }
+      service_account_name: "devops-sa@cloud-run-trials.iam.gserviceaccount.com"
     }
   }
 
