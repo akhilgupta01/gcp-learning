@@ -1,9 +1,3 @@
-resource "google_project_iam_member" "devops-sa-role-iam-sa-user" {
-  project = var.project_id
-  role = "roles/iam.serviceAccountUser"
-  member = "serviceAccount:devops-sa@cloud-run-trials.iam.gserviceaccount.com"
-}
-
 resource "google_cloud_run_service" "crs-hello-world" {
   name = "crs-hello-world"
   location = var.region
@@ -14,7 +8,7 @@ resource "google_cloud_run_service" "crs-hello-world" {
       containers {
         image = "gcr.io/cloudrun/hello"
       }
-      service_account_name = "devops-sa@cloud-run-trials.iam.gserviceaccount.com"
+      service_account_name = "${google_service_account.application_sa.account_id}@cloud-run-trials.iam.gserviceaccount.com"
     }
   }
 
@@ -22,12 +16,4 @@ resource "google_cloud_run_service" "crs-hello-world" {
     percent = 100
     latest_revision = true
   }
-}
-
-resource "google_cloud_run_service_iam_binding" "binding" {
-  location = var.region
-  project = var.project_id
-  service = google_cloud_run_service.crs-hello-world.name
-  role = "roles/iam.serviceAccountUser"
-  members = ["group:devops-sa@cloud-run-trials.iam.gserviceaccount.com"]
 }
