@@ -21,6 +21,6 @@ resource "google_cloud_run_service_iam_binding" "binding" {
   location = var.region
   project = var.project_id
   service = google_cloud_run_service.crs-hello-world.name
-  role = "roles/run.admin"
+  role = "roles/iam.serviceAccountUser"
   members = ["group:devops-sa@cloud-run-trials.iam.gserviceaccount.com"]
 }
