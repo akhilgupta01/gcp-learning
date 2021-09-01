@@ -10,10 +10,10 @@ variable "zone"{
   default = "us-central1-a"
 }
 
-variable "project_id"{
+variable "project"{
   type=string
   description = "Project Id"
-  default = "cloud-run-trials"
+  default = "ag-gcp-learning"
 }
 
 variable "create_vm_instances"{

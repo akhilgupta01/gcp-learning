@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket="cloud-run-trials-tfstate"
+    bucket="ag-gcp-learning-tfstate-adm"
   }
   required_providers {
     google = {
@@ -11,7 +11,7 @@ terraform {
 
 provider "google" {
   version = "3.5.0"
-  project = var.project_id
+  project = var.project
   region  = var.region
   zone    = var.zone
 }
