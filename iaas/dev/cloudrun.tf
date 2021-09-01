@@ -12,7 +12,6 @@ resource "google_cloud_run_service" "crs-hello-world" {
     }
   }
 
-  
   traffic {
     percent = 100
     latest_revision = true
