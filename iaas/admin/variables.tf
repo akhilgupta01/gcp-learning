@@ -13,7 +13,7 @@ variable "zone"{
 variable "project"{
   type=string
   description = "Project Id"
-  default = "ag-gcp-learning"
+  default = "ag-learn-gcp"
 }
 
 variable "create_vm_instances"{
