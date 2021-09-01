@@ -12,7 +12,7 @@ steps:
       - 'init'
       - '-no-color'
       - '-input=false'
-      - './terraform'
+      - './iaas/dev'
 
   - id: terraform-plan
     name: hashicorp/terraform:0.14.8
@@ -20,7 +20,7 @@ steps:
       - 'plan'
       - '-no-color'
       - '-input=false'
-      - './terraform'
+      - './iaas/dev'
 
   - id: terraform-apply
     name: hashicorp/terraform:0.14.8
@@ -29,7 +29,7 @@ steps:
       - '-auto-approve'
       - '-no-color'
       - '-input=false'
-      - './terraform'
+      - './iaas/dev'
 
 
 options:
