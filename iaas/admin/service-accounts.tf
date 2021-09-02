@@ -4,7 +4,7 @@ resource "google_service_account" "application_sa" {
 }
 
 resource "google_service_account_iam_member" "application_sa_user" {
-  service_account_id = google_service_account.application_sa.account_id
+  service_account_id = google_service_account.application_sa.name
   role = "roles/iam.serviceAccountUser"
   member = "serviceAccount:${google_service_account.application_sa.email}"
 }
