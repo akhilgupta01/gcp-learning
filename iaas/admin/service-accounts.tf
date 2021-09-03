@@ -1,5 +1,6 @@
 resource "google_service_account" "application_sa" {
-  account_id = "application-sa"
+  name = "application-sa"
+  account_id = "application-sa2"
   description = "Service account used by application during runtime"
 }
 
