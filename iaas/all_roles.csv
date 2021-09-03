@@ -1,0 +1,870 @@
+Role Name, Title, Description
+roles/accessapproval.approver,  Access Approval Approver,  Ability to view or act on access approval requests and view configuration
+roles/accessapproval.configEditor,  Access Approval Config Editor,  Ability update the Access Approval configuration
+roles/accessapproval.viewer,  Access Approval Viewer,  Ability to view access approval requests and configuration
+roles/accesscontextmanager.gcpAccessAdmin,  Cloud Access Binding Admin,  Create, edit, and change Cloud access bindings.
+roles/accesscontextmanager.gcpAccessReader,  Cloud Access Binding Reader,  Read access to Cloud access bindings.
+roles/accesscontextmanager.policyAdmin,  Access Context Manager Admin,  Full access to policies, access levels, and access zones
+roles/accesscontextmanager.policyEditor,  Access Context Manager Editor,  Edit access to policies.  Create, edit, and change access levels and access zones.
+roles/accesscontextmanager.policyReader,  Access Context Manager Reader,  Read access to policies, access levels, and access zones.
+roles/accesscontextmanager.vpcScTroubleshooterViewer, VPC Service Controls Troubleshooter Viewerroles/actions.Admin,  Actions Admin,  Access to edit and deploy an action
+roles/actions.Viewer,  Actions Viewer,  Access to view an action
+roles/aiplatform.admin,  Vertex AI Administrator,  Grants full access to all resources in Vertex AI
+roles/aiplatform.customCodeServiceAgent,  Vertex AI Custom Code Service Agent,  Gives Vertex AI Custom Code the proper permissions.
+roles/aiplatform.featurestoreAdmin,  Vertex AI Feature Store Admin,  Grants full access to all resources in Vertex AI Feature Store
+roles/aiplatform.featurestoreDataViewer,  Vertex AI Feature Store Data Viewer,  This role provides permissions to read Feature data.
+roles/aiplatform.featurestoreDataWriter,  Vertex AI Feature Store Data Writer,  This role provides permissions to read and write Feature data.
+roles/aiplatform.featurestoreInstanceCreator,  Vertex AI Feature Store Instance Creator,  Administer of Featurestore resources, but not the child resources under Featurestores.
+roles/aiplatform.featurestoreResourceEditor,  Vertex AI Feature Store Resource Editor,  Manage all resources within Featurestores, but cannot create or update the Featurestores.
+roles/aiplatform.featurestoreResourceViewer,  Vertex AI Feature Store Resource Viewer,  Viewer of all resources in Vertex AI Feature Store but cannot make changes.
+roles/aiplatform.featurestoreUser,  Vertex AI Feature Store User,  Deprecated. Use featurestoreAdmin instead.
+roles/aiplatform.migrator,  Vertex AI Migration Service User,  Grants access to use migration service in Vertex AI
+roles/aiplatform.serviceAgent,  Vertex AI Service Agent,  Gives Vertex AI the permissions it needs to function.
+roles/aiplatform.user,  Vertex AI User,  Grants access to use all resource in Vertex AI
+roles/aiplatform.viewer,  Vertex AI Viewer,  Grants access to view all resource in Vertex AI
+roles/androidmanagement.user,  Android Management User,  Full access to manage devices.
+roles/anthos.serviceAgent,  Anthos Service Agent,  Gives the Anthos service agent access to Cloud Platformresources.
+roles/anthosaudit.serviceAgent,  Anthos Audit Service Agent,  Gives the Anthos Audit service agent access toCloud Platform resources.
+roles/anthosconfigmanagement.serviceAgent,  Anthos Config Management Service Agent,  Gives the Anthos Config Management service agent access toCloud Platform resources.
+roles/anthosidentityservice.serviceAgent,  Anthos Identity Service Agent,  Gives the Anthos Identity service agent access toCloud Platform resources.
+roles/anthosservicemesh.serviceAgent,  Anthos Service Mesh Service Agent,  Gives the Anthos Service Mesh service agent access to Cloud Platform resources.
+roles/apigateway.admin,  ApiGateway Admin,  Full access to ApiGateway and related resources.
+roles/apigateway.serviceAgent,  Cloud API Gateway Service Agent,  Gives Cloud API Gateway service account access to Service Management check and reports as well as impersonation on user-specified service accounts.
+roles/apigateway.viewer,  ApiGateway Viewer,  Read-only access to ApiGateway and related resources.
+roles/apigateway_management.serviceAgent,  Cloud API Gateway Management Service Agent,  Gives Cloud API Gateway service account access to retrieve aService configuration.
+roles/apigee.admin,  Apigee Organization Admin,  Full access to all apigee resource features
+roles/apigee.analyticsAgent,  Apigee Analytics Agent,  Curated set of permissions for Apigee Universal Data Collection Agent to manage analytics for an Apigee Organization
+roles/apigee.analyticsEditor,  Apigee Analytics Editor,  Analytics editor for an Apigee Organization
+roles/apigee.analyticsViewer,  Apigee Analytics Viewer,  Analytics viewer for an Apigee Organization
+roles/apigee.apiAdmin,  Apigee API Admin,  Full read/write access to all apigee API resources
+roles/apigee.apiReader,  Apigee API Reader,  Reader of apigee resources
+roles/apigee.developerAdmin,  Apigee Developer Admin,  Developer admin of apigee resources
+roles/apigee.environmentAdmin,  Apigee Environment Admin,  Full read/write access to apigee environment resources, including deployments.
+roles/apigee.monetizationAdmin,  Apigee Monetization Admin,  All permissions related to monetization
+roles/apigee.portalAdmin,  Apigee Portal Admin,  Portal admin for an Apigee Organization
+roles/apigee.readOnlyAdmin,  Apigee Read-only Admin,  Viewer of all apigee resources
+roles/apigee.runtimeAgent,  Apigee Runtime Agent,  Curated set of permissions for a runtime agent to access Apigee Organization resources
+roles/apigee.serviceAgent,  Apigee Service Agent,  Service agent that grants access to Apigee resources - API Products, Developers, Developer Apps, and App Keys.
+roles/apigee.synchronizerManager,  Apigee Synchronizer Manager,  Curated set of permissions for a Synchronizer to manage environments in an Apigee Organization
+roles/apigeeconnect.Admin,  Apigee Connect Admin,  Admin of Apigee Connect
+roles/apigeeconnect.Agent,  Apigee Connect Agent,  Ability to set up Apigee Connect agent between external clusters and Google.
+roles/appdevelopmentexperience.serviceAgent,  App Development Experience Service Agent,  Give the App Development Experience service agent access toCloud Platform resources.
+roles/appengine.appAdmin,  App Engine Admin,  Full management of App Engine apps (but not storage).
+roles/appengine.appCreator,  App Engine Creator,  Ability to create the App Engine resource for the project.
+roles/appengine.appViewer,  App Engine Viewer,  Ability to view App Engine app status.
+roles/appengine.codeViewer,  App Engine Code Viewer,  Ability to view App Engine app status and deployed source code.
+roles/appengine.deployer,  App Engine Deployer,  Necessary permissions to deploy new code to App Engine, and remove old versions.
+roles/appengine.serviceAdmin,  App Engine Service Admin,  Can view and change traffic splits, scaling settings, and delete old versions; can't create new versions.
+roles/appengineflex.serviceAgent,  App Engine flexible environment Service Agent,  Can edit and manage App Engine Flexible Environment apps. Includes access to service accounts.
+roles/artifactregistry.admin,  Artifact Registry Administrator,  Administrator access to create and manage repositories.
+roles/artifactregistry.reader,  Artifact Registry Reader,  Access to read repository items.
+roles/artifactregistry.repoAdmin,  Artifact Registry Repository Administrator,  Access to manage artifacts in repositories.
+roles/artifactregistry.serviceAgent,  Artifact Registry Service Agent,  Gives the Artifact Registry service account access to managed resources.
+roles/artifactregistry.writer,  Artifact Registry Writer,  Access to read and write repository items.
+roles/assuredworkloads.admin,  Assured Workloads Administrator,  Grants full access to Assured Workloads resources, CRM resources - project/folder and Organization Policy administration
+roles/assuredworkloads.editor,  Assured Workloads Editor,  Grants read, write access to Assured Workloads resources, CRM resources - project/folder and Organization Policy administration
+roles/assuredworkloads.reader,  Assured Workloads Reader,  Grants read access to all Assured Workloads resources and CRM resources - project/folder
+roles/assuredworkloads.serviceAgent,  Assured Workloads Service Agent,  Gives the Assured Workloads service account access to create KMS keyrings and keys, and to monitor Assured Workloads.
+roles/automl.admin,  AutoML Admin,  Full access to all AutoML resources
+roles/automl.editor,  AutoML Editor,  Editor of all AutoML resources
+roles/automl.predictor,  AutoML Predictor,  Predict using models
+roles/automl.serviceAgent,  AutoML Service Agent,  AutoML service agent can act as Cloud Storage admin and export BigQuery tables, which can be backed by Cloud Storage and Cloud Bigtable.
+roles/automl.viewer,  AutoML Viewer,  Viewer of all AutoML resources
+roles/automlrecommendations.admin,  Recommendations AI Admin,  Full access to all Recommendations AI resources.
+roles/automlrecommendations.adminViewer,  Recommendations AI Admin Viewer,  Viewer of all Recommendations AI resources.
+roles/automlrecommendations.editor,  Recommendations AI Editor,  Editor of all Recommendations AI resources.
+roles/automlrecommendations.serviceAgent,  Recommendations AI Service Agent,  Recommendations AI service uploads catalog feeds from Cloud Storage, reports results to the customer Cloud Storage bucket, writes logs to customer projects, and writes and reads Stackdriver metrics for customer projects.
+roles/automlrecommendations.viewer,  Recommendations AI Viewer,  Viewer of all Recommendations AI resources except automlrecommendations.apiKeys. To have all read access use Recommendations AI Admin Viewer role instead.
+roles/autoscaling.metricsWriter,  Autoscaling Metrics Writer,  Access to write metrics for autoscaling site
+roles/autoscaling.recommendationsReader,  Autoscaling Recommendations Reader,  Access to read recommendations from autoscaling site
+roles/autoscaling.sitesAdmin,  Autoscaling Site Admin,  Full access to all autoscaling site features
+roles/autoscaling.stateWriter,  Autoscaling State Writer,  Access to write state for autoscaling site
+roles/axt.admin,  Access Transparency Admin,  Enable Access Transparency for Organization
+roles/baremetalsolution.admin,  Bare Metal Solution Admin,  Administrator of Bare Metal Solution resources
+roles/baremetalsolution.editor,  Bare Metal Solution Editor,  Editor of Bare Metal Solution resources
+roles/baremetalsolution.instancesadmin,  Bare Metal Solution Instances Admin,  Admin of Bare Metal Solution Instance resources
+roles/baremetalsolution.instancesviewer,  Bare Metal Solution Instances Viewer,  Viewer of Bare Metal Solution Instance resources
+roles/baremetalsolution.viewer,  Bare Metal Solution Viewer,  Viewer of Bare Metal Solution resources
+roles/bigquery.admin,  BigQuery Admin,  Administer all BigQuery resources and data
+roles/bigquery.connectionAdmin, BigQuery Connection Admin
+roles/bigquery.connectionUser, BigQuery Connection Userroles/bigquery.dataEditor,  BigQuery Data Editor,  Access to edit all the contents of datasets
+roles/bigquery.dataOwner,  BigQuery Data Owner,  Full access to datasets and all of their contents
+roles/bigquery.dataViewer,  BigQuery Data Viewer,  Access to view datasets and all of their contents
+roles/bigquery.filteredDataViewer,  BigQuery Filtered Data Viewer,  Access to view filtered table data defined by a row access policy
+roles/bigquery.jobUser,  BigQuery Job User,  Access to run jobs
+roles/bigquery.metadataViewer,  BigQuery Metadata Viewer,  Access to view table and dataset metadata
+roles/bigquery.readSessionUser,  BigQuery Read Session User,  Access to create and use read sessions
+roles/bigquery.resourceAdmin,  BigQuery Resource Admin,  Administer all BigQuery resources.
+roles/bigquery.resourceEditor,  BigQuery Resource Editor,  Manage all BigQuery resources, but cannot make purchasing decisions.
+roles/bigquery.resourceViewer,  BigQuery Resource Viewer,  View all BigQuery resources but cannot make changes or purchasing decisions.
+roles/bigquery.user,  BigQuery User,  When applied to a project, access to run queries, create datasets, read dataset metadata, and list tables. When applied to a dataset, access to read dataset metadata and list tables within the dataset.
+roles/bigqueryconnection.serviceAgent,  BigQuery Connection Service Agent,  Gives BigQuery Connection Service access to Cloud SQL instances in user projects.
+roles/bigquerydatatransfer.serviceAgent,  BigQuery Data Transfer Service Agent,  'Gives BigQuery Data Transfer Service access to start bigquery jobs in consumer project. '
+roles/bigtable.admin,  Bigtable Administrator,  Full access to all Bigtable resources and ability to assign Bigtable IAM roles.
+roles/bigtable.reader,  Bigtable Reader,  Read access to data in existing tables; read access to metadata for instances, clusters, and tables, including column families.
+roles/bigtable.user,  Bigtable User,  Read and write access to data in existing tables; read access to metadata for instances, clusters, and tables, including column families.
+roles/bigtable.viewer,  Bigtable Viewer,  Read access to metadata for instances, clusters, and tables, including column families.
+roles/billing.admin,  Billing Account Administrator,  Authorized to see and manage all aspects of billing accounts.
+roles/billing.costsManager,  Billing Account Costs Manager,  Can view and export cost information of billing accounts.
+roles/billing.creator,  Billing Account Creator,  Creator of billing accounts.
+roles/billing.projectManager,  Project Billing Manager,  Can assign a project's billing account or disable its billing.
+roles/billing.user,  Billing Account User,  Can associate projects with billing accounts
+roles/billing.viewer,  Billing Account Viewer,  Can view information about billing accounts.
+roles/binaryauthorization.attestorsAdmin,  Binary Authorization Attestor Admin,  Adminstrator of Binary Authorization Attestors
+roles/binaryauthorization.attestorsEditor,  Binary Authorization Attestor Editor,  Editor of Binary Authorization Attestors
+roles/binaryauthorization.attestorsVerifier,  Binary Authorization Attestor Image Verifier,  Caller of Binary Authorization Attestors VerifyImageAttested
+roles/binaryauthorization.attestorsViewer,  Binary Authorization Attestor Viewer,  Viewer of Binary Authorization Attestors
+roles/binaryauthorization.policyAdmin,  Binary Authorization Policy Administrator,  Administrator of Binary Authorization Policy
+roles/binaryauthorization.policyEditor,  Binary Authorization Policy Editor,  Editor of Binary Authorization Policy
+roles/binaryauthorization.policyViewer,  Binary Authorization Policy Viewer,  Viewer of Binary Authorization Policy
+roles/binaryauthorization.serviceAgent,  Binary Authorization Service Agent,  Can read Notes and Occurrences from the Container Analysis Service to find and verify signatures.
+roles/browser,  Browser,  Access to browse GCP resources.
+roles/chat.owner,  Chat Bots Owner,  Can view and modify bot configurations
+roles/chat.reader,  Chat Bots Viewer,  Can view bot configurations
+roles/chroniclesm.admin,  Chronicle Service Admin,  Admins can view and modify Chronicle service details.
+roles/chroniclesm.viewer,  Chronicle Service Viewer,  Viewers can see Chronicle service details but not change them.
+roles/cloudasset.owner,  Cloud Asset Owner,  Full access to cloud assets metadata
+roles/cloudasset.serviceAgent,  Cloud Asset Service Agent,  Gives Cloud Asset service agent permissions to Cloud Storage and BigQuery for exporting Assets, and permission to publish to Cloud Pub/Sub topics for Asset Real Time Feed.
+roles/cloudasset.viewer,  Cloud Asset Viewer,  Read only access to cloud assets metadata
+roles/cloudbuild.builds.approver,  Cloud Build Approver,  Can approve or reject pending builds.
+roles/cloudbuild.builds.builder,  Cloud Build Service Account,  Can perform builds
+roles/cloudbuild.builds.editor,  Cloud Build Editor,  Can create and cancel builds
+roles/cloudbuild.builds.viewer,  Cloud Build Viewer,  Can view builds
+roles/cloudbuild.integrationsEditor,  Cloud Build Integrations Editor,  Can update Integrations
+roles/cloudbuild.integrationsOwner,  Cloud Build Integrations Owner,  Can create/delete Integrations
+roles/cloudbuild.integrationsViewer,  Cloud Build Integrations Viewer,  Can view Integrations
+roles/cloudbuild.serviceAgent,  Cloud Build Service Agent,  Gives Cloud Build service account access to managed resources.
+roles/cloudbuild.workerPoolEditor,  Cloud Build WorkerPool Editor,  Can update and view WorkerPools
+roles/cloudbuild.workerPoolOwner,  Cloud Build WorkerPool Owner,  Can create, delete, update, and view WorkerPools
+roles/cloudbuild.workerPoolUser,  Cloud Build WorkerPool User,  Can run builds in the WorkerPool
+roles/cloudbuild.workerPoolViewer,  Cloud Build WorkerPool Viewer,  Can view WorkerPools
+roles/cloudconfig.admin,  Firebase Remote Config Admin,  Full access to Firebase Remote Config resources.
+roles/cloudconfig.viewer,  Firebase Remote Config Viewer,  Read access to Firebase Remote Config resources.
+roles/clouddebugger.agent,  Cloud Debugger Agent,  Cloud Debugger agents are allowed to register and provide debug snapshot data.
+roles/clouddebugger.user,  Cloud Debugger User,  User Access to Cloud Debugger.  Can create, delete and view snapshots and logpoints.
+roles/clouddeploy.admin,  Cloud Deploy Admin,  Full control of Cloud Deploy resources.
+roles/clouddeploy.approver,  Cloud Deploy Approver,  Permission to approve or reject rollouts.
+roles/clouddeploy.developer,  Cloud Deploy Developer,  Permission to manage deployment configuration without permission to access operational resources, such as targets.
+roles/clouddeploy.jobRunner,  Cloud Deploy Runner,  Permission to execute Cloud Deploy work without permission to deliver to a target.
+roles/clouddeploy.operator,  Cloud Deploy Operator,  Permission to manage deployment configuration.
+roles/clouddeploy.releaser,  Cloud Deploy Releaser,  Permission to create Cloud Deploy releases and rollouts.
+roles/clouddeploy.serviceAgent,  Cloud Deploy Service Agent,  Gives Cloud Deploy Service Account access to managed resources.
+roles/clouddeploy.viewer,  Cloud Deploy Viewer,  Can view Cloud Deploy resources.
+roles/cloudfunctions.admin,  Cloud Functions Admin,  Full access to functions, operations and locations.
+roles/cloudfunctions.developer,  Cloud Functions Developer,  Read and write access to all functions-related resources.
+roles/cloudfunctions.invoker,  Cloud Functions Invoker,  Ability to invoke HTTP functions with restricted access.
+roles/cloudfunctions.serviceAgent,  Cloud Functions Service Agent,  Gives Cloud Functions service account access to managed resources.
+roles/cloudfunctions.viewer,  Cloud Functions Viewer,  Read-only access to functions and locations.
+roles/cloudiot.admin,  Cloud IoT Admin,  Full control of all Cloud IoT resources and permissions.
+roles/cloudiot.deviceController,  Cloud IoT Device Controller,  Access to update the device configuration, but not to create or delete devices.
+roles/cloudiot.editor,  Cloud IoT Editor,  Read-write access to all Cloud IoT resources.
+roles/cloudiot.provisioner,  Cloud IoT Provisioner,  Access to create and delete devices from registries, but not to modify the registries, and enable devices to publish to topics associated with IoT registry.
+roles/cloudiot.serviceAgent,  Cloud IoT Core Service Agent,  'Grants the ability to manage Cloud IoT Core resources, including publishing data to Cloud Pub/Sub and writing device activity logs to Stackdriver. Warning: If this role is removed from the Cloud IoT service account, Cloud IoT Core will be unable to publish data or write device activity logs.'
+roles/cloudiot.viewer,  Cloud IoT Viewer,  Read-only access to all Cloud IoT resources.
+roles/cloudjobdiscovery.admin,  Admin,  Access to Cloud Talent Solution Self-Service Tools.
+roles/cloudjobdiscovery.jobsEditor,  Job Editor,  Write access to all job data in Cloud Talent Solution.
+roles/cloudjobdiscovery.jobsViewer,  Job Viewer,  Read access to all job data in Cloud Talent Solution.
+roles/cloudjobdiscovery.profilesEditor,  Profile Editor,  Write access to all profile data in Cloud Talent Solution.
+roles/cloudjobdiscovery.profilesViewer,  Profile Viewer,  Read access to all profile data in Cloud Talent Solution.
+roles/cloudkms.admin,  Cloud KMS Admin,  Enables management of crypto resources.
+roles/cloudkms.cryptoKeyDecrypter,  Cloud KMS CryptoKey Decrypter,  Enables Decrypt operations
+roles/cloudkms.cryptoKeyEncrypter,  Cloud KMS CryptoKey Encrypter,  Enables Encrypt operations
+roles/cloudkms.cryptoKeyEncrypterDecrypter,  Cloud KMS CryptoKey Encrypter/Decrypter,  Enables Encrypt and Decrypt operations
+roles/cloudkms.cryptoOperator,  Cloud KMS Crypto Operator,  Enables all Crypto Operations.
+roles/cloudkms.importer,  Cloud KMS Importer,  Enables ImportCryptoKeyVersion, CreateImportJob, ListImportJobs, and GetImportJob operations
+roles/cloudkms.publicKeyViewer,  Cloud KMS CryptoKey Public Key Viewer,  Enables GetPublicKey operations
+roles/cloudkms.serviceAgent,  Cloud KMS Service Agent,  Gives Cloud KMS service account access to managed resources.
+roles/cloudkms.signer,  Cloud KMS CryptoKey Signer,  Enables Sign operations
+roles/cloudkms.signerVerifier,  Cloud KMS CryptoKey Signer/Verifier,  Enables Sign, Verify, and GetPublicKey operations
+roles/cloudkms.verifier,  Cloud KMS CryptoKey Verifier,  Enables Verify and GetPublicKey operations
+roles/cloudmigration.inframanager,  Velostrata Manager,  Ability to create and manage Compute VMs to run Velostrata Infrastructure
+roles/cloudmigration.storageaccess,  Velostrata Storage Access,  Ability to access migration storage
+roles/cloudmigration.velostrataconnect,  Velostrata Manager Connection Agent,  Ability to set up connection between Velostrata Manager and Google
+roles/cloudoptimization.serviceAgent,  Cloud Optimization Service Agent,  Grants Cloud Optimization Service Account access to read and write data in the user project.
+roles/cloudprivatecatalog.consumer,  Catalog Consumer,  Can browse catalogs in the target resource context.
+roles/cloudprivatecatalogproducer.admin,  Catalog Admin,  Can manage catalog and view its associations.
+roles/cloudprivatecatalogproducer.manager,  Catalog Manager,  Can manage associations between a catalog and a target resource.
+roles/cloudprivatecatalogproducer.orgAdmin,  Catalog Org Admin,  Can manage catalog org settings.
+roles/cloudprofiler.agent,  Cloud Profiler Agent,  Cloud Profiler agents are allowed to register and provide the profiling data.
+roles/cloudprofiler.user,  Cloud Profiler User,  Cloud Profiler users are allowed to query and view the profiling data.
+roles/cloudscheduler.admin,  Cloud Scheduler Admin,  Full access to jobs and executions.
+roles/cloudscheduler.jobRunner,  Cloud Scheduler Job Runner,  Access to run jobs.
+roles/cloudscheduler.serviceAgent,  Cloud Scheduler Service Agent,  Grants Cloud Scheduler Service Account access to manage resources.
+roles/cloudscheduler.viewer,  Cloud Scheduler Viewer,  Get and list access to jobs, executions, and locations.
+roles/cloudsecurityscanner.editor,  Web Security Scanner Editor,  Full access to all Web Security Scanner resources
+roles/cloudsecurityscanner.runner,  Web Security Scanner Runner,  Read access to Scan and ScanRun, plus the ability to start scans
+roles/cloudsecurityscanner.viewer,  Web Security Scanner Viewer,  Read access to all Web Security Scanner resources
+roles/cloudsql.admin,  Cloud SQL Admin,  Full control of Cloud SQL resources.
+roles/cloudsql.client,  Cloud SQL Client,  Connectivity access to Cloud SQL instances.
+roles/cloudsql.editor,  Cloud SQL Editor,  Full control of existing Cloud SQL instances excluding modifying users, SSL certificates or deleting resources.
+roles/cloudsql.instanceUser,  Cloud SQL Instance User,  Role allowing access to a Cloud SQL instance
+roles/cloudsql.serviceAgent,  Cloud SQL Service Agent,  Grants Cloud SQL access to services and APIs in the user project
+roles/cloudsql.viewer,  Cloud SQL Viewer,  Read-only access to Cloud SQL resources.
+roles/cloudsupport.admin,  Support Account Administrator,  Allows management of a support account without giving access to support cases.
+roles/cloudsupport.techSupportEditor,  Tech Support Editor,  Full read-write access to technical support cases (applicable for GCP Customer Care and Maps support).
+roles/cloudsupport.techSupportViewer,  Tech Support Viewer,  Read-only access to technical support cases (applicable for GCP Customer Care and Maps support).
+roles/cloudsupport.viewer,  Support Account Viewer,  Read-only access to details of a support account. This does not allow viewing cases.
+roles/cloudtasks.admin,  Cloud Tasks Admin,  Full access to queues and tasks.
+roles/cloudtasks.enqueuer,  Cloud Tasks Enqueuer,  Access to create tasks.
+roles/cloudtasks.queueAdmin,  Cloud Tasks Queue Admin,  Admin access to queues.
+roles/cloudtasks.serviceAgent,  Cloud Tasks Service Agent,  Grants Cloud Tasks Service Account access to manage resources.
+roles/cloudtasks.taskDeleter,  Cloud Tasks Task Deleter,  Access to delete tasks.
+roles/cloudtasks.taskRunner,  Cloud Tasks Task Runner,  Access to run tasks.
+roles/cloudtasks.viewer,  Cloud Tasks Viewer,  Get and list access to tasks, queues, and locations.
+roles/cloudtestservice.testAdmin,  Firebase Test Lab Admin,  Full access to all Test Lab features
+roles/cloudtestservice.testViewer,  Firebase Test Lab Viewer,  Read access to Test Lab features
+roles/cloudtpu.serviceAgent,  Cloud TPU V2 API Service Agent,  Give Cloud TPUs service account access to managed resources
+roles/cloudtrace.admin,  Cloud Trace Admin,  Admin access to Stackdriver Trace.
+roles/cloudtrace.agent,  Cloud Trace Agent,  Agent access to Stackdriver Trace. Can write trace data.
+roles/cloudtrace.user,  Cloud Trace User,  User access to Stackdriver Trace. Can view traces, insights and stats. Can create, list, view, and delete tasks.
+roles/cloudtranslate.admin,  Cloud Translation API Admin,  Full access to all Cloud Translation resources
+roles/cloudtranslate.editor,  Cloud Translation API Editor,  Editor of all Cloud Translation resources
+roles/cloudtranslate.serviceAgent,  Cloud Translation API Service Agent,  Gives Cloud Translation Service Account access to consumer resources.
+roles/cloudtranslate.user,  Cloud Translation API User,  User of Cloud Translation and AutoML models
+roles/cloudtranslate.viewer,  Cloud Translation API Viewer,  Viewer of all Translation resources
+roles/codelabapikeys.admin,  Codelab ApiKeys Admin,  Full access to API keys
+roles/codelabapikeys.editor,  Codelab API Keys Editor,  This role can view and edit all properties of API keys.
+roles/codelabapikeys.viewer,  Codelab API Keys Viewer,  This role can view all properties except change history of API keys.
+roles/commerceoffercatalog.offersViewer,  Commerce Offer Catalog Offers Viewer,  Allows viewing offers
+roles/commercepricemanagement.privateOffersAdmin,  Commerce Price Management Private Offers Admin,  Allows managing private offers
+roles/commercepricemanagement.viewer,  Commerce Price Management Viewer,  Allows viewing offers, free trials, skus
+roles/compliancescanning.ServiceAgent,  Compliance Scanning Service Agent,  Gives Compliance Scanning the access it needs to analyze containers and VMs for compliance and create occurrences using the Container Analysis API
+roles/composer.ServiceAgentV2Ext,  Cloud Composer v2 API Service Agent Extension,  Cloud Composer v2 API Service Agent Extension is a supplementary role required to manage Composer v2 environments.
+roles/composer.admin,  Composer Administrator,  Full control of Composer resources.
+roles/composer.environmentAndStorageObjectAdmin,  Environment and Storage Object Administrator,  Full control of Cloud Composer environments and Cloud Storage objects.
+roles/composer.environmentAndStorageObjectViewer,  Environment User and Storage Object Viewer,  Read access to Cloud Composer environments and Cloud Storage objects.
+roles/composer.serviceAgent,  Cloud Composer API Service Agent,  Cloud Composer API service agent can manage environments.
+roles/composer.sharedVpcAgent,  Composer Shared VPC Agent,  Role that should be assigned to Composer Agent service account in Shared VPC host project
+roles/composer.user,  Composer User,  Read and use access to Composer resources.
+roles/composer.worker,  Composer Worker,  Worker access to Composer. Intended for service accounts.
+roles/compute.admin,  Compute Admin,  Full control of all Compute Engine resources.
+roles/compute.imageUser,  Compute Image User,  Read and use image resources.
+roles/compute.instanceAdmin,  Compute Instance Admin (beta),  Full control of Compute Engine instance resources.
+roles/compute.instanceAdmin.v1,  Compute Instance Admin (v1),  Full control of Compute Engine instances, instance groups, disks, snapshots, and images. Read access to all Compute Engine networking resources.
+roles/compute.loadBalancerAdmin,  Compute Load Balancer Admin,  Full control of Compute Engine resources related to load balancer.
+roles/compute.networkAdmin,  Compute Network Admin,  Full control of Compute Engine networking resources.
+roles/compute.networkUser,  Compute Network User,  Access to use Compute Engine networking resources.
+roles/compute.networkViewer,  Compute Network Viewer,  Read-only access to Compute Engine networking resources.
+roles/compute.orgFirewallPolicyAdmin,  Compute Organization Firewall Policy Admin,  Full control of Compute Engine Organization Firewall Policies.
+roles/compute.orgFirewallPolicyUser,  Compute Organization Firewall Policy User,  View or use Compute Engine Firewall Policies to associate with the organization or folders.
+roles/compute.orgSecurityPolicyAdmin,  Compute Organization Security Policy Admin,  Full control of Compute Engine Organization Security Policies.
+roles/compute.orgSecurityPolicyUser,  Compute Organization Security Policy User,  View or use Compute Engine Security Policies to associate with the organization or folders.
+roles/compute.orgSecurityResourceAdmin,  Compute Organization Resource Admin,  Full control of Compute Engine Firewall Policy associations to the organization or folders.
+roles/compute.osAdminLogin,  Compute OS Admin Login,  Access to log in to a Compute Engine instance as an administrator user.
+roles/compute.osLogin,  Compute OS Login,  Access to log in to a Compute Engine instance as a standard (non-administrator) user.
+roles/compute.osLoginExternalUser,  Compute OS Login External User,  Access for an external user to set OS Login information associated with this organization. This role does not grant access to instances. External users must be granted one of the required OS Login IAM roles (https://cloud.google.com/compute/docs/instances/managing-instance-access#configure_users) in order to allow access to instances using SSH.
+roles/compute.packetMirroringAdmin,  Compute packet mirroring admin,  Specify resources to be mirrored.
+roles/compute.packetMirroringUser,  Compute packet mirroring user,  Use Compute Engine packet mirrorings.
+roles/compute.publicIpAdmin,  Compute Public IP Admin,  Full control of public IP address management for Compute Engine.
+roles/compute.securityAdmin,  Compute Security Admin,  Full control of Compute Engine security resources.
+roles/compute.serviceAgent,  Compute Engine Service Agent,  Gives Compute Engine Service Account access to assert service account authority. Includes access to service accounts.
+roles/compute.storageAdmin,  Compute Storage Admin,  Full control of Compute Engine storage resources.
+roles/compute.viewer,  Compute Viewer,  Read-only access to get and list information about all Compute Engine resources, including instances, disks, and firewalls. Allows getting and listing information about disks, images, and snapshots, but does not allow reading the data stored on them.
+roles/compute.xpnAdmin,  Compute Shared VPC Admin,  Can administer shared VPC network (XPN).
+roles/consumerprocurement.entitlementManager,  Consumer Procurement Entitlement Manager,  Allows managing entitlements and enabling, disabling, and inspecting service states for a consumer project
+roles/consumerprocurement.entitlementViewer,  Consumer Procurement Entitlement Viewer,  Allows inspecting entitlements and service states for a consumer project
+roles/consumerprocurement.orderAdmin,  Consumer Procurement Order Administrator,  Allows managing purchases
+roles/consumerprocurement.orderViewer,  Consumer Procurement Order Viewer,  Allows inspecting purchases
+roles/contactcenterinsights.editor,  Contact Center AI Insights editor,  Grants read and write access to all Contact Center AI Insights resources.
+roles/contactcenterinsights.serviceAgent,  Contact Center AI Insights Service Agent,  Allows Contact Center AI to read and write APIs including BigQuery, Dialogflow, and Storage.
+roles/contactcenterinsights.viewer,  Contact Center AI Insights viewer,  Grants read access to all Contact Center AI Insights resources.
+roles/container.admin,  Kubernetes Engine Admin,  Full management of Kubernetes Clusters and their Kubernetes API objects.
+roles/container.clusterAdmin,  Kubernetes Engine Cluster Admin,  Management of Kubernetes Clusters.
+roles/container.clusterViewer,  Kubernetes Engine Cluster Viewer,  Get and list access to GKE Clusters.
+roles/container.developer,  Kubernetes Engine Developer,  Full access to Kubernetes API objects inside Kubernetes Clusters.
+roles/container.hostServiceAgentUser,  Kubernetes Engine Host Service Agent User,  Allows the Kubernetes Engine service account in the host project to configure shared network resources for cluster management. Also gives access to inspect the firewall rules in the host project, and configure Cloud DNS resources.
+roles/container.serviceAgent,  Kubernetes Engine Service Agent,  Gives Kubernetes Engine account access to manage cluster resources. Includes access to service accounts.
+roles/container.viewer,  Kubernetes Engine Viewer,  Read-only access to Kubernetes Engine resources.
+roles/containeranalysis.ServiceAgent,  Container Analysis Service Agent,  Gives Container Analysis API the access it needs to function
+roles/containeranalysis.admin,  Container Analysis Admin,  Access to all Container Analysis resources.
+roles/containeranalysis.notes.attacher,  Container Analysis Notes Attacher,  Can attach Container Analysis Occurrences to Notes.
+roles/containeranalysis.notes.editor,  Container Analysis Notes Editor,  Can edit Container Analysis Notes.
+roles/containeranalysis.notes.occurrences.viewer,  Container Analysis Occurrences for Notes Viewer,  Can view all Container Analysis Occurrences attached to a Note.
+roles/containeranalysis.notes.viewer,  Container Analysis Notes Viewer,  Can view Container Analysis Notes.
+roles/containeranalysis.occurrences.editor,  Container Analysis Occurrences Editor,  Can edit Container Analysis Occurrences.
+roles/containeranalysis.occurrences.viewer,  Container Analysis Occurrences Viewer,  Can view Container Analysis Occurrences.
+roles/containerregistry.ServiceAgent,  Container Registry Service Agent,  Access for Container Registry
+roles/containerscanning.ServiceAgent,  Container Scanner Service Agent,  Gives Container Scanner the access it needs to analyzecontainers for vulnerabilities and create occurrences using the Container Analysis API
+roles/containerthreatdetection.serviceAgent,  Container Threat Detection Service Agent,  Gives Container Threat Detection service account access to enable/disable Container Threat Detection and manage the Container Threat Detection Agent on Google Kubernetes Engine clusters.
+roles/contentwarehouse.serviceAgent,  Content Warehouse Service Agent,  Gives the Content Warehouse service account to manage customer resources
+roles/datacatalog.admin,  Data Catalog Admin,  Full access to all DataCatalog resources
+roles/datacatalog.categoryAdmin,  Policy Tag Admin,  Manage taxonomies
+roles/datacatalog.categoryFineGrainedReader,  Fine-Grained Reader,  Read access to sub-resources tagged by a policy tag, for example, BigQuery columns
+roles/datacatalog.entryGroupCreator,  DataCatalog EntryGroup Creator,  Can create new entryGroups
+roles/datacatalog.entryGroupOwner,  DataCatalog entryGroup Owner,  Full access to entryGroups
+roles/datacatalog.entryOwner,  DataCatalog entry Owner,  Full access to entries
+roles/datacatalog.entryViewer,  DataCatalog Entry Viewer,  Read access to entries
+roles/datacatalog.tagEditor,  Data Catalog Tag Editor,  Gives permission to modify tags on a GCP assets (BigQuery, Pub/Sub etc).
+roles/datacatalog.tagTemplateCreator,  Data Catalog TagTemplate Creator,  Access to create new tag templates
+roles/datacatalog.tagTemplateOwner,  Data Catalog TagTemplate Owner,  Full acess to tag templates
+roles/datacatalog.tagTemplateUser,  Data Catalog TagTemplate User,  Access to use templates to tag resources
+roles/datacatalog.tagTemplateViewer,  Data Catalog TagTemplate Viewer,  Read access to templates and tags created using the templates
+roles/datacatalog.viewer,  Data Catalog Viewer,  Grants metadata read permissions to cataloged GCP assets (BigQuery, Pub/Sub etc)
+roles/dataflow.admin,  Dataflow Admin,  Minimal role for creating and managing dataflow jobs.
+roles/dataflow.developer,  Dataflow Developer,  Full operational access to Dataflow jobs.
+roles/dataflow.serviceAgent,  Cloud Dataflow Service Agent,  Gives Cloud Dataflow service account access to managed resources. Includes access to service accounts.
+roles/dataflow.viewer,  Dataflow Viewer,  Read only access to Dataflow jobs.
+roles/dataflow.worker,  Dataflow Worker,  Worker access to Dataflow.  Intended for service accounts.
+roles/datafusion.admin,  Cloud Data Fusion Admin,  Full access to Cloud Data Fusion Instances, Namespaces and related resources.
+roles/datafusion.runner,  Cloud Data Fusion Runner,  Access to Cloud Data Fusion runtime resources.
+roles/datafusion.serviceAgent,  Cloud Data Fusion API Service Agent,  Gives Cloud Data Fusion service account access to Service Networking, Cloud Dataproc, Cloud Storage, BigQuery, Cloud Spanner, and Cloud Bigtable resources.
+roles/datafusion.viewer,  Cloud Data Fusion Viewer,  Read-only access to Cloud Data Fusion Instances, Namespaces and related resources.
+roles/datalabeling.admin,  Data Labeling Service Admin,  Full access to all Data Labeling resources
+roles/datalabeling.editor,  Data Labeling Service Editor,  Editor of all Data Labeling resources
+roles/datalabeling.serviceAgent,  Data Labeling Service Agent,  Gives Data Labeling service account read/write access to Cloud Storage, read/write BigQuery, update CMLE model versions, editor access to Annotation service and AutoML service.
+roles/datalabeling.viewer,  Data Labeling Service Viewer,  Viewer of all Data Labeling resources
+roles/datamigration.admin,  Database Migration Admin,  Full access to all resources of Database Migration.
+roles/datapipelines.admin,  Data pipelines Admin,  Administrator of datapipelines resources
+roles/datapipelines.invoker,  Data pipelines Invoker,  Invoker of datapipelines jobs
+roles/datapipelines.serviceAgent,  Datapipelines Service Agent,  Gives Datapipelines service permissions to create Dataflow & Cloud Scheduler jobs in the user project.
+roles/datapipelines.viewer,  Data pipelines Viewer,  Viewer of datapipelines resources
+roles/dataprep.projects.user,  Dataprep User,  Use of Dataprep.
+roles/dataprep.serviceAgent,  Dataprep Service Agent,  Dataprep service identity. Includes access to service accounts.
+roles/dataproc.admin,  Dataproc Administrator,  Full control of Dataproc resources.
+roles/dataproc.editor,  Dataproc Editor,  Full control of Dataproc resources. Allows viewing all networks.
+roles/dataproc.hubAgent,  Dataproc Hub Agent,  Allows management of Dataproc resources. Intended for service accounts running Dataproc Hub instances.
+roles/dataproc.serviceAgent,  Dataproc Service Agent,  Gives Cloud Dataproc service account access to Compute, and Storage resources and Service Accounts.
+roles/dataproc.viewer,  Dataproc Viewer,  Read-only access to Dataproc resources.
+roles/dataproc.worker,  Dataproc Worker,  Worker access to Dataproc. Intended for service accounts.
+roles/dataprocessing.admin,  Data Processing Controls Resource Admin,  Data processing controls admin who can fully manage data processing controls settings and view all datasource data.
+roles/datastore.importExportAdmin,  Cloud Datastore Import Export Admin,  Full access to manage imports and exports.
+roles/datastore.indexAdmin,  Cloud Datastore Index Admin,  Full access to manage index definitions.
+roles/datastore.owner,  Cloud Datastore Owner,  Full access to Cloud Datastore.
+roles/datastore.user,  Cloud Datastore User,  Provides read/write access to data in a Cloud Datastore database. Intended for application developers and service accounts.
+roles/datastore.viewer,  Cloud Datastore Viewer,  Read access to all Cloud Datastore resources.
+roles/datastream.admin,  Datastream Admin,  Full access to all Datastream resources.
+roles/datastream.viewer,  Datastream Viewer,  Read-only access to all Datastream resources.
+roles/datastudio.serviceAgent,  Data Studio Service Agent,  Grants Data Studio Service Account access to manage resources.
+roles/dellemccloudonefs.admin,  Dell EMC Cloud OneFS Admin,  This role is managed by Dell EMC, not Google.
+roles/dellemccloudonefs.user,  Dell EMC Cloud OneFS User,  This role is managed by Dell EMC, not Google.
+roles/dellemccloudonefs.viewer,  Dell EMC Cloud OneFS Viewer,  This role is managed by Dell EMC, not Google.
+roles/deploymentmanager.editor,  Deployment Manager Editor,  Read and Write access to all Deployment Manager resources.
+roles/deploymentmanager.typeEditor,  Deployment Manager Type Editor,  Read and Write access to all Type Registry resources.
+roles/deploymentmanager.typeViewer,  Deployment Manager Type Viewer,  Read-only access to all Type Registry resources.
+roles/deploymentmanager.viewer,  Deployment Manager Viewer,  Read-only access to all Deployment Manager resources.
+roles/dialogflow.aamAdmin,  AAM Admin,  An admin has access to all resources and can perform all administrative actions in an AAM project.
+roles/dialogflow.aamConversationalArchitect,  AAM Conversational Architect,  A Conversational Architect can label conversational data, approve taxonomy changes and design virtual agents for a customer's use cases.
+roles/dialogflow.aamDialogDesigner,  AAM Dialog Designer,  A Dialog Designer can label conversational data and propose taxonomy changes for virtual agent modeling.
+roles/dialogflow.aamLeadDialogDesigner,  AAM Lead Dialog Designer,  A Dialog Designer Lead can label conversational data and approve taxonomy changes for virtual agent modeling.
+roles/dialogflow.aamViewer,  AAM Viewer,  A user can view the taxonomy and data reports in an AAM project.
+roles/dialogflow.admin,  Dialogflow API Admin,  Can query for intent; read & write session properties; read & write agent properties.
+roles/dialogflow.client,  Dialogflow API Client,  Can call all methods on sessions and conversations resources as well as their descendants.
+roles/dialogflow.consoleAgentEditor,  Dialogflow Console Agent Editor,  Can edit agent in Dialogflow Console
+roles/dialogflow.consoleSimulatorUser,  Dialogflow Console Simulator User,  Can perform query of dialogflow suggestions in the simulator in web console.
+roles/dialogflow.consoleSmartMessagingAllowlistEditor,  Dialogflow Console Smart Messaging Allowlist Editor,  Can edit allowlist for smart messaging associated with conversation model in the agent assist console
+roles/dialogflow.conversationManager,  Dialogflow Conversation Manager,  Can manage all the resources related to Dialogflow Conversations.
+roles/dialogflow.entityTypeAdmin,  Dialogflow Entity Type Admin,  Can read & write entity types.
+roles/dialogflow.environmentEditor,  Dialogflow Environment editor,  Can read & update environment and its sub-resources.
+roles/dialogflow.flowEditor,  Dialogflow Flow editor,  Can read & update flow and its sub-resources.
+roles/dialogflow.integrationManager,  Dialogflow Integration Manager,  Can add, remove, enable and disable Dialogflow integrations.
+roles/dialogflow.intentAdmin,  Dialogflow Intent Admin,  Can read & write intents.
+roles/dialogflow.reader,  Dialogflow API Reader,  Can read agent and session properties; cannot query for intent.
+roles/dialogflow.serviceAgent,  Dialogflow Service Agent,  Gives Dialogflow Service Account access to resources on behalf of user project for intent detection in integrations (Facebook Messenger, Slack, Telephony, etc.).
+roles/dialogflow.testCaseAdmin,  Dialogflow Test Case Admin,  Can read & write test cases.
+roles/dialogflow.webhookAdmin,  Dialogflow Webhook Admin,  Can read & write webhooks.
+roles/dlp.admin,  DLP Administrator,  Administer DLP including jobs and templates.
+roles/dlp.analyzeRiskTemplatesEditor,  DLP Analyze Risk Templates Editor,  Edit DLP analyze risk templates.
+roles/dlp.analyzeRiskTemplatesReader,  DLP Analyze Risk Templates Reader,  Read DLP analyze risk templates.
+roles/dlp.columnDataProfilesReader,  DLP Column Data Profiles Reader,  Read DLP column profiles.
+roles/dlp.dataProfilesReader,  DLP Data Profiles Reader,  Read DLP profiles.
+roles/dlp.deidentifyTemplatesEditor,  DLP De-identify Templates Editor,  Edit DLP de-identify templates.
+roles/dlp.deidentifyTemplatesReader,  DLP De-identify Templates Reader,  Read DLP de-identify templates.
+roles/dlp.estimatesAdmin,  DLP Cost Estimation,  Manage DLP Cost Estimates.
+roles/dlp.inspectFindingsReader,  DLP Inspect Findings Reader,  Read DLP stored findings.
+roles/dlp.inspectTemplatesEditor,  DLP Inspect Templates Editor,  Edit DLP inspect templates.
+roles/dlp.inspectTemplatesReader,  DLP Inspect Templates Reader,  Read DLP inspect templates.
+roles/dlp.jobTriggersEditor,  DLP Job Triggers Editor,  Edit job triggers configurations.
+roles/dlp.jobTriggersReader,  DLP Job Triggers Reader,  Read job triggers.
+roles/dlp.jobsEditor,  DLP Jobs Editor,  Edit and create jobs
+roles/dlp.jobsReader,  DLP Jobs Reader,  Read jobs
+roles/dlp.orgdriver,  DLP Organization Data Profiles Driver,  Permissions needed by the DLP service account to generate data profiles within an organization or folder.
+roles/dlp.projectDataProfilesReader,  DLP Project Data Profiles Reader,  Read DLP project profiles.
+roles/dlp.projectdriver,  DLP Project Data Profiles Driver,  Permissions needed by the DLP service account to generate data profiles within a project.
+roles/dlp.reader,  DLP Reader,  Read DLP entities, such as jobs and templates.
+roles/dlp.serviceAgent,  DLP API Service Agent,  Gives Cloud DLP service agent permissions for BigQuery, Cloud Storage, Datastore, Pub/Sub and Cloud KMS.
+roles/dlp.storedInfoTypesEditor,  DLP Stored InfoTypes Editor,  Edit DLP stored info types.
+roles/dlp.storedInfoTypesReader,  DLP Stored InfoTypes Reader,  Read DLP stored info types.
+roles/dlp.tableDataProfilesReader,  DLP Table Data Profiles Reader,  Read DLP table profiles.
+roles/dlp.user,  DLP User,  Inspect, Redact, and De-identify Content
+roles/dns.admin,  DNS Administrator,  Full read-write access to DNS resources.
+roles/dns.peer,  DNS Peer,  Access to target networks with DNS peering zones
+roles/dns.reader,  DNS Reader,  Read-only access to DNS resources.
+roles/documentai.admin,  Cloud DocumentAI Administrator.,  Grants full access to all resources in Cloud DocumentAI
+roles/documentai.apiUser,  Cloud DocumentAI API User,  Grants access to process documents in Cloud DocumentAI
+roles/documentai.editor,  Cloud DocumentAI Editor,  Grants access to use all resources in Cloud DocumentAI
+roles/documentai.viewer,  Cloud DocumentAI Viewer,  Grants access to view all resources and process documents in Cloud DocumentAI
+roles/documentaicore.serviceAgent,  DocumentAI Core Service Agent,  Gives DocumentAI Core Service Account access to consumer resources.
+roles/domains.admin,  Cloud Domains Admin,  Full access to Cloud Domains Registrations and related resources.
+roles/domains.viewer,  Cloud Domains Viewer,  Read-only access to Cloud Domains Registrations and related resources.
+roles/earlyaccesscenter.admin,  Early Access Center Administrator,  Grants full access to the Early Access Center, including access to all DATA_READ and DATA_WRITE permissions. Including the ability to enroll into Early Access Campaigns.
+roles/earlyaccesscenter.viewer,  Early Access Center Viewer,  Grants view access to the Early Access Center, including access to all DATA_READ but no DATA_WRITE permissions.
+roles/earthengine.admin,  Earth Engine Resource Admin,  Full access to all Earth Engine resource features
+roles/earthengine.appsPublisher,  Earth Engine Apps Publisher,  Publisher of Earth Engine Apps
+roles/earthengine.viewer,  Earth Engine Resource Viewer,  Viewer of all Earth Engine resources
+roles/earthengine.writer,  Earth Engine Resource Writer,  Writer of all Earth Engine resources
+roles/editor,  Editor,  Edit access to all resources.
+roles/endpoints.portalAdmin,  Endpoints Portal Admin,  Full access to Endpoints Portal resources
+roles/endpoints.serviceAgent,  Cloud Endpoints Service Agent,  Gives the Cloud Endpoints service account access to Endpoints services and the ability to act as a service controller.
+roles/endpointsportal.serviceAgent,  Endpoints Portal Service Agent,  Can access information about Endpoints services for consumer portal management, and can read Source Repositories for consumer portal custom content.
+roles/enterpriseknowledgegraph.serviceAgent,  Enterprise Knowledge Graph Service Agent,  Gives Enterprise Knowledge Graph Service Account access to consumer resources.
+roles/errorreporting.admin,  Error Reporting Admin,  Administrative access to Error Reporting.
+roles/errorreporting.user,  Error Reporting User,  User access to Error Reporting. Can list all errors and update their metadata. Can delete error events.
+roles/errorreporting.viewer,  Error Reporting Viewer,  Read-only access to all Error Reporting data.
+roles/errorreporting.writer,  Error Reporting Writer,  Can send error events to Error Reporting. Intended for service accounts.
+roles/essentialcontacts.admin,  Essential Contacts Admin,  Full access to all essential contacts
+roles/essentialcontacts.viewer,  Essential Contacts Viewer,  Viewer for all essential contacts
+roles/eventarc.admin,  Eventarc Admin,  Full control over all Eventarc resources.
+roles/eventarc.developer,  Eventarc Developer,  Access to read and write Eventarc resources.
+roles/eventarc.eventReceiver,  Eventarc Event Receiver,  Can receive events from all event providers.
+roles/eventarc.serviceAgent,  Eventarc Service Agent,  Gives Eventarc service account access to managed resources.
+roles/eventarc.viewer,  Eventarc Viewer,  Can view the state of all Eventarc resources, including IAM policies.
+roles/file.editor,  Cloud Filestore Editor,  Read-write access to Filestore instances and related resources.
+roles/file.serviceAgent,  Cloud Filestore Service Agent,  Gives Cloud Filestore service account access to managed resources.
+roles/file.viewer,  Cloud Filestore Viewer,  Read-only access to Filestore instances and related resources.
+roles/firebase.admin,  Firebase Admin,  Full access to Firebase products.
+roles/firebase.analyticsAdmin,  Firebase Analytics Admin,  Full access to Google Analytics for Firebase.
+roles/firebase.analyticsViewer,  Firebase Analytics Viewer,  Read access to Google Analytics for Firebase.
+roles/firebase.appDistributionSdkServiceAgent,  Firebase App Distribution Admin SDK Service Agent,  Read and write access to Firebase App Distribution with the Admin SDK
+roles/firebase.developAdmin,  Firebase Develop Admin,  Full access to Firebase Develop products and Analytics.
+roles/firebase.developViewer,  Firebase Develop Viewer,  Read access to Firebase Develop products and Analytics.
+roles/firebase.growthAdmin,  Firebase Grow Admin,  Full access to Firebase Grow products and Analytics.
+roles/firebase.growthViewer,  Firebase Grow Viewer,  Read access to Firebase Grow products and Analytics.
+roles/firebase.managementServiceAgent,  Firebase Service Management Service Agent,  Access to create new service agents for Firebase projects; assign roles to service agents; provision GCP resources as required by Firebase services.
+roles/firebase.qualityAdmin,  Firebase Quality Admin,  Full access to Firebase Quality products and Analytics.
+roles/firebase.qualityViewer,  Firebase Quality Viewer,  Read access to Firebase Quality products and Analytics.
+roles/firebase.sdkAdminServiceAgent,  Firebase Admin SDK Administrator Service Agent,  Read and write access to Firebase products available in the Admin SDK
+roles/firebase.sdkProvisioningServiceAgent,  Firebase SDK Provisioning Service Agent,  Access to provision apps with the Admin SDK.
+roles/firebase.viewer,  Firebase Viewer,  Read-only access to Firebase products.
+roles/firebaseabt.admin,  Firebase A/B Testing Admin,  Full read/write access to Firebase A/B Testing resources.
+roles/firebaseabt.viewer,  Firebase A/B Testing Viewer,  Read-only access to Firebase A/B Testing resources.
+roles/firebaseappcheck.admin,  Firebase App Check Admin,  Full management of Firebase App Check.
+roles/firebaseappcheck.viewer,  Firebase App Check Viewer,  Read-only access for Firebase App Check.
+roles/firebaseappdistro.admin,  Firebase App Distribution Admin,  Full read/write access to Firebase App Distribution resources.
+roles/firebaseappdistro.viewer,  Firebase App Distribution Viewer,  Read-only access to Firebase App Distribution resources.
+roles/firebaseauth.admin,  Firebase Authentication Admin,  Full read/write access to Firebase Authentication resources.
+roles/firebaseauth.viewer,  Firebase Authentication Viewer,  Read-only access to Firebase Authentication resources.
+roles/firebasecrash.symbolMappingsAdmin,  Firebase Crash Symbol Uploader,  Full read/write access to symbol mapping file resources for Firebase Crash Reporting.
+roles/firebasecrashlytics.admin,  Firebase Crashlytics Admin,  Full read/write access to Firebase Crashlytics resources.
+roles/firebasecrashlytics.viewer,  Firebase Crashlytics Viewer,  Read-only access to Firebase Crashlytics resources.
+roles/firebasedatabase.admin,  Firebase Realtime Database Admin,  Full read/write access to Firebase Realtime Database resources.
+roles/firebasedatabase.viewer,  Firebase Realtime Database Viewer,  Read-only access to Firebase Realtime Database resources.
+roles/firebasedynamiclinks.admin,  Firebase Dynamic Links Admin,  Full read/write access to Firebase Dynamic Links resources.
+roles/firebasedynamiclinks.viewer,  Firebase Dynamic Links Viewer,  Read-only access to Firebase Dynamic Links resources.
+roles/firebasehosting.admin,  Firebase Hosting Admin,  Full read/write access to Firebase Hosting resources.
+roles/firebasehosting.viewer,  Firebase Hosting Viewer,  Read-only access to Firebase Hosting resources.
+roles/firebaseinappmessaging.admin,  Firebase In-App Messaging Admin,  Full read/write access to Firebase In-App Messaging resources.
+roles/firebaseinappmessaging.viewer,  Firebase In-App Messaging Viewer,  Read-only access to Firebase In-App Messaging resources.
+roles/firebaseml.admin,  Firebase ML Kit Admin,  Full read/write access to Firebase ML Kit resources.
+roles/firebaseml.viewer,  Firebase ML Kit Viewer,  Read-only access to Firebase ML Kit resources.
+roles/firebasemods.serviceAgent,  Firebase Extensions API Service Agent,  Grants Firebase Extensions API Service Account access to manage resources.
+roles/firebasenotifications.admin,  Firebase Cloud Messaging Admin,  Full read/write access to Firebase Cloud Messaging resources.
+roles/firebasenotifications.viewer,  Firebase Cloud Messaging Viewer,  Read-only access to Firebase Cloud Messaging resources.
+roles/firebaseperformance.admin,  Firebase Performance Reporting Admin,  Full access to firebaseperformance resources.
+roles/firebaseperformance.viewer,  Firebase Performance Reporting Viewer,  Read-only access to firebaseperformance resources.
+roles/firebasepredictions.admin,  Firebase Predictions Admin,  Full read/write access to Firebase Predictions resources.
+roles/firebasepredictions.viewer,  Firebase Predictions Viewer,  Read-only access to Firebase Predictions resources.
+roles/firebaserules.admin,  Firebase Rules Admin,  Full management of Firebase Rules.
+roles/firebaserules.viewer,  Firebase Rules Viewer,  Read-only access on all resources with the ability to test Rulesets.
+roles/firebasestorage.admin,  Cloud Storage for Firebase Admin,  Full management of Cloud Storage for Firebase.
+roles/firebasestorage.serviceAgent,  Cloud Storage for Firebase Service Agent,  Access to Cloud Storage for Firebase through API and SDK.
+roles/firebasestorage.viewer,  Cloud Storage for Firebase Viewer,  Read-only access for Cloud Storage for Firebase.
+roles/firestore.serviceAgent,  Firestore Service Agent,  Gives Firestore service account access to managed resources.
+roles/firewallinsights.serviceAgent,  Cloud Firewall Insights Service Agent,  Gives Cloud Firewall Insights service agent permissions to retrieve Firewall, VM and route resources on user behalf.
+roles/fleetengine.serviceAgent,  FleetEngine Service Agent,  Grants the FleetEngine Service Account access to manage resources.
+roles/gameservices.admin,  Game Services API Admin,  Full access to Game Services API and related resources.
+roles/gameservices.serviceAgent,  Game Services Service Agent,  Gives Game Services Service Account access to GCP resources.
+roles/gameservices.viewer,  Game Services API Viewer,  Read-only access to Game Services API and related resources.
+roles/genomics.admin,  Genomics Admin,  Full access to genomics datasets and operations.
+roles/genomics.editor,  Genomics Editor,  Access to read and edit genomics datasets and operations.
+roles/genomics.pipelinesRunner,  Genomics Pipelines Runner,  Full access to operate on genomics pipelines.
+roles/genomics.serviceAgent,  Genomics Service Agent,  Gives Genomics Service Account access to compute resources. Includes access to service accounts.
+roles/genomics.viewer,  Genomics Viewer,  Access to view genomics datasets and operations.
+roles/gkehub.admin,  GKE Hub Admin,  Full access to GKE Hub resources.
+roles/gkehub.connect,  GKE Connect Agent,  Ability to set up GKE Connect between external clusters and Google.
+roles/gkehub.gatewayAdmin,  Connect Gateway Admin,  Full access to Connect Gateway.
+roles/gkehub.serviceAgent,  GKE Hub Service Agent,  Gives the GKE Hub service agent access to Cloud Platform resources.
+roles/gkehub.viewer,  GKE Hub Viewer,  Read-only access to GKE Hubs and related resources.
+roles/gkemulticloud.admin,  Anthos Multi-cloud Admin,  Administrator of Anthos Multi-cloud resources
+roles/gkemulticloud.serviceAgent,  Anthos Multi-Cloud Service Agent,  Grants the Anthos Multi-Cloud Service Account access to manage resources.
+roles/gkemulticloud.viewer,  Anthos Multi-cloud Viewer,  Viewer of Anthos Multi-cloud resources
+roles/gsuiteaddons.developer,  Google Workspace Add-ons Developer,  Full access to Google Workspace Add-ons resources
+roles/gsuiteaddons.reader,  Google Workspace Add-ons Reader,  Read-only access to Google Workspace Add-ons resources
+roles/gsuiteaddons.tester,  Google Workspace Add-ons Tester,  Testing execution access to Google Workspace Add-ons resources
+roles/healthcare.annotationEditor,  Healthcare Annotation Editor,  Create, delete, update, read and list annotations.
+roles/healthcare.annotationReader,  Healthcare Annotation Reader,  Read and list annotations in an Annotation store.
+roles/healthcare.annotationStoreAdmin,  Healthcare Annotation Administrator,  Administer Annotation stores.
+roles/healthcare.annotationStoreViewer,  Healthcare Annotation Store Viewer,  List Annotation Stores in a dataset.
+roles/healthcare.attributeDefinitionEditor,  Healthcare Attribute Definition Editor,  Edit AttributeDefinition objects.
+roles/healthcare.attributeDefinitionReader,  Healthcare Attribute Definition Reader,  Read AttributeDefinition objects in a consent store.
+roles/healthcare.consentArtifactAdmin,  Healthcare Consent Artifact Administrator,  Administer ConsentArtifact objects.
+roles/healthcare.consentArtifactEditor,  Healthcare Consent Artifact Editor,  Edit ConsentArtifact objects.
+roles/healthcare.consentArtifactReader,  Healthcare Consent Artifact Reader,  Read ConsentArtifact objects in a consent store.
+roles/healthcare.consentEditor,  Healthcare Consent Editor,  Edit Consent objects.
+roles/healthcare.consentReader,  Healthcare Consent Reader,  Read Consent objects in a consent store.
+roles/healthcare.consentStoreAdmin,  Healthcare Consent Store Administrator,  Administer Consent stores.
+roles/healthcare.consentStoreViewer,  Healthcare Consent Store Viewer,  List Consent Stores in a dataset.
+roles/healthcare.datasetAdmin,  Healthcare Dataset Administrator,  Administer Healthcare Datasets.
+roles/healthcare.datasetViewer,  Healthcare Dataset Viewer,  List the Healthcare Datasets in a project.
+roles/healthcare.dicomEditor,  Healthcare DICOM Editor,  Edit DICOM images individually and in bulk.
+roles/healthcare.dicomStoreAdmin,  Healthcare DICOM Store Administrator,  Administer DICOM stores.
+roles/healthcare.dicomStoreViewer,  Healthcare DICOM Store Viewer,  List DICOM Stores in a dataset.
+roles/healthcare.dicomViewer,  Healthcare DICOM Viewer,  Retrieve DICOM images from a DICOM store.
+roles/healthcare.fhirResourceEditor,  Healthcare FHIR Resource Editor,  Create, delete, update, read and search FHIR resources.
+roles/healthcare.fhirResourceReader,  Healthcare FHIR Resource Reader,  Read and search FHIR resources.
+roles/healthcare.fhirStoreAdmin,  Healthcare FHIR Store Administrator,  Administer FHIR resource stores.
+roles/healthcare.fhirStoreViewer,  Healthcare FHIR Store Viewer,  List FHIR Stores in a dataset.
+roles/healthcare.hl7V2Consumer,  Healthcare HL7v2 Message Consumer,  List and read HL7v2 messages, update message labels, and publish new messages.
+roles/healthcare.hl7V2Editor,  Healthcare HL7v2 Message Editor,  Read, write, and delete access to HL7v2 messages.
+roles/healthcare.hl7V2Ingest,  Healthcare HL7v2 Message Ingest,  Ingest HL7v2 messages received from a source network.
+roles/healthcare.hl7V2StoreAdmin,  Healthcare HL7v2 Store Administrator,  Administer HL7v2 Stores.
+roles/healthcare.hl7V2StoreViewer,  Healthcare HL7v2 Store Viewer,  View HL7v2 Stores in a dataset.
+roles/healthcare.nlpServiceViewer,  Healthcare NLP Service Viewer,  Extract and analyze medical entities from a given text.
+roles/healthcare.serviceAgent,  Healthcare Service Agent,  Gives the Healthcare Service Account access to networks,Kubernetes engine, and pubsub resources.
+roles/healthcare.userDataMappingEditor,  Healthcare User Data Mapping Editor,  Edit UserDataMapping objects.
+roles/healthcare.userDataMappingReader,  Healthcare User Data Mapping Reader,  Read UserDataMapping objects in a consent store.
+roles/iam.organizationRoleAdmin,  Organization Role Administrator,  Access to administer all custom roles in the organization and the projects below it.
+roles/iam.organizationRoleViewer,  Organization Role Viewer,  Read access to all custom roles in the organization and the projects below it.
+roles/iam.roleAdmin,  Role Administrator,  Access to administer all custom roles in the project.
+roles/iam.roleViewer,  Role Viewer,  Read access to all custom roles in the project.
+roles/iam.securityAdmin,  Security Admin,  Security admin role, with permissions to get and set any IAM policy.
+roles/iam.securityReviewer,  Security Reviewer,  Security reviewer role, with permissions to get any IAM policy.
+roles/iam.serviceAccountAdmin,  Service Account Admin,  Create and manage service accounts.
+roles/iam.serviceAccountCreator,  Create Service Accounts,  Access to create service accounts.
+roles/iam.serviceAccountDeleter,  Delete Service Accounts,  Access to delete service accounts.
+roles/iam.serviceAccountKeyAdmin,  Service Account Key Admin,  Create and manage (and rotate) service account keys.
+roles/iam.serviceAccountTokenCreator,  Service Account Token Creator,  Impersonate service accounts (create OAuth2 access tokens, sign blobs or JWTs, etc).
+roles/iam.serviceAccountUser,  Service Account User,  Run operations as the service account.
+roles/iam.workloadIdentityPoolAdmin,  IAM Workload Identity Pool Admin,  Full rights to create and manage workload identity pools.
+roles/iam.workloadIdentityPoolViewer,  IAM Workload Identity Pool Viewer,  Read access to workload identity pools.
+roles/iam.workloadIdentityUser,  Workload Identity User,  Impersonate service accounts from GKE Workloads
+roles/iap.admin,  IAP Policy Admin,  Administrator of IAP Permissions
+roles/iap.httpsResourceAccessor,  IAP-secured Web App User,  Access HTTPS resources which use Identity-Aware Proxy
+roles/iap.settingsAdmin,  IAP Settings Admin,  Administrator of IAP Settings.
+roles/iap.tunnelResourceAccessor,  IAP-secured Tunnel User,  Access Tunnel resources which use Identity-Aware Proxy
+roles/identityplatform.admin,  Identity Platform Admin,  Full access to Identity Platform resources.
+roles/identityplatform.viewer,  Identity Platform Viewer,  Read access to Identity Platform resources.
+roles/identitytoolkit.admin,  Identity Toolkit Admin,  Full access to Identity Toolkit resources.
+roles/identitytoolkit.viewer,  Identity Toolkit Viewer,  Read access to Identity Toolkit resources.
+roles/integrations.apigeeIntegrationAdminRole,  Apigee Integration Admin,  A user that has full access to all Apigee integrations.
+roles/integrations.apigeeIntegrationDeployerRole,  Apigee Integration Deployer,  A developer that can deploy/undeploy Apigee integrations to the integration runtime.
+roles/integrations.apigeeIntegrationEditorRole,  Apigee Integration Editor,  A developer that can list, create and update Apigee integrations.
+roles/integrations.apigeeIntegrationInvokerRole,  Apigee Integration Invoker,  A role that can invoke Apigee integrations.
+roles/integrations.apigeeIntegrationsViewer,  Apigee Integration Viewer,  A developer that can list and view Apigee integrations.
+roles/integrations.apigeeSuspensionResolver,  Apigee Integration Approver,  A role that can approve / reject Apigee integrations that contain a suspension/wait task.
+roles/kuberun.eventsControlPlaneServiceAgent,  KubeRun Events Control Plane Service Agent,  Service account role used to setup authentication for the control plane used by KubeRun Events.
+roles/kuberun.eventsDataPlaneServiceAgent,  KubeRun Events Data Plane Service Agent,  Service account role used to setup authentication for the data plane used by KubeRun Events.
+roles/lifesciences.admin,  Cloud Life Sciences Admin,  Full control of Cloud Life Sciences resources.
+roles/lifesciences.editor,  Cloud Life Sciences Editor,  Access to read and edit Cloud Life Sciences resources.
+roles/lifesciences.serviceAgent,  Cloud Life Sciences Service Agent,  Gives Cloud Life Sciences Service Account access to compute resources. Includes access to service accounts.
+roles/lifesciences.viewer,  Cloud Life Sciences Viewer,  Access to read Cloud Life Sciences resources.
+roles/lifesciences.workflowsRunner,  Cloud Life Sciences Workflows Runner,  Full access to operate on Cloud Life Sciences workflows.
+roles/livestream.editor,  Live Stream Editor,  Full access to Live Stream resources.
+roles/livestream.viewer,  Live Stream Viewer,  Read access to Live Stream resources.
+roles/logging.admin,  Logging Admin,  Access to all logging permissions, and dependent permissions.
+roles/logging.bucketWriter,  Logs Bucket Writer,  Ability to write logs to a log bucket.
+roles/logging.configWriter,  Logs Configuration Writer,  Access to configure log exporting and metrics.
+roles/logging.fieldAccessor,  Log Field Accessor,  Ability to read restricted fields in a log bucket.
+roles/logging.logWriter,  Logs Writer,  Access to write logs.
+roles/logging.privateLogViewer,  Private Logs Viewer,  Access to view all logs, including logs with private contents.
+roles/logging.serviceAgent,  Cloud Logging Service Agent,  Grants a Cloud Logging Service Account the ability to create Datasets and manage BigQuery Authorized Views inside those Datasets.
+roles/logging.viewAccessor,  Logs View Accessor,  Ability to read logs in a view.
+roles/logging.viewer,  Logs Viewer,  Access to view logs, except for logs with private contents.
+roles/managedidentities.admin,  Google Cloud Managed Identities Admin,  Full access to Google Cloud Managed Identities Domains and related resources. Intended to be granted on a project-level.
+roles/managedidentities.domainAdmin,  Google Cloud Managed Identities Domain Admin,  Read-Update-Delete to Google Cloud Managed Identities Domains and related resources. Intended to be granted on a resource (domain) level.
+roles/managedidentities.peeringAdmin,  Google Cloud Managed Identities Peering Admin,  Full access to Google Cloud Managed Identities Domains and related resources. Intended to be granted on a project-level
+roles/managedidentities.peeringViewer,  Google Cloud Managed Identities Peering Viewer,  Read-only access to Google Cloud Managed Identities Peering and related resources.
+roles/managedidentities.serviceAgent,  Cloud Managed Identities Service Agent,  Gives Managed Identities service account access to managed resources.
+roles/managedidentities.viewer,  Google Cloud Managed Identities Viewer,  Read-only access to Google Cloud Managed Identities Domains and related resources.
+roles/mediaasset.serviceAgent,  Media Asset Service Agent,  Downloads and uploads media files from and to customer GCS buckets.
+roles/memcache.admin,  Cloud Memorystore Memcached Admin,  Full access to Memcached instances and related resources.
+roles/memcache.editor,  Cloud Memorystore Memcached Editor,  Read-Write access to Memcached instances and related resources.
+roles/memcache.serviceAgent,  Cloud Memorystore Memcached Service Agent,  Gives Cloud Memorystore Memcached service account access to managed resource
+roles/memcache.viewer,  Cloud Memorystore Memcached Viewer,  Read-only access to Memcached instances and related resources.
+roles/meshconfig.serviceAgent,  Mesh Config Service Agent,  Apply mesh configuration
+roles/meshdataplane.serviceAgent,  Mesh Data Plane Service Agent,  Run user-space Istio components
+roles/metastore.admin,  Dataproc Metastore Admin,  Full access to all Dataproc Metastore resources.
+roles/metastore.editor,  Dataproc Metastore Editor,  Read and write access to all Dataproc Metastore resources.
+roles/metastore.metadataOperator,  Dataproc Metastore Metadata Operator,  Read-only access to Dataproc Metastore resources with additional metadata operations permission.
+roles/metastore.serviceAgent,  Dataproc Metastore Service Agent,  Gives the Dataproc Metastore service account access to managed resources.
+roles/metastore.user,  Dataproc Metastore Viewer,  Read-only access to all Dataproc Metastore resources.
+roles/ml.admin,  AI Platform Admin,  Full access to AI Platform.
+roles/ml.developer,  AI Platform Developer,  Access to create training and prediction jobs, models and versions, send online prediction requests.
+roles/ml.jobOwner,  AI Platform Job Owner,  Full access to the job.
+roles/ml.modelOwner,  AI Platform Model Owner,  Full access to the model and its versions.
+roles/ml.modelUser,  AI Platform Model User,  Permissions to read the model and its versions, and use them for prediction.
+roles/ml.operationOwner,  AI Platform Operation Owner,  Full access to the operation.
+roles/ml.serviceAgent,  AI Platform Service Agent,  AI Platform service agent can act as log writer, Cloud Storage admin, Artifact Registry Reader, BigQuery writer, and service account access token creator.
+roles/ml.viewer,  AI Platform Viewer,  Read-only access to AI Platform resources.
+roles/monitoring.admin,  Monitoring Admin,  All current and future monitoring permissions.
+roles/monitoring.alertPolicyEditor,  Monitoring AlertPolicy Editor,  Read/write access to alerting policies.
+roles/monitoring.alertPolicyViewer,  Monitoring AlertPolicy Viewer,  Read-only access to alerting policies.
+roles/monitoring.dashboardEditor,  Monitoring Dashboard Configuration Editor,  Read/write access to dashboard configurations.
+roles/monitoring.dashboardViewer,  Monitoring Dashboard Configuration Viewer,  Read-only access to dashboard configurations.
+roles/monitoring.editor,  Monitoring Editor,  Read/write access to all monitoring data and configuration.
+roles/monitoring.metricWriter,  Monitoring Metric Writer,  Write-only access to metrics.  This provides exactly the permissions needed by the Stackdriver agent and other systems that send metrics.
+roles/monitoring.metricsScopesAdmin,  Monitoring Metrics Scopes Admin,  Access to add and remove monitored projects from metrics scopes.
+roles/monitoring.metricsScopesViewer,  Monitoring Metrics Scopes Viewer,  Read-only access to metrics scopes and their monitored projects.
+roles/monitoring.notificationChannelEditor,  Monitoring NotificationChannel Editor,  Read/write access to notification channels.
+roles/monitoring.notificationChannelViewer,  Monitoring NotificationChannel Viewer,  Read-only access to notification channels.
+roles/monitoring.notificationServiceAgent,  Monitoring Notification Service Agent,  Grants permissions to deliver notifications directly to resources within the target project, such as delivering to Cloud PubSub topics within the project.
+roles/monitoring.servicesEditor,  Monitoring Services Editor,  Read/write access to services.
+roles/monitoring.servicesViewer,  Monitoring Services Viewer,  Read-only access to services.
+roles/monitoring.uptimeCheckConfigEditor,  Monitoring Uptime Check Configuration Editor,  Read/write access to uptime check configurations.
+roles/monitoring.uptimeCheckConfigViewer,  Monitoring Uptime Check Configuration Viewer,  Read-only access to uptime check configurations.
+roles/monitoring.viewer,  Monitoring Viewer,  Read-only access to get and list information about all monitoring data and configuration.
+roles/multiclusteringress.serviceAgent,  Multi Cluster Ingress Service Agent,  Gives the Multi Cluster Ingress service agent access to CloudPlatform resources.
+roles/multiclustermetering.serviceAgent,  Multi-cluster metering Service Agent,  Gives the Multi-cluster metering service agent access to CloudPlatform resources.
+roles/netappcloudvolumes.admin,  NetApp Cloud Volumes Admin,  This role is managed by NetApp, not Google.
+roles/netappcloudvolumes.viewer,  NetApp Cloud Volumes Viewer,  This role is managed by NetApp, not Google.
+roles/networkconnectivity.hubAdmin,  Hub & Spoke Admin,  Full access to Hub and Spoke resources.
+roles/networkconnectivity.hubViewer,  Hub & Spoke Viewer,  Read-only access to Hub and Spoke resources.
+roles/networkconnectivity.spokeAdmin,  Spoke Admin,  Create Spokes and attach them to an existing Hub.
+roles/networkmanagement.admin,  Network Management Admin,  Full access to Network Management resources.
+roles/networkmanagement.serviceAgent,  GCP Network Management Service Agent,  Grants the GCP Network Management API the authority to complete analysis based on network configurations from Compute Engine and Container Engine.
+roles/networkmanagement.viewer,  Network Management Viewer,  Read-only access to Network Management resources.
+roles/notebooks.admin,  Notebooks Admin,  Full access to Notebooks all resources.
+roles/notebooks.legacyAdmin,  Notebooks Legacy Admin,  Full access to Notebooks all resources through compute API.
+roles/notebooks.legacyViewer,  Notebooks Legacy Viewer,  Read-only access to Notebooks all resources through compute API.
+roles/notebooks.runner,  Notebooks Runner,  Restricted access for running scheduled Notebooks.
+roles/notebooks.serviceAgent,  AI Platform Notebooks Service Agent,  Provide access for notebooks service agent to manage notebook instances in user projects
+roles/notebooks.viewer,  Notebooks Viewer,  Read-only access to Notebooks all resources.
+roles/oauthconfig.editor,  OAuth Config Editor,  Read/write access to OAuth config resources
+roles/oauthconfig.viewer,  OAuth Config Viewer,  Read-only access to OAuth config resources
+roles/ondemandscanning.admin,  On-Demand Scanning Admin,  All permissions for On-Demand Scanning
+roles/opsconfigmonitoring.resourceMetadata.viewer,  Ops Config Monitoring Resource Metadata Viewer,  Read-only access to resource metadata.
+roles/opsconfigmonitoring.resourceMetadata.writer,  Ops Config Monitoring Resource Metadata Writer,  Write-only access to resource metadata. This provides exactly the permissions needed by the Ops Config Monitoring metadata agent and other systems that send metadata.
+roles/orgpolicy.policyAdmin,  Organization Policy Administrator,  The permission to set Organization Policies on resources.
+roles/orgpolicy.policyViewer,  Organization Policy Viewer,  Access to view Organization Policies on resources.
+roles/osconfig.guestPolicyAdmin,  GuestPolicy Admin,  Full admin access to GuestPolicies
+roles/osconfig.guestPolicyEditor,  GuestPolicy Editor,  Editor of GuestPolicy resources
+roles/osconfig.guestPolicyViewer,  GuestPolicy Viewer,  Viewer of GuestPolicy resources
+roles/osconfig.instanceOSPoliciesComplianceViewer,  InstanceOSPoliciesCompliance Viewer,  Viewer of OS Policies Compliance of VM instances
+roles/osconfig.inventoryViewer,  OS Inventory Viewer,  Viewer of OS Inventories
+roles/osconfig.osPolicyAssignmentAdmin,  OSPolicyAssignment Admin,  Full admin access to OS Policy Assignments
+roles/osconfig.osPolicyAssignmentEditor,  OSPolicyAssignment Editor,  Editor of OS Policy Assignments
+roles/osconfig.osPolicyAssignmentViewer,  OSPolicyAssignment Viewer,  Viewer of OS Policy Assignments
+roles/osconfig.patchDeploymentAdmin,  PatchDeployment Admin,  Full admin access to PatchDeployments
+roles/osconfig.patchDeploymentViewer,  PatchDeployment Viewer,  Viewer of PatchDeployment resources
+roles/osconfig.patchJobExecutor,  Patch Job Executor,  Access to execute Patch Jobs.
+roles/osconfig.patchJobViewer,  Patch Job Viewer,  Get and list Patch Jobs.
+roles/osconfig.serviceAgent,  Cloud OS Config Service Agent,  Grants OS Config Service Account access to Google Compute Engine instances.
+roles/osconfig.vulnerabilityReportViewer,  OS VulnerabilityReport Viewer,  Viewer of OS VulnerabilityReports
+roles/owner,  Owner,  Full access to all resources.
+roles/paymentsresellersubscription.partnerAdmin,  Payments Reseller Admin,  Full access to all Payments Reseller resources, including subscriptions, products and promotions
+roles/paymentsresellersubscription.partnerViewer,  Payments Reseller Viewer,  Read access to all Payments Reseller resources, including subscriptions, products and promotions
+roles/paymentsresellersubscription.productViewer,  Payments Reseller Products Viewer,  Read access to Payments Reseller Product resource
+roles/paymentsresellersubscription.promotionViewer,  Payments Reseller Promotions Viewer,  Read access to Payments Reseller Promotion resource
+roles/paymentsresellersubscription.subscriptionEditor,  Payments Reseller Subscriptions Editor,  Write access to Payments Reseller Subscription resource
+roles/paymentsresellersubscription.subscriptionViewer,  Payments Reseller Subscriptions Viewer,  Read access to Payments Reseller Subscription resource
+roles/policyanalyzer.activityAnalysisViewer,  Activity Analysis Viewer,  Viewer user that can read all activity analysis.
+roles/policysimulator.admin,  Simulator Admin,  Admin user that can run and access replays.
+roles/privateca.admin,  CA Service Admin,  Full access to all CA Service resources.
+roles/privateca.auditor,  CA Service Auditor,  Read-only access to all CA Service resources.
+roles/privateca.caManager,  CA Service Operation Manager,  Create and manage CAs, revoke certificates, create certificates templates, and read-only access for CA Service resources.
+roles/privateca.certificateManager,  CA Service Certificate Manager,  Create certificates and read-only access for CA Service resources.
+roles/privateca.certificateRequester,  CA Service Certificate Requester,  Request certificates from CA Service.
+roles/privateca.templateUser,  CA Service Certificate Template User,  Read, list and use certificate templates.
+roles/privateca.workloadCertificateRequester,  CA Service Workload Certificate Requester,  Request certificates from CA Service with caller's identity.
+roles/proximitybeacon.attachmentEditor,  Beacon Attachment Editor,  Can create and delete attachments; can list and get a project's beacons; can list a project's namespaces.
+roles/proximitybeacon.attachmentPublisher,  Beacon Attachment Publisher,  Grants necessary permissions to use beacons to create attachments in namespaces not owned by this project.
+roles/proximitybeacon.attachmentViewer,  Beacon Attachment Viewer,  Can view all attachments under a namespace; no beacon or namespace permissions.
+roles/proximitybeacon.beaconEditor,  Beacon Editor,  Necessary access to register, modify, and view beacons; no attachment or namespace permissions.
+roles/pubsub.admin,  Pub/Sub Admin,  Full access to topics, subscriptions, and snapshots.
+roles/pubsub.editor,  Pub/Sub Editor,  Modify topics and subscriptions, publish and consume messages.
+roles/pubsub.publisher,  Pub/Sub Publisher,  Publish messages to a topic.
+roles/pubsub.serviceAgent,  Cloud Pub/Sub Service Agent,  Grants Cloud Pub/Sub Service Account access to manage resources.
+roles/pubsub.subscriber,  Pub/Sub Subscriber,  Consume messages from a subscription, attach subscriptions to a topic, and seek to a snapshot.
+roles/pubsub.viewer,  Pub/Sub Viewer,  View topics, subscriptions, and snapshots.
+roles/pubsublite.admin,  Pub/Sub Lite Admin,  Full access to topics, subscriptions and reservations.
+roles/pubsublite.editor,  Pub/Sub Lite Editor,  Modify topics, subscriptions and reservations, publish and consume messages.
+roles/pubsublite.publisher,  Pub/Sub Lite Publisher,  Publish messages to a topic.
+roles/pubsublite.subscriber,  Pub/Sub Lite Subscriber,  Subscribe to and read messages from a topic.
+roles/pubsublite.viewer,  Pub/Sub Lite Viewer,  View topics, subscriptions and reservations.
+roles/recaptchaenterprise.admin,  reCAPTCHA Enterprise Admin,  Access to view and modify reCAPTCHA Enterprise keys
+roles/recaptchaenterprise.agent,  reCAPTCHA Enterprise Agent,  Access to create and annotate reCAPTCHA Enterprise assessments
+roles/recaptchaenterprise.viewer,  reCAPTCHA Enterprise Viewer,  Access to view reCAPTCHA Enterprise keys and metrics
+roles/recommender.billingAccountCudAdmin,  Billing Account Usage Commitment Recommender Admin,  Admin of Billing Account Usage Commitment Recommender.
+roles/recommender.billingAccountCudViewer,  Billing Account Usage Commitment Recommender Viewer,  Viewer of Billing Account Usage Commitment Recommender.
+roles/recommender.cloudAssetInsightsAdmin,  Cloud Asset Insights Admin,  Admin of all Cloud Asset insights.
+roles/recommender.cloudAssetInsightsViewer,  Cloud Asset Insights Viewer,  Viewer of all Cloud Asset insights.
+roles/recommender.cloudsqlAdmin,  Cloud SQL Recommender Admin,  Admin of Cloud SQL insights and recommendations.
+roles/recommender.cloudsqlViewer,  Cloud SQL Recommender Viewer,  Viewer of Cloud SQL insights and recommendations.
+roles/recommender.computeAdmin,  Compute Recommender Admin,  Admin of compute recommendations.
+roles/recommender.computeViewer,  Compute Recommender Viewer,  Viewer of compute recommendations.
+roles/recommender.exporter,  Recommendations Exporter,  Exporter of Recommendations
+roles/recommender.firewallAdmin,  Firewall Recommender Admin,  Admin of Firewall insights and recommendations.
+roles/recommender.firewallViewer,  Firewall Recommender Viewer,  Viewer of Firewall insights and recommendations.
+roles/recommender.iamAdmin,  IAM Recommender Admin,  Admin of IAM recommendations.
+roles/recommender.iamViewer,  IAM Recommender Viewer,  Viewer of IAM recommendations.
+roles/recommender.productSuggestionAdmin,  Product Suggestion Recommenders Admin,  Admin of all Product Suggestion insights and recommendations.
+roles/recommender.productSuggestionViewer,  Product Suggestion Recommenders Viewer,  Viewer of all Product Suggestion insights and recommendations.
+roles/recommender.projectCudAdmin,  Project Usage Commitment Recommender Admin,  Admin of Project Usage Commitment Recommender.
+roles/recommender.projectCudViewer,  Project Usage Commitment Recommender Viewer,  Viewer of Project Usage Commitment Recommender.
+roles/recommender.projectUtilAdmin,  Project Utilization Recommender Admin,  Admin of Project Utilization insights and recommendations.
+roles/recommender.projectUtilViewer,  Project Utilization Recommender Viewer,  Viewer of Project Utilization insights and recommendations.
+roles/redis.admin,  Cloud Memorystore Redis Admin,  Full access to Redis instances and related resources.
+roles/redis.editor,  Cloud Memorystore Redis Editor,  Read-Write access to Redis instances and related resources.
+roles/redis.serviceAgent,  Cloud Memorystore Redis Service Agent,  Gives Cloud Memorystore Redis service account access to managed resource
+roles/redis.viewer,  Cloud Memorystore Redis Viewer,  Read-only access to Redis instances and related resources.
+roles/redisenterprisecloud.admin,  Redis Enterprise Cloud Admin,  This role is managed by Redis Labs, not Google.
+roles/redisenterprisecloud.viewer,  Redis Enterprise Cloud Viewer,  This role is managed by Redis Labs, not Google.
+roles/remotebuildexecution.actionCacheWriter,  Remote Build Execution Action Cache Writer,  Remote Build Execution Action Cache Writer
+roles/remotebuildexecution.artifactAdmin,  Remote Build Execution Artifact Admin,  Remote Build Execution Artifact Admin
+roles/remotebuildexecution.artifactCreator,  Remote Build Execution Artifact Creator,  Remote Build Execution Artifact Creator
+roles/remotebuildexecution.artifactViewer,  Remote Build Execution Artifact Viewer,  Remote Build Execution Artifact Viewer
+roles/remotebuildexecution.configurationAdmin,  Remote Build Execution Configuration Admin,  Remote Build Execution Configuration Admin
+roles/remotebuildexecution.configurationViewer,  Remote Build Execution Configuration Viewer,  Remote Build Execution Configuration Viewer
+roles/remotebuildexecution.logstreamWriter,  Remote Build Execution Logstream Writer,  Remote Build Execution Logstream Writer
+roles/remotebuildexecution.reservationAdmin,  Remote Build Execution Reservation Admin,  Remote Build Execution Reservation Admin
+roles/remotebuildexecution.serviceAgent,  Remote Build Execution Service Agent,  Gives Remote Build Execution service account access to managed resources.
+roles/remotebuildexecution.worker,  Remote Build Execution Worker,  Remote Build Execution Worker
+roles/resourcemanager.folderAdmin,  Folder Admin,  Access and administer a folder and all of its sub-resources.
+roles/resourcemanager.folderCreator,  Folder Creator,  Create folder and view all of its sub-resources.
+roles/resourcemanager.folderEditor,  Folder Editor,  Edit, delete, and undelete a folder and all of its child resources.
+roles/resourcemanager.folderIamAdmin,  Folder IAM Admin,  Access and administer a folder IAM policies.
+roles/resourcemanager.folderMover,  Folder Mover,  Move a folder and all of its child resources.
+roles/resourcemanager.folderViewer,  Folder Viewer,  Access to view a folder and all of its child resources.
+roles/resourcemanager.lienModifier,  Project Lien Modifier,  Access to modify Liens on projects.
+roles/resourcemanager.organizationAdmin,  Organization Administrator,  Access to administer all resources belonging to the organization.
+roles/resourcemanager.organizationViewer,  Organization Viewer,  Access only to view an Organization.
+roles/resourcemanager.projectCreator,  Project Creator,  Access to create new GCP projects.
+roles/resourcemanager.projectDeleter,  Project Deleter,  Access to delete GCP projects.
+roles/resourcemanager.projectIamAdmin,  Project IAM Admin,  Access and administer a project IAM policies.
+roles/resourcemanager.projectMover,  Project Mover,  Access to update and move a project
+roles/resourcemanager.tagAdmin,  Tag Administrator,  Access to create, delete, update, and manage access to Tags
+roles/resourcemanager.tagUser,  Tag User,  Access to list Tags and manage their associations with resources
+roles/resourcemanager.tagViewer,  Tag Viewer,  Access to list Tags and their associations with resources
+roles/resourcesettings.admin,  Resource Settings Administrator,  Provides admin capabilities to set Resource Setting Values on resources.
+roles/resourcesettings.viewer,  Resource Settings Viewer,  Provides capabilities to view Resource Settings and Resource Setting Values on resources.
+roles/retail.admin,  Retail Admin,  Full access to Retail api resources.
+roles/retail.editor,  Retail Editor,  Full access to Retail api resources except purge, rejoin, and setSponsorship.
+roles/retail.serviceAgent,  Retail Service Agent,  Retail service uploads product feeds and user events from Cloud Storage and BigQuery, reports results to the customer Cloud Storage bucket, writes logs to customer projects, and writes and reads Stackdriver metrics for customer projects.
+roles/retail.viewer,  Retail Viewer,  Grants access to read all resources in Retail.
+roles/riskmanager.admin,  Risk Manager Admin,  Grants all Risk Manager permissions
+roles/riskmanager.editor,  Risk Manager Editor,  Access to edit Risk Manager resources
+roles/riskmanager.reviewer,  Risk Manager Report Reviewer,  Access to review Risk Manager reports
+roles/riskmanager.serviceAgent,  Risk Manager Service Agent,  Service agent that grants Risk Manager service access to fetch findings for generating Reports
+roles/riskmanager.viewer,  Risk Manager Viewer,  Access to view Risk Manager resources
+roles/run.admin,  Cloud Run Admin,  Full control over all Cloud Run resources.
+roles/run.developer,  Cloud Run Developer,  Read and write access to all Cloud Run resources.
+roles/run.invoker,  Cloud Run Invoker,  Can invoke a Cloud Run service.
+roles/run.serviceAgent,  Cloud Run Service Agent,  Gives Cloud Run service account access to managed resources.
+roles/run.viewer,  Cloud Run Viewer,  Can view the state of all Cloud Run resources, including IAM policies.
+roles/runtimeconfig.admin,  Cloud RuntimeConfig Admin,  Full access to RuntimeConfig resources.
+roles/secretmanager.admin,  Secret Manager Admin,  Full access to administer Secret Manager resources.
+roles/secretmanager.secretAccessor,  Secret Manager Secret Accessor,  Allows accessing the payload of secrets.
+roles/secretmanager.secretVersionAdder,  Secret Manager Secret Version Adder,  Allows adding versions to existing secrets.
+roles/secretmanager.secretVersionManager,  Secret Manager Secret Version Manager,  Allows creating and managing versions of existing secrets.
+roles/secretmanager.viewer,  Secret Manager Viewer,  Allows viewing metadata of all Secret Manager resources
+roles/securedlandingzone.serviceAgent,  Secured Landing Zone Service Agent,  Grants Secured Landing Zone service account permissions to manage resources in the customer project
+roles/securitycenter.admin,  Security Center Admin,  Admin(super user) access to security center
+roles/securitycenter.adminEditor,  Security Center Admin Editor,  Admin Read-write access to security center
+roles/securitycenter.adminViewer,  Security Center Admin Viewer,  Admin Read access to security center
+roles/securitycenter.assetSecurityMarksWriter,  Security Center Asset Security Marks Writer,  Write access to asset security marks
+roles/securitycenter.assetsDiscoveryRunner,  Security Center Assets Discovery Runner,  Run asset discovery access to assets
+roles/securitycenter.assetsViewer,  Security Center Assets Viewer,  Read access to assets
+roles/securitycenter.automationServiceAgent,  Security Center Automation Service Agent,  Security Center automation service agent can configure GCP resources to enable security scanning.
+roles/securitycenter.controlServiceAgent,  Security Center Control Service Agent,  Security Center Control service agent can monitor and configure GCP resources and import security findings.
+roles/securitycenter.findingSecurityMarksWriter,  Security Center Finding Security Marks Writer,  Write access to finding security marks
+roles/securitycenter.findingsEditor,  Security Center Findings Editor,  Read-write access to findings
+roles/securitycenter.findingsStateSetter,  Security Center Findings State Setter,  Set state access to findings
+roles/securitycenter.findingsViewer,  Security Center Findings Viewer,  Read access to findings
+roles/securitycenter.findingsWorkflowStateSetter,  Security Center Findings Workflow State Setter,  Set workflow state access to findings
+roles/securitycenter.notificationConfigEditor,  Security Center Notification Configurations Editor,  Write access to notification configurations
+roles/securitycenter.notificationConfigViewer,  Security Center Notification Configurations Viewer,  Read access to notification configurations
+roles/securitycenter.notificationServiceAgent,  Security Center Notification Service Agent,  Security Center service agent can publish notifications to Pub/Sub topics.
+roles/securitycenter.securityHealthAnalyticsServiceAgent,  Security Health Analytics Service Agent,  Security Health Analytics service agent can scan GCP resource metadata to find security vulnerabilities.
+roles/securitycenter.serviceAgent,  Security Center Service Agent,  Security Center service agent can scan GCP resources and import security scans.
+roles/securitycenter.settingsAdmin,  Security Center Settings Admin,  Admin(super user) access to security center settings
+roles/securitycenter.settingsEditor,  Security Center Settings Editor,  Read-Write access to security center settings
+roles/securitycenter.settingsViewer,  Security Center Settings Viewer,  Read access to security center settings
+roles/securitycenter.sourcesAdmin,  Security Center Sources Admin,  Admin access to sources
+roles/securitycenter.sourcesEditor,  Security Center Sources Editor,  Read-write access to sources
+roles/securitycenter.sourcesViewer,  Security Center Sources Viewer,  Read access to sources
+roles/serverless.serviceAgent,  Cloud Run Service Agent,  Gives Cloud Run service account access to managed resources.
+roles/servicebroker.admin,  Service Broker Admin,  Full access to ServiceBroker resources.
+roles/servicebroker.operator,  Service Broker Operator,  Operational access to the ServiceBroker resources.
+roles/serviceconsumermanagement.tenancyUnitsAdmin,  Admin of Tenancy Units,  Administrate tenancy units
+roles/serviceconsumermanagement.tenancyUnitsViewer,  Viewer of Tenancy Units,  View tenancy units
+roles/servicedirectory.admin,  Service Directory Admin,  Full control of all Service Directory resources and permissions.
+roles/servicedirectory.editor,  Service Directory Editor,  Edit Service Directory resources.
+roles/servicedirectory.pscAuthorizedService,  Private Service Connect Authorized Service,  Gives access to VPC Networks via Service Directory
+roles/servicedirectory.serviceAgent,  Service Directory Service Agent,  Give the Service Directory service agent access to Cloud Platform resources.
+roles/servicedirectory.viewer,  Service Directory Viewer,  View Service Directory resources.
+roles/servicemanagement.admin,  Service Management Administrator,  Full control of Google Service Management resources.
+roles/servicemanagement.configEditor,  Service Config Editor,  Access to update the service config and create rollouts.
+roles/servicemanagement.quotaAdmin,  Quota Administrator,  Access to administer service quotas.
+roles/servicemanagement.quotaViewer,  Quota Viewer,  Access to view service quotas.
+roles/servicemanagement.reporter,  Service Reporter,  Can report usage of a service during runtime.
+roles/servicemanagement.serviceConsumer,  Service Consumer,  Can enable the service.
+roles/servicemanagement.serviceController,  Service Controller,  Can check preconditions and report usage of a service during runtime.
+roles/servicenetworking.networksAdmin,  Service Networking Admin,  Full control of service networking with projects.
+roles/servicenetworking.serviceAgent,  Service Networking Service Agent,  Gives permission to manage network configuration, such as establishing network peering, necessary for service producers
+roles/serviceusage.apiKeysAdmin,  API Keys Admin,  Ability to create, delete, update, get and list API keys for a project.
+roles/serviceusage.apiKeysViewer,  API Keys Viewer,  Ability to get and list API keys for a project.
+roles/serviceusage.serviceUsageAdmin,  Service Usage Admin,  Ability to enable, disable, and inspect service states, inspect operations, and consume quota and billing for a consumer project.
+roles/serviceusage.serviceUsageConsumer,  Service Usage Consumer,  Ability to inspect service states and operations, and consume quota and billing for a consumer project.
+roles/serviceusage.serviceUsageViewer,  Service Usage Viewer,  Ability to inspect service states and operations for a consumer project.
+roles/source.admin,  Source Repository Administrator,  Admin access to repositories
+roles/source.reader,  Source Repository Reader,  Read access to repositories
+roles/source.writer,  Source Repository Writer,  Read / Write access to repositories
+roles/sourcerepo.serviceAgent,  Cloud Source Repositories Service Agent,  Allow Cloud Source Repositories to integrate with other Cloud services.
+roles/spanner.admin,  Cloud Spanner Admin,  Full control of Cloud Spanner resources.
+roles/spanner.backupAdmin,  Cloud Spanner Backup Admin,  Administrator role to manage Cloud Spanner backups. Does not include permissions to restore from Cloud Spanner backups.
+roles/spanner.backupWriter,  Cloud Spanner Backup Writer,  Role with limited permissions to create and manage Cloud Spanner backups. Does not have permission to modify backups.
+roles/spanner.databaseAdmin,  Cloud Spanner Database Admin,  Full control of Cloud Spanner databases.
+roles/spanner.databaseReader,  Cloud Spanner Database Reader,  Access to read and/or query a Cloud Spanner database.
+roles/spanner.databaseUser,  Cloud Spanner Database User,  Access to read, query, write and view and change the schema of Cloud Spanner databases
+roles/spanner.restoreAdmin,  Cloud Spanner Restore Admin,  Administrator role to restore Cloud Spanner databases from Cloud Spanner backups.
+roles/spanner.viewer,  Cloud Spanner Viewer,  Viewer access to Cloud Spanner resources.
+roles/speech.admin,  Cloud Speech Administrator,  Grants full access to all resources in Speech-to-text
+roles/speech.client,  Cloud Speech Client,  Grants access to the recognition APIs.
+roles/speech.editor,  Cloud Speech Editor,  Grants access to edit resources in Speech-to-text
+roles/stackdriver.accounts.editor,  Stackdriver Accounts Editor,  Read/write access to manage Stackdriver account structure.
+roles/stackdriver.accounts.viewer,  Stackdriver Accounts Viewer,  Read-only access to get and list information about Stackdriver account structure.
+roles/stackdriver.resourceMetadata.writer,  Stackdriver Resource Metadata Writer,  Write-only access to resource metadata.  This provides exactly the permissions needed by the Stackdriver metadata agent and other systems that send metadata.
+roles/storage.admin,  Storage Admin,  Full control of GCS resources.
+roles/storage.hmacKeyAdmin,  Storage HMAC Key Admin,  Full control of GCS HMAC Keys.
+roles/storage.legacyBucketOwner,  Storage Legacy Bucket Owner,  Read and write access to existing buckets with object listing/creation/deletion.
+roles/storage.legacyBucketReader,  Storage Legacy Bucket Reader,  Read access to buckets with object listing.
+roles/storage.legacyBucketWriter,  Storage Legacy Bucket Writer,  Read access to buckets with object listing/creation/deletion.
+roles/storage.legacyObjectOwner,  Storage Legacy Object Owner,  Read/write access to existing objects without listing.
+roles/storage.legacyObjectReader,  Storage Legacy Object Reader,  Read access to objects without listing.
+roles/storage.objectAdmin,  Storage Object Admin,  Full control of GCS objects.
+roles/storage.objectCreator,  Storage Object Creator,  Access to create objects in GCS.
+roles/storage.objectViewer,  Storage Object Viewer,  Read access to GCS objects.
+roles/storagetransfer.admin,  Storage Transfer Admin,  Create, update and manage transfer jobs and operations.
+roles/storagetransfer.user,  Storage Transfer User,  Create and update storage transfer jobs and operations.
+roles/storagetransfer.viewer,  Storage Transfer Viewer,  Read access to storage transfer jobs and operations.
+roles/subscribewithgoogledeveloper.developer,  Subscribe with Google Developer,  Access DevTools for Subscribe with Google
+roles/threatdetection.editor,  Threat Detection Settings Editor,  Read-write access to all Threat Detection settings
+roles/threatdetection.viewer,  Threat Detection Settings Viewer,  Read access to all Threat Detection settings
+roles/tpu.admin,  TPU Admin,  Full access to TPU nodes and related resources.
+roles/tpu.serviceAgent,  Cloud TPU API Service Agent,  Give Cloud TPUs service account access to managed resources
+roles/tpu.viewer,  TPU Viewer,  Read-only access to TPU nodes and related resources.
+roles/trafficdirector.client,  Traffic Director Client,  Traffic Director Client to fetch service configurations and report metrics
+roles/transcoder.admin,  Transcoder Admin,  Full access to all transcoder resources.
+roles/transcoder.serviceAgent,  Transcoder Service Agent,  Downloads and uploads media files from and to customer GCS buckets. Publishes status updates to customer Pub/Sub.
+roles/transcoder.viewer,  Transcoder Viewer,  Viewer of all transcoder resources.
+roles/translationhub.admin,  Translation Hub Admin,  Admin of Translation Hub
+roles/translationhub.portalUser,  Translation Hub Portal User,  Portal user of Translation Hub
+roles/viewer,  Viewer,  Read access to all resources.
+roles/visualinspection.editor,  Visual Inspection AI Solution Editor,  Read and write access to all Visual Inspection AI resources except visualinspection.locations.reportUsageMetrics
+roles/visualinspection.serviceAgent,  Visual Inspection AI Service Agent,  Grants Visual Inspection AI Service Agent admin roles for accessing/exporting training data, pushing containers artifacts to GCR and ArtifactsRegistry, and Vertex AI for storing data and running training jobs.
+roles/visualinspection.usageMetricsReporter,  Visual Inspection AI Usage Metrics Reporter,  ReportUsageMetric access to Visual Inspection AI Service
+roles/visualinspection.viewer,  Visual Inspection AI Viewer,  Read access to Visual Inspection AI resources
+roles/vmmigration.admin,  VM Migration Administrator,  Ability to view and edit all VM Migration objects
+roles/vmmigration.viewer,  VM Migration Viewer,  Ability to view all VM Migration objects
+roles/vmwareengine.vmwareengineAdmin,  VMware Engine Service Admin,  Admin has full access to VMware Engine Service
+roles/vmwareengine.vmwareengineViewer,  VMware Engine Service Viewer,  Viewer has read-only access to VMware Engine Service
+roles/vpcaccess.admin,  Serverless VPC Access Admin,  Full access to all Serverless VPC Access resources
+roles/vpcaccess.serviceAgent,  Serverless VPC Access Service Agent,  Can create and manage resources to support serverless application to connect to virtual private cloud.
+roles/vpcaccess.user,  Serverless VPC Access User,  User of Serverless VPC Access connectors
+roles/vpcaccess.viewer,  Serverless VPC Access Viewer,  Viewer of all Serverless VPC Access resources
+roles/websecurityscanner.serviceAgent,  Cloud Web Security Scanner Service Agent,  Gives the Cloud Web Security Scanner service account access to compute engine details and app engine details.
+roles/workflows.admin,  Workflows Admin,  Full access to workflows and related resources.
+roles/workflows.editor,  Workflows Editor,  Read and write access to workflows and related resources.
+roles/workflows.invoker,  Workflows Invoker,  Access to execute workflows and manage the executions.
+roles/workflows.serviceAgent,  Cloud Workflows Service Agent,  Gives Cloud Workflows service account access to managed resources.
+roles/workflows.viewer,  Workflows Viewer,  Read-only access to workflows and related resources.
+
