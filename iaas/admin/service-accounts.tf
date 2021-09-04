@@ -28,9 +28,4 @@ resource "google_service_account" "application_sa" {
   display_name = "application-sa"
   description = "Service account used by application during runtime"
 }
-resource "google_service_account_iam_member" "application_sa_service_account_user" {
-  service_account_id = google_service_account.application_sa.name
-  role = "roles/iam.serviceAccountUser"
-  member = "serviceAccount:${google_service_account.application_sa.email}"
-}
 
