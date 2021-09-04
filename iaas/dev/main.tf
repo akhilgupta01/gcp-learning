@@ -1,4 +1,5 @@
 terraform {
+  required_version = "0.14.8"
   backend "gcs" {
     bucket="ag-gcp-learning-tfstate-dev"
   }
@@ -10,7 +11,7 @@ terraform {
 }
 
 provider "google" {
-  version = "3.5.0"
+  version = "3.82.0"
   project = var.project
   region  = var.region
   zone    = var.zone
