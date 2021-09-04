@@ -8,7 +8,7 @@ resource "google_cloud_run_service" "crs-hello-world" {
       containers {
         image = "gcr.io/cloudrun/hello"
       }
-      service_account_name = "application_sa@${var.project}.iam.gserviceaccount.com"
+      service_account_name = "application-sa@${var.project}.iam.gserviceaccount.com"
     }
   }
 

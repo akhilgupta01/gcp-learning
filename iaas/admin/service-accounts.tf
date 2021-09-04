@@ -28,9 +28,3 @@ resource "google_service_account_iam_member" "app_deployer_service_account_user"
   role = "roles/iam.serviceAccountUser"
   member = "serviceAccount:${google_service_account.app_deployer.email}"
 }
-resource "google_service_account_iam_member" "app_sa_service_account_user" {
-  service_account_id = google_service_account.app_deployer.name
-  role = "roles/iam.serviceAccountUser"
-  member = "serviceAccount:${google_service_account.application_sa.email}"
-}
-
