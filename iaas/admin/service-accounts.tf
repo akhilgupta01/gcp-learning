@@ -15,7 +15,11 @@ resource "google_project_iam_member" "app_deployer_cloud_run_developer" {
   role = "roles/run.developer"
   member = "serviceAccount:${google_service_account.app_deployer.email}"
 }
-
+resource "google_project_iam_member" "application_sa_user" {
+  project = google_service_account.app_deployer.project
+  role = "roles/iam.serviceAccountUser"
+  member = "serviceAccount:${google_service_account.app_deployer.email}"
+}
 
 #Service Account to be used by application during runtime
 resource "google_service_account" "application_sa" {
@@ -24,8 +28,3 @@ resource "google_service_account" "application_sa" {
   description = "Service account used by application during runtime"
 }
 
-resource "google_project_iam_member" "application_sa_user" {
-  project = google_service_account.app_deployer.project
-  role = "roles/iam.serviceAccountUser"
-  member = "serviceAccount:${google_service_account.application_sa.email}"
-}
