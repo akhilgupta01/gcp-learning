@@ -4,8 +4,8 @@ resource "google_service_account" "app_deployer" {
   account_id = "app-deployer"
   description = "Service account used to deploy applications in this project"
 }
-resource "google_service_account_iam_member" "app_deployer_cloud_build_builder" {
-  service_account_id = google_service_account.app_deployer.name
+resource "google_project_iam_member" "app_deployer_cloud_build_builder" {
+  project = google_service_account.app_deployer.project
   role = "roles/cloudbuild.builds.builder"
   member = "serviceAccount:${google_service_account.app_deployer.email}"
 }
