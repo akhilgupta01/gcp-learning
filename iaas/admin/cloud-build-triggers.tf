@@ -10,5 +10,5 @@ resource "google_cloudbuild_trigger" "hello-world-app-deploy" {
   }
 
   filename = "iaas/dev/cloudbuild.yaml"
-  included_files = "iaas/dev/**"
+  included_files = ["iaas/dev/**"]
 }
