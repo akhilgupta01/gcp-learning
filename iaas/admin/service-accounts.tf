@@ -17,7 +17,7 @@ resource "google_project_iam_member" "app_deployer_cloud_run_developer" {
 }
 resource "google_service_account_iam_member" "app_deployer_service_account_user" {
   service_account_id = google_service_account.application_sa.name
-  role = "roles/iam.serviceAccountUser"
+  role = "roles/iam.serviceAccountAdmin"
   member = "serviceAccount:${google_service_account.app_deployer.email}"
 }
 
