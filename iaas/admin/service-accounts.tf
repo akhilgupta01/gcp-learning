@@ -10,9 +10,9 @@ resource "google_project_iam_member" "app_deployer_cloud_build_builder" {
   role = "roles/cloudbuild.builds.builder"
   member = "serviceAccount:${google_service_account.app_deployer.email}"
 }
-resource "google_project_iam_member" "app_deployer_cloud_build_service_agent" {
+resource "google_project_iam_member" "app_deployer_cloud_run_developer" {
   project = google_service_account.app_deployer.project
-  role = "roles/cloudbuild.serviceAgent"
+  role = "roles/run.developer"
   member = "serviceAccount:${google_service_account.app_deployer.email}"
 }
 
