@@ -2,6 +2,7 @@
 resource "google_service_account" "app_deployer" {
   #name =
   account_id = "app-deployer"
+  display_name = "app-deployer"
   description = "Service account used to deploy applications in this project"
 }
 resource "google_project_iam_member" "app_deployer_cloud_build_builder" {
