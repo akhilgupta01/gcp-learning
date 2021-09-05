@@ -17,3 +17,11 @@ resource "google_cloud_run_service" "crs-hello-world" {
     latest_revision = true
   }
 }
+
+resource "google_cloud_run_service_iam_member" "member" {
+  location = google_cloud_run_service.crs-hello-world.location
+  project = google_cloud_run_service.crs-hello-world.project
+  service = google_cloud_run_service.crs-hello-world.name
+  role = "roles/run.invoker"
+  member = "allUsers"
+}
