@@ -528,7 +528,7 @@ roles/iam.roleAdmin,  Role Administrator,  Access to administer all custom roles
 roles/iam.roleViewer,  Role Viewer,  Read access to all custom roles in the project.
 roles/iam.securityAdmin,  Security Admin,  Security admin role, with permissions to get and set any IAM policy.
 roles/iam.securityReviewer,  Security Reviewer,  Security reviewer role, with permissions to get any IAM policy.
-	roles/iam.serviceAccountAdmin,  Service Account Admin,  Create and manage service accounts.
+roles/iam.serviceAccountAdmin,  Service Account Admin,  Create and manage service accounts.
 roles/iam.serviceAccountCreator,  Create Service Accounts,  Access to create service accounts.
 roles/iam.serviceAccountDeleter,  Delete Service Accounts,  Access to delete service accounts.
 roles/iam.serviceAccountKeyAdmin,  Service Account Key Admin,  Create and manage (and rotate) service account keys.
