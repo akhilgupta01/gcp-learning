@@ -1,1 +1,4 @@
-
+spring-boot:
+  build-image:
+    imageName: gcr.io/ag-learn-gcp/hello-world-app
+    builder: gcr.io/buildpacks/builder
