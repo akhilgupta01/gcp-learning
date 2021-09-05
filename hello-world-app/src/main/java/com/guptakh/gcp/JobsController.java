@@ -4,13 +4,10 @@ import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.InputStreamReader;
 
 @RestController
 public class JobsController {
@@ -21,11 +18,10 @@ public class JobsController {
     @GetMapping("/jobs/storage")
     @SneakyThrows
     public String readStorage(){
-        FileReader fileReader = new FileReader(this.gsFile.getFile());
-        BufferedReader br=new BufferedReader(fileReader);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(gsFile.getInputStream()));
         String line;
         int count=0;
-        while((line=br.readLine())!=null) {
+        while((line=reader.readLine())!=null) {
             count++;
         }
         return String.valueOf(count);
