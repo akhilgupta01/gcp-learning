@@ -4,10 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GcpContainerDemoApplication {
-
+public class Application {
 	public static void main(String[] args) {
-		SpringApplication.run(GcpContainerDemoApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
-
 }
