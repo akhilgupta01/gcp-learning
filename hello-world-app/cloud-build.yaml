@@ -4,12 +4,12 @@ steps:
     dir: './hello-world-app'
     entrypoint: mvn
     args: [ 'spring-boot:build-image',
-            '-Dspring-boot.build-image.imageName=gcr.io/ag-learn-gcp/hello-world-app:1.0-SNAPSHOT',
+            '-Dspring-boot.build-image.imageName=gcr.io/ag-learn-gcp/hello-world-app:1.1-SNAPSHOT',
             '-Dspring-boot.build-image.builder=gcr.io/buildpacks/builder' ]
 
   - id: push image
     name: 'gcr.io/cloud-builders/docker'
-    args: [ 'push', 'gcr.io/ag-learn-gcp/hello-world-app:1.0-SNAPSHOT' ]
+    args: [ 'push', 'gcr.io/ag-learn-gcp/hello-world-app:1.1-SNAPSHOT' ]
 
 options:
   logging: CLOUD_LOGGING_ONLY
