@@ -6,7 +6,7 @@ resource "google_cloud_run_service" "crs-hello-world" {
   template {
     spec {
       containers {
-        image = "gcr.io/cloudrun/hello"
+        image = "gcr.io/ag-learn-gcp/hello-world-app:1.0-SNAPSHOT"
       }
       service_account_name = "application-sa@${var.project}.iam.gserviceaccount.com"
     }
