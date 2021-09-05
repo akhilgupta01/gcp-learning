@@ -59,6 +59,7 @@ public class JobLaunchService {
 
     @SneakyThrows
     private Job loadJob(String jobName) {
+        log.info("Jobs registered : {}", jobRegistry.getJobNames());
         return jobRegistry.getJob(jobName);
     }
 
