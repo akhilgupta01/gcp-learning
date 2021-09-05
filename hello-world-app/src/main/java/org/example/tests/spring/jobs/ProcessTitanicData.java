@@ -20,6 +20,7 @@ import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.batch.item.file.transform.PassThroughLineAggregator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gcp.storage.GoogleStorageResource;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -37,6 +38,7 @@ public class ProcessTitanicData implements LazyJobConfiguration {
     @Autowired
     private Storage storage;
 
+    @Bean
     public Job job(){
         return this.jobBuilderFactory.get("processTitanicData")
                 .start(processPassengers())
