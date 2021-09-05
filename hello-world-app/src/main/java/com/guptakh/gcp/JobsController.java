@@ -18,22 +18,6 @@ public class JobsController {
     @Value("gs://${gcs-resource-test-bucket}/all_roles.csv")
     private Resource gsFile;
 
-    @GetMapping("/jobs/{jobName}")
-    public String runJob(@PathVariable String jobName){
-        System.out.println("Starting job " + jobName);
-        final List<Integer> primeNumbers = new ArrayList<>();
-        for(int i=2; i<100000; i++){
-            if(i%2 == 0){
-                continue;
-            }
-            final int num = i;
-            if(primeNumbers.stream().noneMatch(x -> num % x == 0)){
-                primeNumbers.add(i);
-            }
-        }
-        return String.valueOf(primeNumbers);
-    }
-
     @GetMapping("/jobs/storage")
     @SneakyThrows
     public String readStorage(){
