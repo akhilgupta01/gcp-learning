@@ -39,7 +39,7 @@ steps:
 
   - id: push image
     name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/ag-learn-gcp/hello-world-app']
+    args: ['push', 'gcr.io/ag-learn-gcp/hello-world-app:1.0-SNAPSHOT']
 
 options:
   logging: CLOUD_LOGGING_ONLY
