@@ -44,10 +44,4 @@ resource "google_project_iam_member" "application_sa_storage_object_viewer" {
   role = "roles/storage.objectViewer"
   member = "serviceAccount:${google_service_account.application_sa.email}"
 }
-resource "google_project_iam_member" "application_sa_storage_object_admin" {
-  project = google_service_account.app_deployer.project
-  role = "roles/storage.objectAdmin"
-  member = "serviceAccount:${google_service_account.application_sa.email}"
-}
-
 
