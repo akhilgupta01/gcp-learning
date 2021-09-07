@@ -33,8 +33,10 @@ public class GCSItemWriter<T> extends AbstractItemStreamItemWriter<T> {
 
     @Override
     public void write(List<? extends T> items) throws Exception {
+        StringBuilder sb = new StringBuilder();
         for(T item: items){
-            outputStream.write(String.valueOf(item).getBytes());
+            sb.append(item).append("\n");
         }
+        outputStream.write(sb.toString().getBytes());
     }
 }
