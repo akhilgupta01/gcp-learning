@@ -5,6 +5,7 @@ import org.example.tests.spring.config.AppConfig;
 import org.example.tests.spring.config.LazyJobConfiguration;
 import org.example.tests.spring.jobs.model.Passenger;
 import org.example.tests.spring.jobs.model.PassengerMapper;
+import org.example.tests.spring.writer.GCSItemWriter;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -14,10 +15,8 @@ import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.LineMapper;
-import org.springframework.batch.item.file.builder.FlatFileItemWriterBuilder;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
 import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
-import org.springframework.batch.item.file.transform.PassThroughLineAggregator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gcp.storage.GoogleStorageResource;
 import org.springframework.context.annotation.Bean;
@@ -39,7 +38,7 @@ public class ProcessTitanicData implements LazyJobConfiguration {
     private Storage storage;
 
     @Bean
-    public Job job(){
+    public Job job() {
         return this.jobBuilderFactory.get("processTitanicData")
                 .start(processPassengers())
                 .build();
@@ -55,11 +54,7 @@ public class ProcessTitanicData implements LazyJobConfiguration {
     }
 
     private ItemWriter<Passenger> passengerWriter() {
-        return new FlatFileItemWriterBuilder<Passenger>()
-                .name("passengerWriter")
-                .resource(new GoogleStorageResource(storage, "gs://" + appConfig.getStorageBucket() + "/passenger_out.txt"))
-                .lineAggregator(new PassThroughLineAggregator<>())
-                .build();
+        return new GCSItemWriter<Passenger>(new GoogleStorageResource(storage, "gs://" + appConfig.getStorageBucket() + "/passenger_out.txt", true));
     }
 
     private ItemProcessor<Passenger, Passenger> passengerEnricher() {
