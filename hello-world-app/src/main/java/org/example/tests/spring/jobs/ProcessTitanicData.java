@@ -64,6 +64,7 @@ public class ProcessTitanicData implements LazyJobConfiguration {
     private ItemReader<Passenger> passengerReader() {
         FlatFileItemReader<Passenger> itemReader = new FlatFileItemReader<>();
         itemReader.setResource(new GoogleStorageResource(storage, "gs://" + appConfig.getStorageBucket() + "/passengers.csv"));
+        itemReader.setLinesToSkip(1);
         itemReader.setLineMapper(passengerLineMapper());
         return itemReader;
     }
