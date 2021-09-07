@@ -6,4 +6,10 @@ import lombok.Data;
 @Data
 @Builder
 public class Passenger {
+    private String passengerId;
+    private boolean survived;
+    private int pClass;
+    private String name;
+    private String sex;
+    private double age;
 }
