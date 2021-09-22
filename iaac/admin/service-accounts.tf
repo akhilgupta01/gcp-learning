@@ -45,3 +45,10 @@ resource "google_project_iam_member" "application_sa_storage_object_viewer" {
   member = "serviceAccount:${google_service_account.application_sa.email}"
 }
 
+#Service account to be used by cloud composer
+resource "google_service_account" "composer_sa" {
+  #name =
+  account_id = "composer-sa"
+  display_name = "composer-sa"
+  description = "Service account used by Cloud Composer"
+}

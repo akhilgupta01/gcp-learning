@@ -18,7 +18,7 @@ variable "project"{
 variable "create_network"{
   type=bool
   description = "Toggle for Network creation"
-  default = false
+  default = true
 }
 variable "create_vm_instances"{
   type=bool
@@ -29,4 +29,9 @@ variable "create_cloud_build_triggers"{
   type=bool
   description = "Toggle for cloud build trigger creation"
   default = false
+}
+variable "enable_composer"{
+  type=bool
+  description = "Toggle for cloud composer enable/disable"
+  default = true
 }
