@@ -24,7 +24,7 @@ resource "google_project_iam_member" "app_deployer_security_admin" {
 
 #Service Account to be used by application during runtime
 resource "google_service_account" "application_sa" {
-  #name =
+  name = "application-sa"
   account_id = "application-sa"
   display_name = "application-sa"
   description = "Service account used by application during runtime"
@@ -47,7 +47,7 @@ resource "google_project_iam_member" "application_sa_storage_object_viewer" {
 
 #Service account to be used by cloud composer
 resource "google_service_account" "composer_sa" {
-  #name =
+  name = "composer-sa"
   account_id = "composer-sa"
   display_name = "composer-sa"
   description = "Service account used by Cloud Composer"
