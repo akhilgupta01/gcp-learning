@@ -27,7 +27,7 @@ resource "google_composer_environment" "composer_env"{
     }
     software_config {
       python_version = "3"
-      image_version = data.google_composer_image_versions.all.image_versions[0].image_version_id
+      image_version = "composer-1.17.0-airflow-1.10.15"
     }
   }
 }
