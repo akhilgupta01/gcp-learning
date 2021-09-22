@@ -6,6 +6,7 @@ resource "google_composer_environment" "composer_env"{
   provider = google-beta
   name = "composer-env"
   region = var.region
+  project = var.project
   config {
     node_count = 3
     node_config {
