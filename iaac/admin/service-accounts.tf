@@ -55,7 +55,7 @@ resource "google_project_iam_member" "composer-worker" {
   member = "serviceAccount:${google_service_account.composer_sa.email}"
 }
 resource "google_service_account_iam_member" "composer_sa_access_to_devops_admin" {
-  service_account_id = google_service_account.composer_sa.account_id
+  service_account_id = google_service_account.composer_sa.name
   role = "roles/iam.serviceAccountUser"
   member = "serviceAccount:devops-admin@ag-learn-gcp.iam.gserviceaccount.com"
 }
