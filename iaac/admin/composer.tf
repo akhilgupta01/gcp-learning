@@ -1,9 +1,5 @@
-data "google_composer_image_versions" "all" {
-}
-
 resource "google_composer_environment" "composer_env"{
   count = var.enable_composer ? 1:0
-  provider = google-beta
   name = "composer-env"
   region = var.region
   project = var.project
@@ -27,7 +23,7 @@ resource "google_composer_environment" "composer_env"{
     }
     software_config {
       python_version = "3"
-      image_version = "composer-1.17.0-airflow-1.10.15"
+      image_version = "composer-1.16.6-airflow-1.10.15"
     }
   }
 }
