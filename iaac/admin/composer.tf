@@ -7,7 +7,7 @@ resource "google_composer_environment" "composer_env"{
   name = "composer-env"
   region = var.region
   config {
-    node_count = 2
+    node_count = 3
     node_config {
       zone = var.zone
       machine_type = "n1-standard-1"
