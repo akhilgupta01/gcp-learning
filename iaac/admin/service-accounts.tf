@@ -20,6 +20,12 @@ resource "google_project_iam_member" "app_deployer_security_admin" {
   role = "roles/iam.securityAdmin"
   member = "serviceAccount:${google_service_account.app_deployer.email}"
 }
+resource "google_project_iam_member" "app_deployer_composer_admin" {
+  project = google_service_account.app_deployer.project
+  role = "roles/composer.admin"
+  member = "serviceAccount:${google_service_account.app_deployer.email}"
+}
+
 
 
 #Service Account to be used by application during runtime
