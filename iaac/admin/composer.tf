@@ -24,6 +24,13 @@ resource "google_composer_environment" "composer_env"{
     software_config {
       python_version = "3"
       image_version = "composer-1.16.6-airflow-1.10.15"
+      pypi_packages = {
+        apache-airflow-providers-google = ""
+        scipy = "==1.1.0"
+      }
+      env_variables = {
+        FOO = "bar"
+      }
     }
   }
 }
