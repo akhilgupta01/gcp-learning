@@ -78,18 +78,8 @@ t3 = BashOperator(
     dag=dag,
 )
 
-t4 = SimpleHttpOperator(
-    task_id='put_op',
-    method='POST',
-    endpoint='https://crs-hello-world-7eloyx2buq-uc.a.run.app/jobs',
-    data=json.dumps({
-        "jobName": "processTitanicData",
-        "params": {
-            "cobdate": "21-Oct-2021"
-        }
-    }),
-    headers={"Content-Type": "application/json"},
-    dag=dag,
-)
+t4 = BashOperator(
+    task_id='invoke_cloud_run',
+    bash_command=f'curl - H "Content-Type: application/json" - X POST - d {"jobName":"processTitanicData","params": {"cobDate": "21-Dec-2089"}} https://crs-hello-world-7eloyx2buq-uc.a.run.app/jobs')
 
 t1 >> [t2, t3] >> t4
