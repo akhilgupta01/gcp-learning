@@ -11,6 +11,11 @@ resource "google_cloud_run_service" "crs-hello-world" {
       service_account_name = "application-sa@${var.project}.iam.gserviceaccount.com"
     }
   }
+  metadata{
+    annotations = {
+      "run.googleapis.com/ingress" = "internal"
+    }
+  }
 
   traffic {
     percent = 100

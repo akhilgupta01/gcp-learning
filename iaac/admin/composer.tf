@@ -26,7 +26,6 @@ resource "google_composer_environment" "composer_env"{
       image_version = "composer-1.16.6-airflow-1.10.15"
       pypi_packages = {
         google-api-python-client = ""
-        scipy = "==1.1.0"
       }
       env_variables = {
         FOO = "bar"
