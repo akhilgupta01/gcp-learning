@@ -11,7 +11,7 @@ terraform {
 }
 
 provider "google" {
-  version = "3.82.0"
+  version = "3.86.0"
   project = var.project
   region  = var.region
   zone    = var.zone
