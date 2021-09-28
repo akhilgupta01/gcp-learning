@@ -23,7 +23,7 @@ resource "google_composer_environment" "composer_env"{
     }
     software_config {
       python_version = "3"
-      image_version = "composer-2.0.0-preview.2-airflow-2.1.2"
+      image_version = "composer-1.16.6-airflow-1.10.15"
       pypi_packages = {
         google-api-python-client = ""
       }
