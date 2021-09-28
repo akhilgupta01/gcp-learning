@@ -32,4 +32,7 @@ resource "google_composer_environment" "composer_env2"{
       }
     }
   }
+  depends_on = [
+    google_compute_subnetwork.subnetwork,
+    google_service_account.composer_sa]
 }
