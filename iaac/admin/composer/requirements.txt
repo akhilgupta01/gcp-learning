@@ -1,2 +1,0 @@
-apache-airflow==1.10.15
-apache-airflow-backport-providers-google==2021.3.3

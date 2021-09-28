@@ -33,5 +33,5 @@ variable "create_cloud_build_triggers"{
 variable "enable_composer"{
   type=bool
   description = "Toggle for cloud composer enable/disable"
-  default = false
+  default = true
 }
