@@ -79,7 +79,7 @@ t3 = BashOperator(
 
 t4 = BashOperator(
     task_id='invoke_cloud_run',
-    bash_command='curl -H "Content-Type: application/json" -X POST -d \'{\"jobName\":\"processTitanicData\",\"params\": {\"cobDate\":\"21-Dec-2089\"}}\' https://crs-hello-world-7eloyx2buq-uc.a.run.app/jobs',
+    bash_command='curl -H "Content-Type: application/json" -X POST -d \'{\"jobName\":\"processTitanicData2\",\"params\": {\"cobDate\":\"21-Dec-2089\"}}\' https://crs-hello-world-7eloyx2buq-uc.a.run.app/jobs',
     dag=dag)
 
 t1 >> t4
