@@ -1,11 +1,11 @@
 resource "google_composer_environment" "composer_env2"{
+  provider = google-beta
   count = var.enable_composer ? 1:0
   name = "composer2-env"
   region = var.region
   project = var.project
   config {
     node_config {
-      zone = var.zone
       network = google_compute_network.vpc_network.id
       subnetwork = google_compute_subnetwork.subnetwork.id
       service_account = google_service_account.composer_sa.name
