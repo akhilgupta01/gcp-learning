@@ -82,4 +82,4 @@ t4 = BashOperator(
     bash_command='curl -H "Content-Type: application/json" -X POST -d \'{\"jobName\":\"processTitanicData\",\"params\": {\"cobDate\":\"21-Dec-2089\"}}\' https://crs-hello-world-7eloyx2buq-uc.a.run.app/jobs',
     dag=dag)
 
-t1 >> [t2, t3] >> t4
+t1 >> t4
