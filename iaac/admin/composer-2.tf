@@ -1,4 +1,4 @@
-resource "google_composer_environment" "composer_env"{
+resource "google_composer_environment" "composer_env2"{
   count = var.enable_composer ? 1:0
   name = "composer2-env"
   region = var.region
