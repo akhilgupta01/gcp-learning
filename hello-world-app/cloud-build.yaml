@@ -1,7 +1,7 @@
 steps:
   - id: build-image
     name: maven:3-jdk-8
-    dir: './hello-world-app'
+    dir: 'hello-world-app'
     entrypoint: mvn
     args: [ 'spring-boot:build-image',
             '-Dspring-boot.build-image.imageName=gcr.io/ag-learn-gcp/hello-world-app:1.11-SNAPSHOT',
@@ -12,12 +12,13 @@ steps:
     args: [ 'push', 'gcr.io/ag-learn-gcp/hello-world-app:1.11-SNAPSHOT' ]
 
   - id: upload composer DAGs
-    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: bash
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'sh'
+    dir: hello-world-app
     args:
       - '-c'
       - |
-        gsutil -m rsync -d -r ./gcp/dags/ gs://us-central1-composer-env-a3dbaf4c-bucket/dags/
+        gsutil -m cp -R ./gcp/dags/ gs://us-central1-composer-env-a3dbaf4c-bucket/dags/
 
 options:
   logging: CLOUD_LOGGING_ONLY
