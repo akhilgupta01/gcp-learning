@@ -5,6 +5,7 @@ resource "google_composer_environment" "composer_env2"{
   project = var.project
   config {
     node_config {
+      zone = var.zone
       network = google_compute_network.vpc_network.id
       subnetwork = google_compute_subnetwork.subnetwork.id
       service_account = google_service_account.composer_sa.name
