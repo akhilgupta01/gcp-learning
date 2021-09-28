@@ -18,7 +18,7 @@ steps:
     args:
       - '-c'
       - |
-        gsutil -m cp -R ./gcp/dags/ gs://us-central1-composer-env-a3dbaf4c-bucket/dags/
+        gsutil -m cp -R ./gcp/dags/* gs://us-central1-composer-env-a3dbaf4c-bucket/dags/
 
 options:
   logging: CLOUD_LOGGING_ONLY
