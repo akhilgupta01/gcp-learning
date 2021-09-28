@@ -9,7 +9,7 @@ resource "google_composer_environment" "composer_env2" {
       network         = google_compute_network.vpc_network.id
       subnetwork      = google_compute_subnetwork.subnetwork.id
       service_account = google_service_account.composer_sa.name
-      zone            = ""
+      zone            = var.zone
     }
     private_environment_config {
       enable_private_endpoint   = true
@@ -17,7 +17,7 @@ resource "google_composer_environment" "composer_env2" {
       master_ipv4_cidr_block    = "172.16.10.0/23"
     }
     software_config {
-      image_version = "composer-2.0.0-preview.2-airflow-2.1.2"
+      image_version = "composer-1.17.1-airflow-2.1.2"
       pypi_packages = {
         google-api-python-client = ""
       }
