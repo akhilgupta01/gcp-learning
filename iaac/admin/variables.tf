@@ -13,5 +13,5 @@ variable "zone"{
 variable "project"{
   type=string
   description = "Project Id"
-  default = "neat-encoder-329003"
+  default = "gcp-terraform-demo-329004"
 }
