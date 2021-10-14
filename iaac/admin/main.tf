@@ -7,10 +7,6 @@ terraform {
     google = {
       source = "hashicorp/google"
     }
-    google-beta = {
-      source = "hashicorp/google-beta"
-      version = "3.86.0"
-    }
   }
 }
 
@@ -20,15 +16,3 @@ provider "google" {
   region  = var.region
   zone    = var.zone
 }
-
-provider "google-beta" {
-  version = "3.86.0"
-  project = var.project
-  region  = var.region
-  zone    = var.zone
-}
-
-
-
-
-
