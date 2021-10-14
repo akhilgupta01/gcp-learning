@@ -1,7 +1,7 @@
 resource "google_compute_instance" "vm_instance" {
   name = "terraform-instance"
-  machine_type = "f1-micro"
-  #machine_type = "n2-standard-2"
+  #machine_type = "f1-micro"
+  machine_type = "n2-standard-2"
   allow_stopping_for_update = true
 
   zone = var.zone
