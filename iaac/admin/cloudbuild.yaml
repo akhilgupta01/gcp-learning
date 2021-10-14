@@ -7,7 +7,7 @@ steps:
 #      - gcloud services enable container.googleapis.com
 #
   - id: terraform-init
-    name: hashicorp/terraform:0.14.8
+    name: hashicorp/terraform:1.0.7
     args:
       - 'init'
       - '-no-color'
@@ -15,7 +15,7 @@ steps:
       - './iaac/admin'
 
   - id: terraform-plan
-    name: hashicorp/terraform:0.14.8
+    name: hashicorp/terraform:1.0.7
     args:
       - 'plan'
       - '-no-color'
@@ -23,7 +23,7 @@ steps:
       - './iaac/admin'
 
   - id: terraform-apply
-    name: hashicorp/terraform:0.14.8
+    name: hashicorp/terraform:1.0.7
     args:
       - 'apply'
       - '-auto-approve'
