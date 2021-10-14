@@ -1,4 +1,20 @@
 steps:
+  - id: terraform-init
+    name: hashicorp/terraform:1.0.7
+    dir: './iaac/admin'
+    args:
+      - 'init'
+      - '-no-color'
+      - '-input=false'
+
+  - id: terraform-plan
+    name: hashicorp/terraform:1.0.7
+    dir: './iaac/admin'
+    args:
+      - 'plan'
+      - '-no-color'
+      - '-input=false'
+
   - id: terraform-apply
     name: hashicorp/terraform:1.0.7
     dir: './iaac/admin'
