@@ -1,7 +1,7 @@
 terraform {
   required_version = "1.0.7"
   backend "gcs" {
-    bucket="ag-gcp-learning-tfstate-adm"
+    bucket="neat-encoder-329003-tfstate-adm"
   }
   required_providers {
     google = {

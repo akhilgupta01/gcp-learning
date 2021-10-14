@@ -13,7 +13,7 @@ variable "zone"{
 variable "project"{
   type=string
   description = "Project Id"
-  default = "ag-learn-gcp"
+  default = "neat-encoder-329003"
 }
 variable "create_network"{
   type=bool
