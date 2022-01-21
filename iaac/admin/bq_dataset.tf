@@ -25,7 +25,7 @@ resource "google_bigquery_table" "default" {
 EOF
 }
 
-resource "google_bigquery_table" "default" {
+resource "google_bigquery_table" "passengers" {
   dataset_id = google_bigquery_dataset.dataset.dataset_id
   table_id   = "passengers"
   deletion_protection=false
