@@ -6,6 +6,27 @@ resource "google_bigquery_dataset" "dataset" {
 
 resource "google_bigquery_table" "default" {
   dataset_id = google_bigquery_dataset.dataset.dataset_id
+  table_id   = "system-x"
+  deletion_protection=false
+
+  time_partitioning {
+    type = "DAY"
+  }
+
+  labels = {
+    env = "default"
+  }
+
+  schema = <<EOF
+[
+  {"name": "tx_id", "type": "STRING", "mode": "Required","description": "ID of the transaction"},
+  {"name": "tx_date", "type": "DATETIME", "mode": "Required","description": "Datetime when the transaction was created"}
+]
+EOF
+}
+
+resource "google_bigquery_table" "default" {
+  dataset_id = google_bigquery_dataset.dataset.dataset_id
   table_id   = "passengers"
   deletion_protection=false
 
