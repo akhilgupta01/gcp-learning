@@ -13,5 +13,5 @@ variable "zone"{
 variable "project"{
   type=string
   description = "Project Id"
-  default = "gcp-terraform-demo-329004"
+  default = "ag-trial-project-1"
 }
