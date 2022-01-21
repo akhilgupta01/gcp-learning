@@ -7,6 +7,7 @@ resource "google_bigquery_dataset" "dataset" {
 resource "google_bigquery_table" "default" {
   dataset_id = google_bigquery_dataset.dataset.dataset_id
   table_id   = "passengers"
+  deletion_protection=false
 
   external_data_configuration {
     autodetect    = true
