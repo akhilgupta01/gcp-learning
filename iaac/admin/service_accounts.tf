@@ -48,6 +48,12 @@ resource "google_project_iam_member" "application_sa_bq_job_user" {
   role = "roles/bigquery.jobUser"
   member = "serviceAccount:${google_service_account.application_sa.email}"
 }
+resource "google_project_iam_member" "application_sa_bq_data_viewer" {
+  project = google_service_account.app_deployer.project
+  role = "roles/bigquery.dataViewer"
+  member = "serviceAccount:${google_service_account.application_sa.email}"
+}
+
 
 
 #Service account to be used by cloud composer
