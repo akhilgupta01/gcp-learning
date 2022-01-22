@@ -12,5 +12,6 @@
 
     <modules>
         <module>hello-world-app</module>
+        <module>connect-gcp</module>
     </modules>
 </project>
