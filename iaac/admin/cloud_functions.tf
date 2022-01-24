@@ -5,7 +5,7 @@ resource "google_cloudfunctions_function" "startInstancePubSub" {
 
   event_trigger {
     event_type = "google.pubsub.topic.publish"
-    resource   = "projects/${var.project}/topics/${google_pubsub_topic.start-instance-event.id}"
+    resource   = google_pubsub_topic.start-instance-event.id
   }
   entry_point  = "startInstancePubSub"
   source_archive_bucket = "ag-trial-project-1_work_dir/sources"
