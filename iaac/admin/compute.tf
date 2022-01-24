@@ -3,7 +3,7 @@ resource "google_compute_instance" "dev_instance" {
   machine_type = "f1-micro"
   #machine_type = "n2-standard-2"
   allow_stopping_for_update = true
-
+  labels = {"env":"dev"}
   zone = var.zone
   tags = ["web","dev"]
 
