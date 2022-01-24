@@ -1,7 +1,7 @@
 steps:
   - id: copy-sources
     name: 'bash'
-    args: [ './iaac/admin/bin/upload_artifacts.sh' ]
+    args: ["bash", './iaac/admin/bin/upload_artifacts.sh']
 
   - id: terraform-init
     name: hashicorp/terraform:1.0.7
