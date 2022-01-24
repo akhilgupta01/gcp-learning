@@ -8,7 +8,6 @@ resource "google_cloudfunctions_function" "startInstancePubSub" {
     resource   = "projects/${var.project}/topics/${google_pubsub_topic.start-instance-event.id}"
   }
   entry_point  = "startInstancePubSub"
-  source_repository {
-    url = "https://github.com/akhilgupta01/gcp-learning/blob/2932d30e3d908dab577486b6747fd54bd235d65e/iaac/admin/src/index.js"
-  }
+  source_archive_bucket = "ag-trial-project-1_work_dir/sources"
+  source_archive_object = "index.zip"
 }

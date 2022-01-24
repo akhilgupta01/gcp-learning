@@ -1,9 +1,4 @@
 steps:
-  - id: copy-sources
-    name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: 'bash'
-    args: ['./iaac/admin/bin/upload_artifacts.sh']
-
   - id: terraform-init
     name: hashicorp/terraform:1.0.7
     dir: './iaac/admin'
