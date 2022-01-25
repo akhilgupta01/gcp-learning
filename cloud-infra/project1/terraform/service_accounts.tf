@@ -56,8 +56,8 @@ resource "google_project_iam_member" "application_sa_bq_data_viewer" {
 
 #Service Account to be used by cloud function to start/stop a VM
 resource "google_service_account" "vm_manager_sa" {
-  account_id = "vm_manager_sa"
-  display_name = "vm_manager_sa"
+  account_id = "vm-manager-sa"
+  display_name = "vm-manager-sa"
   description = "Service account used to start/stop a VM"
 }
 resource "google_project_iam_member" "vm_manager_sa_vm_viewer" {
