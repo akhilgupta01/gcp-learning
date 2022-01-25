@@ -1,7 +1,7 @@
 steps:
   - id: terraform-init
     name: hashicorp/terraform:1.0.7
-    dir: './iaac/admin'
+    dir: './cloud-infra/project1/terraform'
     args:
       - 'init'
       - '-no-color'

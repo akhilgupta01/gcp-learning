@@ -27,7 +27,7 @@ As this is a pre-requisite for Terraform, we will have to use one of the GCP pro
 ####Steps to create Cloud Storage Bucket for Terraform 
 * Enable the `Cloud Storage API`
 * Create a new Cloud Storage bucket, lets call it as `ag-gcp-learning-tfstate-adm`
-* Refer to this bucket as the backend bucket in [main.tf](./iaac/admin/main.tf) 
+* Refer to this bucket as the backend bucket in [main.tf](cloud-infra/project1/terraform/main.tf) 
 
 ### Setup Git Repository, Admin Service Account & Cloud Build
 We want to maintain the infrastructure as Code, for this we will setup a Git Repo and check-in all our changes in this
