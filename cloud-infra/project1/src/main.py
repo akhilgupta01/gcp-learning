@@ -6,10 +6,7 @@ import json
 def manage_vm_instance(event, context):
     if 'data' in event:
         message = base64.b64decode(event['data']).decode('utf-8')
-        print(message)
         message_json = json.loads(message)
-        print(message_json)
-        print(message_json['project_id'])
         project_id = message_json['project_id']
         zone = message_json['zone']
         vm_instance = message_json['vm_instance']
