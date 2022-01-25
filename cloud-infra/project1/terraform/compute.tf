@@ -14,7 +14,7 @@ resource "google_compute_instance" "dev_instance" {
 
   boot_disk {
     initialize_params {
-      sourceImage: "projects/cos-cloud/global/images/family/cos-stable"
+      sourceImage = "projects/cos-cloud/global/images/family/cos-stable"
     }
   }
   network_interface {
