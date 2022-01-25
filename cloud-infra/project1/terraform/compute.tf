@@ -3,8 +3,7 @@ resource "google_compute_instance" "dev_instance" {
   machine_type = "n1-standard-1"
   allow_stopping_for_update = true
   labels = {
-    "env":"dev",
-    "container-vm": "cos-stable-93-16623-102-4"
+    "env":"dev"
   }
   metadata = {
     "gce-container-declaration" = "spec:\n  containers:\n    - name: instance-4\n      image: 'gcr.io/cloud-marketplace/google/nginx1:1.12'\n      stdin: false\n      tty: false\n  restartPolicy: Always\n"
@@ -15,7 +14,7 @@ resource "google_compute_instance" "dev_instance" {
 
   boot_disk {
     initialize_params {
-      image = "cos-stable-93-16623-102-4"
+      sourceImage: "projects/cos-cloud/global/images/family/cos-stable"
     }
   }
   network_interface {
