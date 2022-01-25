@@ -31,5 +31,5 @@ resource "google_cloudfunctions_function" "startInstancePubSub" {
   entry_point           = "startInstancePubSub"
   source_archive_bucket = google_storage_bucket.work_dir.name
   source_archive_object = "sources/src-${data.archive_file.source.output_md5}.zip"
-  service_account_email = google_service_account.application_sa.email
+  service_account_email = google_service_account.vm_manager_sa.email
 }
