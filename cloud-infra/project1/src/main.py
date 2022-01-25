@@ -1,8 +1,10 @@
 import google.cloud.compute_v1 as compute_v1
 import json
 
-
 def manage_vm_instance(message, event):
+    print(message)
+    print(message['data'])
+    print(message.data)
     data_json = json.loads(message.data.decode('utf-8'))
     project_id = data_json['project_id']
     zone = data_json['zone']
