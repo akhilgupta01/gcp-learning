@@ -13,7 +13,7 @@ resource "google_storage_bucket_object" "cloud_functions" {
   # Append to the MD5 checksum of the files's content
   # to force the zip to be updated as soon as a change occurs
   name   = "src-${data.archive_file.source.output_md5}.zip"
-  bucket = "${google_storage_bucket.work_dir.name}/sources"
+  bucket = "ag-trial-project-1_work_dir/sources"
 
   depends_on = [data.archive_file.source]
 }
@@ -30,6 +30,6 @@ resource "google_cloudfunctions_function" "startInstancePubSub" {
   }
   entry_point           = "startInstancePubSub"
   source_archive_bucket = "ag-trial-project-1_work_dir/sources"
-  source_archive_object = "startInstancePubSub.zip"
+  source_archive_object = google_storage_bucket_object.cloud_functions.name
   service_account_email = google_service_account.application_sa.email
 }
