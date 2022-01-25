@@ -29,7 +29,7 @@ resource "google_cloudfunctions_function" "startInstancePubSub" {
     resource   = google_pubsub_topic.start-instance-event.id
   }
   entry_point           = "startInstancePubSub"
-  source_archive_bucket = "ag-trial-project-1_work_dir/sources"
-  source_archive_object = google_storage_bucket_object.cloud_functions.name
+  source_archive_bucket = google_storage_bucket.work_dir.name
+  source_archive_object = "sources/src-${data.archive_file.source.output_md5}.zip"
   service_account_email = google_service_account.application_sa.email
 }
