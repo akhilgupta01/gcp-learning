@@ -9,7 +9,7 @@ steps:
 
   - id: terraform-plan
     name: hashicorp/terraform:1.0.7
-    dir: './iaac/admin'
+    dir: './cloud-infra/project1/terraform'
     args:
       - 'plan'
       - '-no-color'
@@ -17,7 +17,7 @@ steps:
 
   - id: terraform-apply
     name: hashicorp/terraform:1.0.7
-    dir: './iaac/admin'
+    dir: './cloud-infra/project1/terraform'
     args:
       - 'apply'
       - '-auto-approve'
