@@ -15,7 +15,7 @@ resource "google_compute_instance" "dev_instance" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "cos-stable-93-16623-102-4"
     }
   }
   network_interface {
