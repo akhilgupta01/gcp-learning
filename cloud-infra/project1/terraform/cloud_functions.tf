@@ -13,7 +13,7 @@ resource "google_storage_bucket_object" "cloud_functions" {
   # Append to the MD5 checksum of the files's content
   # to force the zip to be updated as soon as a change occurs
   name   = "sources/src-${data.archive_file.source.output_md5}.zip"
-  bucket = google_storage_bucket.work_dir
+  bucket = google_storage_bucket.work_dir.name
 
   depends_on = [data.archive_file.source]
 }
