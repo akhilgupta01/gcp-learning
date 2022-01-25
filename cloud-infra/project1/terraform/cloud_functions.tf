@@ -19,16 +19,16 @@ resource "google_storage_bucket_object" "cloud_functions" {
 }
 
 
-resource "google_cloudfunctions_function" "startInstancePubSub" {
-  name        = "startInstancePubSub"
-  description = "Starts a VM Instance"
+resource "google_cloudfunctions_function" "manage_vm_instance" {
+  name        = "manage_vm_instance"
+  description = "Starts or Stops a VM Instance"
   runtime     = "python39"
 
   event_trigger {
     event_type = "google.pubsub.topic.publish"
-    resource   = google_pubsub_topic.start-instance-event.id
+    resource   = google_pubsub_topic.vm-instance-manage-event.id
   }
-  entry_point           = "startInstancePubSub"
+  entry_point           = "manage_vm_instance"
   source_archive_bucket = google_storage_bucket.work_dir.name
   source_archive_object = "sources/src-${data.archive_file.source.output_md5}.zip"
   service_account_email = google_service_account.vm_manager_sa.email
