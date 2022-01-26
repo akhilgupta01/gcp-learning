@@ -1,12 +1,12 @@
 resource "google_compute_instance" "dev_instance" {
-  name = "terraform-instance"
+  name = "terraform-instance3"
   machine_type = "n1-standard-1"
   allow_stopping_for_update = true
   labels = {
     "env":"dev"
   }
   metadata = {
-    "gce-container-declaration" = <<-EOF
+    "gce-container-declaration" = <<EOF
     "spec:
       containers:
         - name: instance-4
