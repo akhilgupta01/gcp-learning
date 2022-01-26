@@ -6,7 +6,16 @@ resource "google_compute_instance" "dev_instance" {
     "env":"dev"
   }
   metadata = {
-    "gce-container-declaration" = "spec:\n  containers:\n    - name: instance-4\n      image: 'gcr.io/cloud-marketplace/google/nginx1:1.12'\n      stdin: false\n      tty: false\n  restartPolicy: Always\n"
+    "gce-container-declaration" = <<-EOF
+    "spec:
+      containers:
+        - name: instance-4
+          image: 'gcr.io/cloud-marketplace/google/nginx1:1.12'
+          stdin: false
+          tty: false
+          restartPolicy: Always
+    "
+    EOF
     "google-logging-enabled": "true"
   }
   zone = var.zone
