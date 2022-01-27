@@ -13,5 +13,5 @@ variable "zone"{
 variable "project"{
   type=string
   description = "Project Id"
-  default = "ag-trial-project-1"
+  default = "ag-trial-project-a"
 }

@@ -1,7 +1,7 @@
 terraform {
   required_version = "1.0.7"
   backend "gcs" {
-    bucket="gcp-learning-tfstate-admin"
+    bucket="ag-trial-project-a-tfstate"
   }
   required_providers {
     google = {
