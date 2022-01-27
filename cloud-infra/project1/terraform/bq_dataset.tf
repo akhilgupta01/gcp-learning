@@ -34,7 +34,7 @@ resource "google_bigquery_table" "passengers" {
     autodetect    = true
     source_format = "CSV"
     source_uris = [
-      "gs://ag-trial-project-1_work_dir/incoming/passengers.csv",
+      "gs://ag-trial-project-a_work_dir/incoming/passengers.csv",
     ]
   }
 }
