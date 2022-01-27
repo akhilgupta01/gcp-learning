@@ -35,7 +35,7 @@ repository. We would also like to setup an automated build process that will tri
 given git branch. We will follow the steps as mentioned below
 
 * Configure a new Git repository `gcp-learning`
-* Enable `Cloud Build Api`
+* Enable `Cloud Build Api` and `Identity and Access Management (IAM) API`
 * Create a new service account and name it as `DevOps Admin Service Account`
   This service account would be used by the cloud build to create any other infrastructure item like network, compute
   nodes, service account, grant roles etc. We will assign following roles to this service Account.
@@ -45,7 +45,10 @@ given git branch. We will follow the steps as mentioned below
   roles/cloudbuild.builds.builder| Cloud Build Service Account | Can perform builds | Cloud Build API |
   roles/iam.serviceAccountAdmin  | Service Account Admin | Create and manage Service Account | |
   roles/iam.securityAdmin        | Security Admin | Security admin role, with permissions to get and set any IAM policy. | Cloud Resource Manager API |
-  roles/compute.networkAdmin     | Compute Network Admin| Full control of Compute Engine networking resources.| |	
+  roles/compute.networkAdmin     | Compute Network Admin| Full control of Compute Engine networking resources.| |
+  roles/bigquery.admin     | BigQuery Admin| Full control of BigQuery.| BigQuery API|
+  roles/pubsub.admin             | Pub/Sub Admin| Full control of Pub Sub.|PubSub API |
+* roles/cloudfunctions.admin             | Cloud Functions Admin| Full control of Cloud Functions.|Cloud Function API |
 
 * Setup a build trigger
   * Connect Git Repository to Cloud Build
