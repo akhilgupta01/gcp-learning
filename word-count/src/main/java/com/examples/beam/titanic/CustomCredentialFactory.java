@@ -7,9 +7,12 @@ import org.apache.beam.sdk.options.PipelineOptions;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 public class CustomCredentialFactory extends GcpCredentialFactory {
 
+    private static final List<String> SCOPES = Arrays.asList("https://www.googleapis.com/auth/cloud-platform", "https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/datastore", "https://www.googleapis.com/auth/bigquery", "https://www.googleapis.com/auth/bigquery.insertdata", "https://www.googleapis.com/auth/pubsub");
     private static CustomCredentialFactory INSTANCE = new CustomCredentialFactory();
 
     private CustomCredentialFactory() {
@@ -26,8 +29,8 @@ public class CustomCredentialFactory extends GcpCredentialFactory {
     public Credentials getCredential() {
         Credentials credentials = null;
         try {
-            String jsonPath = "C:\\Users\\Akhil\\keys\\ag-trial-project-1-37f7d97087f1.json";
-            credentials = GoogleCredentials.fromStream(new FileInputStream(jsonPath));
+            String jsonPath = "C:\\Users\\Akhil\\keys\\ag-trial-project-a-641e1d3dd625.json";
+            credentials = GoogleCredentials.fromStream(new FileInputStream(jsonPath)).createScoped(SCOPES);
         } catch (IOException e) {
             e.printStackTrace();
         }

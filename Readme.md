@@ -49,6 +49,7 @@ given git branch. We will follow the steps as mentioned below
   roles/bigquery.admin     | BigQuery Admin| Full control of BigQuery.| BigQuery API|
   roles/pubsub.admin             | Pub/Sub Admin| Full control of Pub Sub.|PubSub API |
 * roles/cloudfunctions.admin             | Cloud Functions Admin| Full control of Cloud Functions.|Cloud Function API |
+* roles/iam.serviceAccountUser             | Service Account User| | |
 
 * Setup a build trigger
   * Connect Git Repository to Cloud Build

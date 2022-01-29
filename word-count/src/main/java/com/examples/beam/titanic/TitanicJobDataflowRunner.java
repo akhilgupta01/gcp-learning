@@ -2,6 +2,7 @@ package com.examples.beam.titanic;
 
 import com.examples.beam.titanic.input.CsvInputParser;
 import com.examples.beam.titanic.model.Passenger;
+import org.apache.beam.runners.dataflow.DataflowRunner;
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
 import org.apache.beam.sdk.options.PipelineOptionsFactory;
@@ -16,10 +17,20 @@ import static com.examples.beam.titanic.Tags.INVALID;
 import static com.examples.beam.titanic.Tags.VALID;
 import static org.apache.beam.sdk.values.TypeDescriptors.strings;
 
-public class TitanicDataProcessor {
+public class TitanicJobDataflowRunner {
 
     public static void main(String[] args) {
+        /*
+        Set environment variable GOOGLE_APPLICATION_CREDENTIALS=<location of the key.json>
+        This credential will be used to deploy and run the dataflow job
+        */
         TitanicJobOptions options = PipelineOptionsFactory.as(TitanicJobOptions.class);
+        options.setJobName("TitanicJob-a");
+        options.setProject("ag-trial-project-a");
+        options.setRegion("us-central1");
+        options.setWorkerZone("us-central1-a");
+        options.setRunner(DataflowRunner.class);
+        options.setGcpTempLocation("gs://ag-trial-project-a_work_dir/working");
         //options.setCredentialFactoryClass(CustomCredentialFactory.class);
 
         Pipeline pipeline = Pipeline.create(options);
