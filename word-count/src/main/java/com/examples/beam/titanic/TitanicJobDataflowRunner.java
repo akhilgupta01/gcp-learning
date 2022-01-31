@@ -36,8 +36,11 @@ public class TitanicJobDataflowRunner {
 
         ingestedData.get(INVALID)
                 .apply(TextIO.write().to(options.getInvalidOutput()).withNumShards(1));
-
-        pipeline.run().waitUntilFinish();
+        try {
+            pipeline.run().waitUntilFinish();
+        }catch(UnsupportedOperationException e) {
+            // do nothing
+        }
     }
 
     private static ParDo.MultiOutput<String, Passenger> parsePassengersData() {
