@@ -30,7 +30,7 @@ public class TitanicJobDataflowRunner {
         options.setRegion("us-central1");
         options.setWorkerZone("us-central1-a");
         options.setRunner(DataflowRunner.class);
-        options.setGcpTempLocation("gs://ag-trial-project-a_work_dir/working");
+        options.setStagingLocation("gs://ag-trial-project-a_work_dir/staging");
         //options.setCredentialFactoryClass(CustomCredentialFactory.class);
 
         Pipeline pipeline = Pipeline.create(options);

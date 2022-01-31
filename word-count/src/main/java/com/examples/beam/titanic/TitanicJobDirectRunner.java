@@ -23,6 +23,8 @@ public class TitanicJobDirectRunner {
     public static void main(String[] args) {
         TitanicJobOptions options = PipelineOptionsFactory.as(TitanicJobOptions.class);
         options.setJobName("TitanicJob-a");
+        options.setStagingLocation("target");
+        options.setTempLocation("target/tmp");
         options.setRunner(DirectRunner.class);
 
         Pipeline pipeline = Pipeline.create(options);
