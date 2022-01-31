@@ -24,7 +24,9 @@ public class TitanicJobDataflowRunner {
         This credential will be used to deploy and run the dataflow job
         */
         TitanicJobOptions options = PipelineOptionsFactory.fromArgs(args).withValidation().as(TitanicJobOptions.class);
+        System.out.println(options.getInput().get());
         Pipeline pipeline = Pipeline.create(options);
+
 
         PCollectionTuple ingestedData = pipeline
                 .apply("Read the input file", TextIO.read().from(options.getInput()))
