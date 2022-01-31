@@ -56,3 +56,30 @@ given git branch. We will follow the steps as mentioned below
     * Create a build trigger
       Setup branch and the included and excluded resources to trigger a build
       Use the Devops Admin Service Account to trigger the build
+
+## word-count in Dataflow
+#### Useful Links
+- Creating Dataflow Templates 
+  - https://cloud.google.com/dataflow/docs/guides/templates/creating-templates
+
+
+Use following command to create a template
+```
+mvn compile exec:java -Dexec.mainClass=com.examples.beam.titanic.TitanicJobDataflowRunner \
+-Dexec.cleanupDaemonThreads=false \
+-Dexec.args="--runner=DataflowRunner \
+--project=ag-trial-project1-a \
+--stagingLocation=gs://ag-trial-project-a_work_dir/staging \
+--tempLocation=gs://ag-trial-project-a_work_dir/working \
+--templateLocation=gs://ag-trial-project-a_work_dir/templates/titanic_job_template \
+--region=us-central1"
+```
+
+Use following command to create a Job from a template
+```
+gcloud dataflow jobs run titanic-10 \
+--gcs-location gs://ag-trial-project-a_work_dir/templates/titanic_job_template \
+--parameters input=gs://ag-trial-project-a_work_dir/incoming/passengers4.csv \
+--region us-central1 \
+--staging-location gs://ag-trial-project-a_work_dir/working
+```
