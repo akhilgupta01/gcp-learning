@@ -168,6 +168,13 @@
                 <configuration>
                     <mainClass>com.examples.beam.titanic.TitanicJobDataflowRunner</mainClass>
                     <cleanupDaemonThreads>false</cleanupDaemonThreads>
+                    <arguments>
+                        <argument>--runner=DataflowRunner</argument>
+                        <argument>--project=ag-trial-project1-a</argument>
+                        <argument>--stagingLocation=gs://ag-trial-project-a_work_dir/staging</argument>
+                        <argument>--templateLocation=gs://ag-trial-project-a_work_dir/templates/titanic_job_template</argument>
+                        <argument>--region=us-central1</argument>
+                    </arguments>
                 </configuration>
             </plugin>
         </plugins>

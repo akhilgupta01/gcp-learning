@@ -2,7 +2,6 @@ package com.examples.beam.titanic;
 
 import com.examples.beam.titanic.input.CsvInputParser;
 import com.examples.beam.titanic.model.Passenger;
-import org.apache.beam.runners.dataflow.DataflowRunner;
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
 import org.apache.beam.sdk.options.PipelineOptionsFactory;
@@ -26,12 +25,6 @@ public class TitanicJobDataflowRunner {
         */
         TitanicJobOptions options = PipelineOptionsFactory.as(TitanicJobOptions.class);
         options.setJobName("TitanicJob-a");
-        options.setProject("ag-trial-project-a");
-        options.setRegion("us-central1");
-        options.setWorkerZone("us-central1-a");
-        options.setRunner(DataflowRunner.class);
-        options.setStagingLocation("gs://ag-trial-project-a_work_dir/staging");
-        //options.setCredentialFactoryClass(CustomCredentialFactory.class);
 
         Pipeline pipeline = Pipeline.create(options);
 
