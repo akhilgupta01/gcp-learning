@@ -1,6 +1,5 @@
 package com.examples.beam.titanic;
 
-import org.apache.beam.runners.dataflow.options.DataflowPipelineOptions;
 import org.apache.beam.sdk.options.Default;
 import org.apache.beam.sdk.options.Description;
 import org.apache.beam.sdk.options.PipelineOptions;
@@ -8,7 +7,7 @@ import org.apache.beam.sdk.options.ValueProvider;
 
 public interface TitanicJobOptions extends PipelineOptions {
     @Description("Input for the pipeline")
-    @Default.String("gs://ag-trial-project-a_work_dir/incoming/passengers.csv")
+//    @Default.String("gs://ag-trial-project-a_work_dir/incoming/passengers.csv")
     ValueProvider<String> getInput();
     void setInput(ValueProvider<String> input);
 
