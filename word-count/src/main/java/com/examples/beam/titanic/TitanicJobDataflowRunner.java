@@ -23,9 +23,7 @@ public class TitanicJobDataflowRunner {
         Set environment variable GOOGLE_APPLICATION_CREDENTIALS=<location of the key.json>
         This credential will be used to deploy and run the dataflow job
         */
-        TitanicJobOptions options = PipelineOptionsFactory.as(TitanicJobOptions.class);
-        options.setJobName("TitanicJob-a");
-
+        TitanicJobOptions options = PipelineOptionsFactory.fromArgs(args).withValidation().as(TitanicJobOptions.class);
         Pipeline pipeline = Pipeline.create(options);
 
         PCollectionTuple ingestedData = pipeline
