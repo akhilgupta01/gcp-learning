@@ -9,7 +9,7 @@ public interface TitanicJobOptions extends DataflowPipelineOptions {
     @Description("Input for the pipeline")
     @Default.String("gs://ag-trial-project-a_work_dir/incoming/passengers.csv")
     ValueProvider<String> getInput();
-    void setInput(String input);
+    void setInput(ValueProvider<String> input);
 
     @Description("Valid Output for the pipeline")
     @Default.String("gs://ag-trial-project-a_work_dir/outgoing/titanic_valid.csv")
