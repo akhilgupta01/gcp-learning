@@ -31,11 +31,11 @@ public class TitanicJobDataflowRunner {
                 .apply("Parse passengers data", parsePassengersData());
 
         ingestedData.get(VALID)
-                .apply(MapElements.into(strings()).via(String::valueOf))
-                .apply(TextIO.write().to(options.getValidOutput()).withNumShards(1));
+                .apply("Valid Records: Convert to Strings", MapElements.into(strings()).via(String::valueOf))
+                .apply("Valid Records: Write to file", TextIO.write().to(options.getValidOutput()).withNumShards(1));
 
         ingestedData.get(INVALID)
-                .apply(TextIO.write().to(options.getInvalidOutput()).withNumShards(1));
+                .apply("Invalid Records: Write to file", TextIO.write().to(options.getInvalidOutput()).withNumShards(1));
         try {
             pipeline.run().waitUntilFinish();
         }catch(UnsupportedOperationException e) {
