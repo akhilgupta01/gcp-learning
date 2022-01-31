@@ -24,7 +24,7 @@ public class TitanicJobDataflowRunner {
         This credential will be used to deploy and run the dataflow job
         */
         TitanicJobOptions options = PipelineOptionsFactory.fromArgs(args).withValidation().as(TitanicJobOptions.class);
-        System.out.println(options.getInput().get());
+        System.out.println(options.getInput());
         Pipeline pipeline = Pipeline.create(options);
 
 
