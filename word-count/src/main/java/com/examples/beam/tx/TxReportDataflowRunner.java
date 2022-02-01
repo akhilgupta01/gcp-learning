@@ -29,7 +29,7 @@ public class TxReportDataflowRunner {
                 .apply("Do Eligibility Check", ParDo.of(new EligibilityFunction()));
 
         eligibilityResult.apply("Filter Eligible", Filter.by((SerializableFunction<Transaction, Boolean>) auditableRecord -> auditableRecord.getEligibilityStatus().isEligible()))
-                .apply(MapElements.via(new SimpleFunction<Transaction, KV<String, Transaction>>() {
+                .apply("Map By ISIN", MapElements.via(new SimpleFunction<Transaction, KV<String, Transaction>>() {
                     public KV<String, Transaction> apply(Transaction transaction) {
                         return KV.of(transaction.getIsin(), transaction);
                     }
@@ -38,6 +38,9 @@ public class TxReportDataflowRunner {
                 .apply("Aggregate" , ParDo.of(new AggregateFunction()))
                 .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
                 .apply("Write Output", TextIO.write().to(options.getTransactionReport()).withSuffix(".csv").withNumShards(1));
+
+        eligibilityResult.apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
+                .apply("Write Output", TextIO.write().to(options.getEligibilityResultFile()).withSuffix(".csv").withNumShards(1));
         try {
             pipeline.run().waitUntilFinish();
         }catch(UnsupportedOperationException e) {
