@@ -3,10 +3,9 @@ package com.examples.beam.core.functions;
 import com.examples.beam.titanic.tags.Tags;
 import com.opencsv.CSVParser;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.beam.sdk.transforms.DoFn;
 
 @Slf4j
-public abstract class CsvStringParserFunction<T> extends DoFn<String, T> {
+public abstract class CsvStringParserFunction<T> extends TextParsingFunction<T> {
 
     @ProcessElement
     public void processElement(@Element String csvInputRow, ProcessContext processContext){
