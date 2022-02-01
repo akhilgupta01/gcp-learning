@@ -17,12 +17,12 @@ public class EligibilityFunction extends DoFn<Transaction, Transaction> {
             log.info(transaction.getTxId() + " is eligible");
             eligibilityStatus = EligibilityStatus.builder().eligible(true).reason("GT-2000").build();
             transaction.setEligibilityStatus(eligibilityStatus);
-            context.output(TagProvider.ELIGIBLE, transaction);
+            context.output(transaction);
         }else{
             log.info(transaction.getTxId() + " is not eligible");
             eligibilityStatus = EligibilityStatus.builder().eligible(false).reason("LT-2000").build();
             transaction.setEligibilityStatus(eligibilityStatus);
-            context.output(TagProvider.NOT_ELIGIBLE, transaction);
+            context.output(transaction);
         }
     }
 }
