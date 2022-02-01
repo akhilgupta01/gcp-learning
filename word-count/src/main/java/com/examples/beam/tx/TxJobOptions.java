@@ -19,7 +19,7 @@ public interface TxJobOptions extends DataflowPipelineOptions {
     void setEligibilityResultFile(String eligibilityResultFile);
 
     @Description("Output Report")
-    @Default.String("gs://ag-trial-project-a_work_dir/outgoing/transaction_report")
+    @Default.String("gs://ag-trial-project-a_work_dir/outgoing/transaction_report.csv")
     String getTransactionReport();
     void setTransactionReport(String transactionReport);
 }
