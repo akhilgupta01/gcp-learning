@@ -11,10 +11,7 @@ import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
 import org.apache.beam.sdk.options.PipelineOptionsFactory;
 import org.apache.beam.sdk.transforms.*;
-import org.apache.beam.sdk.values.KV;
-import org.apache.beam.sdk.values.PCollection;
-import org.apache.beam.sdk.values.PCollectionTuple;
-import org.apache.beam.sdk.values.TypeDescriptor;
+import org.apache.beam.sdk.values.*;
 
 import static org.apache.beam.sdk.values.TypeDescriptors.strings;
 
@@ -30,10 +27,10 @@ public class TxReportDataflowRunner {
                 .apply("Read input", TextIO.read().from(options.getTransactionFile()))
                 .apply("Parse CSV data", parseData());
 
-        PCollection<Transaction> eligibilityResult = ingestedData.get(TagProvider.INGESTION_SUCCESS_TAG)
-                .apply("Do Eligibility Check", ParDo.of(new EligibilityFunction()));
+        PCollectionTuple eligibilityResult = ingestedData.get(TagProvider.INGESTION_SUCCESS_TAG)
+                .apply("Do Eligibility Check", ParDo.of(new EligibilityFunction()).withOutputTags(TagProvider.ELIGIBLE, TupleTagList.of(TagProvider.NOT_ELIGIBLE)));
 
-        eligibilityResult
+        eligibilityResult.get(TagProvider.ELIGIBLE)
                 .apply("Filter Eligible", Filter.by((SerializableFunction<Transaction, Boolean>) auditableRecord -> auditableRecord.getEligibilityStatus().isEligible()))
                 .apply("Map By ISIN", MapElements.via(new SimpleFunction<Transaction, KV<String, Transaction>>() {
                     public KV<String, Transaction> apply(Transaction transaction) {
@@ -46,7 +43,7 @@ public class TxReportDataflowRunner {
                 .apply("Write Output", TextIO.write().to(options.getTransactionReport()).withoutSharding());
 
 
-        eligibilityResult
+        eligibilityResult.get(TagProvider.NOT_ELIGIBLE)
                 .apply("Filter Not eligible", Filter.by((SerializableFunction<Transaction, Boolean>) auditableRecord -> !auditableRecord.getEligibilityStatus().isEligible()))
                 .apply("Extract Eligibility Status", ParDo.of(new DoFn<Transaction, EligibilityStatus>() {
                     @ProcessElement

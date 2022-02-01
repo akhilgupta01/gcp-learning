@@ -11,5 +11,8 @@ public class TagProvider {
     public static final TupleTag<Transaction> INGESTION_SUCCESS_TAG = new TupleTag<Transaction>(){};
     public static final TupleTag<String> PARSE_FAILURE_TAG = new TupleTag<String>(){};
 
+    public static final TupleTag<Transaction> ELIGIBLE = new TupleTag<Transaction>(){};
+    public static final TupleTag<Transaction> NOT_ELIGIBLE = new TupleTag<Transaction>(){};
+
     public static final TupleTagList INGESTION_FAILURE_TAGS = TupleTagList.of(Arrays.asList(PARSE_FAILURE_TAG, Tags.INVALID));
 }
