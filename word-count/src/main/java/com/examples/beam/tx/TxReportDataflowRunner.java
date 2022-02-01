@@ -1,5 +1,6 @@
 package com.examples.beam.tx;
 
+import com.examples.beam.core.model.EligibilityStatus;
 import com.examples.beam.tx.functions.AggregateFunction;
 import com.examples.beam.tx.functions.EligibilityFunction;
 import com.examples.beam.tx.functions.TxStringParserFunction;
@@ -11,6 +12,7 @@ import org.apache.beam.sdk.transforms.*;
 import org.apache.beam.sdk.values.KV;
 import org.apache.beam.sdk.values.PCollection;
 import org.apache.beam.sdk.values.PCollectionTuple;
+import org.apache.beam.sdk.values.TypeDescriptor;
 
 import static org.apache.beam.sdk.values.TypeDescriptors.strings;
 
@@ -39,7 +41,9 @@ public class TxReportDataflowRunner {
                 .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
                 .apply("Write Output", TextIO.write().to(options.getTransactionReport()).withSuffix(".csv").withNumShards(1));
 
-        eligibilityResult.apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
+        eligibilityResult
+                .apply("Extract Eligibility Status", MapElements.into(TypeDescriptor.of(EligibilityStatus.class)).via(Transaction::getEligibilityStatus))
+                .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
                 .apply("Write Output", TextIO.write().to(options.getEligibilityResultFile()).withSuffix(".csv").withNumShards(1));
         try {
             pipeline.run().waitUntilFinish();
