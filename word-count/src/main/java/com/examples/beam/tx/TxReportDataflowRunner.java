@@ -33,7 +33,7 @@ public class TxReportDataflowRunner {
         PCollection<Transaction> eligibilityResult = ingestedData.get(TagProvider.INGESTION_SUCCESS_TAG)
                 .apply("Do Eligibility Check", ParDo.of(new EligibilityFunction()));
 
-        PCollection<TxReport> aggregatedRecords = eligibilityResult
+        eligibilityResult
                 .apply("Filter Eligible", Filter.by((SerializableFunction<Transaction, Boolean>) auditableRecord -> auditableRecord.getEligibilityStatus().isEligible()))
                 .apply("Map By ISIN", MapElements.via(new SimpleFunction<Transaction, KV<String, Transaction>>() {
                     public KV<String, Transaction> apply(Transaction transaction) {
@@ -41,10 +41,13 @@ public class TxReportDataflowRunner {
                     }
                 }))
                 .apply("Group By ISIN", GroupByKey.create())
-                .apply("Aggregate" , ParDo.of(new AggregateFunction()));
+                .apply("Aggregate" , ParDo.of(new AggregateFunction()))
+                .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
+                .apply("Write Output", TextIO.write().to(options.getTransactionReport()).withoutSharding());
 
 
-        PCollection<EligibilityStatus> eligibilityStatuses = eligibilityResult
+        eligibilityResult
+                .apply("Filter Not eligible", Filter.by((SerializableFunction<Transaction, Boolean>) auditableRecord -> !auditableRecord.getEligibilityStatus().isEligible()))
                 .apply("Extract Eligibility Status", ParDo.of(new DoFn<Transaction, EligibilityStatus>() {
                     @ProcessElement
                     public void map(ProcessContext context){
@@ -52,15 +55,9 @@ public class TxReportDataflowRunner {
                         EligibilityStatus eligibilityStatus = context.element().getEligibilityStatus();
                         context.output(eligibilityStatus);
                     }
-                }));
-
-        aggregatedRecords
+                }))
                 .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
-                .apply("Write Output", TextIO.write().to(options.getTransactionReport()).withSuffix(".csv").withoutSharding());
-
-        eligibilityStatuses
-                .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
-                .apply("Write Output", TextIO.write().to(options.getEligibilityResultFile()).withSuffix(".csv").withoutSharding());
+                .apply("Write Output", TextIO.write().to(options.getEligibilityResultFile()).withoutSharding());
 
         try {
             pipeline.run().waitUntilFinish();
