@@ -2,12 +2,13 @@ package com.examples.beam.core.model;
 
 import lombok.Builder;
 import lombok.Data;
-
-import java.io.Serializable;
+import lombok.ToString;
 
 @Data
 @Builder
-public class EligibilityStatus implements Serializable {
+@ToString
+public class EligibilityInfo implements DataRecord{
+    private String businessId;
     private boolean eligible;
     private String reason;
 }

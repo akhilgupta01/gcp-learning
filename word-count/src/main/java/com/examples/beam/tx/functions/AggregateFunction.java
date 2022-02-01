@@ -12,14 +12,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AggregateFunction extends DoFn<KV<String, Iterable<Transaction>>, TxReport> {
 
     @ProcessElement
-    public void doAggregation(ProcessContext context) {
+    public void doAggregation(@Element KV<String,Iterable<Transaction>> transactions, OutputReceiver<TxReport> outputReceiver) {
         AtomicInteger totalQuantity = new AtomicInteger(0);
-        KV<String,Iterable<Transaction>> transactions = context.element();
         transactions.getValue().forEach(tx -> totalQuantity.addAndGet(tx.getQuantity()));
         TxReport report = TxReport.builder()
                 .isin(transactions.getKey())
                 .totalQty(totalQuantity.get())
                 .build();
-        context.output(report);
+        outputReceiver.output(report);
     }
 }

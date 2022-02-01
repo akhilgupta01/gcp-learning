@@ -1,6 +1,7 @@
 package com.examples.beam.tx.functions;
 
 import com.examples.beam.core.functions.CsvStringParserFunction;
+import com.examples.beam.core.model.DataRecord;
 import com.examples.beam.tx.model.Transaction;
 import lombok.extern.slf4j.Slf4j;
 

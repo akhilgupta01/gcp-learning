@@ -65,21 +65,21 @@ given git branch. We will follow the steps as mentioned below
 
 Use following command to create a template
 ```
-mvn compile exec:java -Dexec.mainClass=com.examples.beam.titanic.TitanicJobDataflowRunner \
+mvn compile exec:java -Dexec.mainClass=com.examples.beam.tx.TxReportDataflowRunner \
 -Dexec.cleanupDaemonThreads=false \
 -Dexec.args="--runner=DataflowRunner \
 --project=ag-trial-project1-a \
 --stagingLocation=gs://ag-trial-project-a_work_dir/staging \
 --tempLocation=gs://ag-trial-project-a_work_dir/working \
---templateLocation=gs://ag-trial-project-a_work_dir/templates/titanic_job_template \
+--templateLocation=gs://ag-trial-project-a_work_dir/templates/tx_report_job_template \
 --region=us-central1"
 ```
 
 Use following command to create a Job from a template
 ```
-gcloud dataflow jobs run titanic-10 \
---gcs-location gs://ag-trial-project-a_work_dir/templates/titanic_job_template \
---parameters input=gs://ag-trial-project-a_work_dir/incoming/passengers4.csv \
+gcloud dataflow jobs run txreport-1 \
+--gcs-location gs://ag-trial-project-a_work_dir/templates/tx_report_job_template \
+--parameters transactionFile=gs://ag-trial-project-a_work_dir/incoming/transactions.csv \
 --region us-central1 \
 --staging-location gs://ag-trial-project-a_work_dir/working
 ```

@@ -1,6 +1,6 @@
 package com.examples.beam.core.functions;
 
-import com.examples.beam.titanic.tags.Tags;
+import com.examples.beam.core.Tags;
 import com.opencsv.CSVParser;
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,7 +18,7 @@ public abstract class CsvStringParserFunction<T> extends TextParsingFunction<T> 
             String[] fields = csvParser.parseLine(csvInputRow);
             processContext.output(mapFields(fields));
         }catch (Exception ex){
-            processContext.output(Tags.INVALID, csvInputRow);
+            processContext.output(Tags.FAILED_INGESTION, csvInputRow);
         }
     }
 
