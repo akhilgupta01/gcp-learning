@@ -20,7 +20,7 @@ public class TxReportDataflowRunner {
 
     public static void main(String[] args) {
         PipelineOptionsFactory.register(TxJobOptions.class);
-        TxJobOptions options = PipelineOptionsFactory.fromArgs(args).withValidation().as(TxJobOptions.class);
+        TxJobDataflowOptions options = PipelineOptionsFactory.fromArgs(args).withValidation().as(TxJobDataflowOptions.class);
         Pipeline pipeline = Pipeline.create(options);
 
         PCollectionTuple ingestedData = pipeline
@@ -35,7 +35,6 @@ public class TxReportDataflowRunner {
                 .apply("Extract Eligibility Status", ParDo.of(new DoFn<Transaction, EligibilityStatus>() {
                     @ProcessElement
                     public void map(ProcessContext context){
-                        log.info("Converting to eligibility status");
                         EligibilityStatus eligibilityStatus = context.element().getEligibilityStatus();
                         context.output(eligibilityStatus);
                     }
@@ -52,10 +51,13 @@ public class TxReportDataflowRunner {
                 }))
                 .apply("Group By ISIN", GroupByKey.create())
                 .apply("Aggregate" , ParDo.of(new AggregateFunction()))
-                .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
+                .apply("Logging", ParDo.of(new DoFn<TxReport, String>() {
+                    @ProcessElement
+                    public void map(@Element TxReport report, ProcessContext context){
+                        context.output(report.toString());
+                    }
+                }))
                 .apply("Write Output", TextIO.write().to(options.getTransactionReport()).withoutSharding());
-
-
 
         try {
             pipeline.run().waitUntilFinish();

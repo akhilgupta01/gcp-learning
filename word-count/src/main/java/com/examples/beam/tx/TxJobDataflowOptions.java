@@ -1,8 +1,12 @@
 package com.examples.beam.tx;
 
-import org.apache.beam.sdk.options.*;
+import org.apache.beam.runners.dataflow.options.DataflowPipelineOptions;
+import org.apache.beam.sdk.options.Default;
+import org.apache.beam.sdk.options.Description;
+import org.apache.beam.sdk.options.Validation;
+import org.apache.beam.sdk.options.ValueProvider;
 
-public interface TxJobOptions extends PipelineOptions {
+public interface TxJobDataflowOptions extends DataflowPipelineOptions {
     @Description("Input transactions file")
     @Default.String("gs://ag-trial-project-a_work_dir/incoming/transactions.csv")
     @Validation.Required
