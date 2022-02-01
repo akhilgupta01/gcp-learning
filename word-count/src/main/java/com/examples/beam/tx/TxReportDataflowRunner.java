@@ -1,5 +1,6 @@
 package com.examples.beam.tx;
 
+import com.examples.beam.core.functions.MetricFn;
 import com.examples.beam.core.model.EligibilityInfo;
 import com.examples.beam.core.model.EligibilityWrapper;
 import com.examples.beam.tx.functions.AggregateFunction;
@@ -9,7 +10,9 @@ import com.examples.beam.tx.model.Transaction;
 import com.examples.beam.tx.model.TxReport;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.beam.sdk.Pipeline;
+import org.apache.beam.sdk.PipelineResult;
 import org.apache.beam.sdk.io.TextIO;
+import org.apache.beam.sdk.metrics.*;
 import org.apache.beam.sdk.options.PipelineOptionsFactory;
 import org.apache.beam.sdk.transforms.*;
 import org.apache.beam.sdk.values.KV;
@@ -28,15 +31,17 @@ public class TxReportDataflowRunner {
 
         PCollectionTuple ingestedData = pipeline
                 .apply("Read input", TextIO.read().from(options.getTransactionFile()))
+                .apply(ParDo.of(MetricFn.of("TxReport", "RawInput")))
                 .apply("Parse CSV data", parseData());
 
         PCollection<EligibilityWrapper> eligibilityResult = ingestedData.get(TxReportTags.INGESTION_SUCCESS_TAG)
+                .apply(ParDo.of(MetricFn.of("TxReport", "Ingestion_success")))
                 .apply("Check Eligibility", ParDo.of(new CheckEligibilityFn()));
 
         eligibilityResult
                 .apply("Extract Eligibility Status", ParDo.of(new DoFn<EligibilityWrapper, EligibilityInfo>() {
                     @ProcessElement
-                    public void map(ProcessContext context){
+                    public void map(ProcessContext context) {
                         EligibilityWrapper eligibilityWrapper = context.element();
                         EligibilityInfo eligibilityInfo = EligibilityInfo.builder()
                                 .businessId(eligibilityWrapper.getDataRecord().getBusinessId())
@@ -51,25 +56,37 @@ public class TxReportDataflowRunner {
 
         eligibilityResult
                 .apply("Filter Eligible", Filter.by(EligibilityWrapper::isEligible))
+                .apply(ParDo.of(MetricFn.of("TxReport", "Eligible")))
                 .apply("Map By ISIN", MapElements.via(new SimpleFunction<EligibilityWrapper, KV<String, Transaction>>() {
                     public KV<String, Transaction> apply(EligibilityWrapper eligibleRecord) {
-                        Transaction transaction = (Transaction)eligibleRecord.getDataRecord();
+                        Transaction transaction = (Transaction) eligibleRecord.getDataRecord();
                         return KV.of(transaction.getIsin(), transaction);
                     }
                 }))
                 .apply("Group By ISIN", GroupByKey.create())
-                .apply("Aggregate" , ParDo.of(new AggregateFunction()))
+                .apply(ParDo.of(MetricFn.of("TxReport", "Distinct ISIN")))
+                .apply("Aggregate", ParDo.of(new AggregateFunction()))
                 .apply("to String", MapElements.into(strings()).via(TxReport::toString))
                 .apply("Write Output", TextIO.write().to(options.getTransactionReport()).withoutSharding());
 
         try {
-            pipeline.run().waitUntilFinish();
-        }catch(UnsupportedOperationException e) {
+            PipelineResult pipelineResult = pipeline.run();
+            pipelineResult.waitUntilFinish();
+
+            MetricQueryResults metrics = pipelineResult.metrics().queryMetrics(
+                    MetricsFilter.builder().addNameFilter(MetricNameFilter.inNamespace("TxReport")).build());
+
+            for (MetricResult<Long> counter: metrics.getCounters()) {
+                System.out.println(counter.getName() + ":" + counter.getAttempted());
+            }
+
+        } catch (UnsupportedOperationException e) {
             // do nothing
         }
     }
 
     private static ParDo.MultiOutput<String, Transaction> parseData() {
-        return ParDo.of(new TxStringParserFunction()).withOutputTags(TxReportTags.INGESTION_SUCCESS_TAG, TxReportTags.INGESTION_FAILURE_TAGS);
+        return ParDo.of(new TxStringParserFunction())
+                .withOutputTags(TxReportTags.INGESTION_SUCCESS_TAG, TxReportTags.INGESTION_FAILURE_TAGS);
     }
 }
