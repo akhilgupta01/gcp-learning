@@ -7,14 +7,10 @@ import org.apache.beam.sdk.transforms.DoFn;
 
 @Slf4j
 public abstract class CsvStringParserFunction<T> extends DoFn<String, T> {
-    private CSVParser csvParser;
-
-    protected CsvStringParserFunction(){
-        csvParser = new CSVParser();
-    }
 
     @ProcessElement
     public void processElement(@Element String csvInputRow, ProcessContext processContext){
+        CSVParser csvParser = new CSVParser();
         if(csvInputRow.startsWith(headerRow())){
             log.info("Header row found");
             return;
