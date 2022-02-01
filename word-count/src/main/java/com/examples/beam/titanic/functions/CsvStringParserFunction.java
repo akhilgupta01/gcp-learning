@@ -1,11 +1,11 @@
-package com.examples.beam.titanic.input;
+package com.examples.beam.titanic.functions;
 
-import com.examples.beam.titanic.Tags;
+import com.examples.beam.titanic.tags.Tags;
 import com.examples.beam.titanic.model.Passenger;
 import com.opencsv.CSVParser;
 import org.apache.beam.sdk.transforms.DoFn;
 
-public class CsvInputParser extends DoFn<String, Passenger> {
+public class CsvStringParserFunction extends DoFn<String, Passenger> {
 
     @ProcessElement
     public void processElement(@Element String csvInputRow, ProcessContext processContext){
@@ -20,7 +20,7 @@ public class CsvInputParser extends DoFn<String, Passenger> {
                     .passengerId(fields[0])
                     .name(fields[3])
                     .sex(fields[4])
-                    .age(fields[5])
+                    .age(Integer.valueOf(fields[5]))
                     .build();
             processContext.output(passenger);
         }catch (Exception ex){

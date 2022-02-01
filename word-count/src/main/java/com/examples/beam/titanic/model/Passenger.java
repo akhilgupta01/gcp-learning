@@ -1,16 +1,18 @@
 package com.examples.beam.titanic.model;
 
+import com.examples.beam.core.model.AuditableRecord;
+import com.examples.beam.core.model.EligibilityStatus;
 import lombok.Builder;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
 @Builder
-public class Passenger implements Serializable {
+public class Passenger implements AuditableRecord {
     private String passengerId;
     private String name;
     private String sex;
-    private String age;
+    private Integer age;
     private Boolean survived;
+
+    private EligibilityStatus eligibilityStatus;
 }
