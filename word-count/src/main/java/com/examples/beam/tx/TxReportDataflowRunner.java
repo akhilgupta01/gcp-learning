@@ -53,8 +53,8 @@ public class TxReportDataflowRunner {
                         context.output(eligibilityStatus);
                     }
                 }))
-                .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
-                .apply("Write Output", TextIO.write().to(options.getEligibilityResultFile()).withoutSharding());
+                .apply("Convert NE to String", MapElements.into(strings()).via(String::valueOf))
+                .apply("Write NE Output", TextIO.write().to(options.getEligibilityResultFile()).withoutSharding());
 
         try {
             pipeline.run().waitUntilFinish();
