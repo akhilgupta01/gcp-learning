@@ -5,6 +5,7 @@ import com.examples.beam.tx.functions.AggregateFunction;
 import com.examples.beam.tx.functions.EligibilityFunction;
 import com.examples.beam.tx.functions.TxStringParserFunction;
 import com.examples.beam.tx.model.Transaction;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
 import org.apache.beam.sdk.options.PipelineOptionsFactory;
@@ -16,6 +17,7 @@ import org.apache.beam.sdk.values.TypeDescriptor;
 
 import static org.apache.beam.sdk.values.TypeDescriptors.strings;
 
+@Slf4j
 public class TxReportDataflowRunner {
 
     public static void main(String[] args) {
@@ -46,6 +48,7 @@ public class TxReportDataflowRunner {
                 .apply("Extract Eligibility Status", ParDo.of(new DoFn<Transaction, EligibilityStatus>() {
                     @ProcessElement
                     public void map(ProcessContext context){
+                        log.info("Converting to eligibility status");
                         EligibilityStatus eligibilityStatus = context.element().getEligibilityStatus();
                         context.output(eligibilityStatus);
                     }
