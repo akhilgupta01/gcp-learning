@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AggregateFunction extends DoFn<KV<String, Iterable<Transaction>>, TxReport> {
 
     @ProcessElement
-    public void checkEligibility(@Element KV<String, Iterable<Transaction>> transactions, ProcessContext context) {
+    public void doAggregation(@Element KV<String, Iterable<Transaction>> transactions, ProcessContext context) {
         AtomicInteger totalQuantity = new AtomicInteger(0);
         transactions.getValue().forEach(tx -> totalQuantity.addAndGet(tx.getQuantity()));
         TxReport report = TxReport.builder()
