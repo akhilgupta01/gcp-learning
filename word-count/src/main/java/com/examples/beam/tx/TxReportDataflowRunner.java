@@ -5,6 +5,7 @@ import com.examples.beam.tx.functions.AggregateFunction;
 import com.examples.beam.tx.functions.EligibilityFunction;
 import com.examples.beam.tx.functions.TxStringParserFunction;
 import com.examples.beam.tx.model.Transaction;
+import com.examples.beam.tx.model.TxReport;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.io.TextIO;
@@ -32,7 +33,7 @@ public class TxReportDataflowRunner {
         PCollection<Transaction> eligibilityResult = ingestedData.get(TagProvider.INGESTION_SUCCESS_TAG)
                 .apply("Do Eligibility Check", ParDo.of(new EligibilityFunction()));
 
-        eligibilityResult
+        PCollection<TxReport> aggregatedRecords = eligibilityResult
                 .apply("Filter Eligible", Filter.by((SerializableFunction<Transaction, Boolean>) auditableRecord -> auditableRecord.getEligibilityStatus().isEligible()))
                 .apply("Map By ISIN", MapElements.via(new SimpleFunction<Transaction, KV<String, Transaction>>() {
                     public KV<String, Transaction> apply(Transaction transaction) {
@@ -40,11 +41,10 @@ public class TxReportDataflowRunner {
                     }
                 }))
                 .apply("Group By ISIN", GroupByKey.create())
-                .apply("Aggregate" , ParDo.of(new AggregateFunction()))
-                .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
-                .apply("Write Output", TextIO.write().to(options.getTransactionReport()).withSuffix(".csv").withNumShards(1));
+                .apply("Aggregate" , ParDo.of(new AggregateFunction()));
 
-        eligibilityResult
+
+        PCollection<EligibilityStatus> eligibilityStatuses = eligibilityResult
                 .apply("Extract Eligibility Status", ParDo.of(new DoFn<Transaction, EligibilityStatus>() {
                     @ProcessElement
                     public void map(ProcessContext context){
@@ -52,9 +52,15 @@ public class TxReportDataflowRunner {
                         EligibilityStatus eligibilityStatus = context.element().getEligibilityStatus();
                         context.output(eligibilityStatus);
                     }
-                }))
+                }));
+
+        aggregatedRecords
                 .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
-                .apply("Write Output", TextIO.write().to(options.getEligibilityResultFile()).withSuffix(".csv").withNumShards(1));
+                .apply("Write Output", TextIO.write().to(options.getTransactionReport()).withSuffix(".csv").withoutSharding());
+
+        eligibilityStatuses
+                .apply("Convert to String", MapElements.into(strings()).via(String::valueOf))
+                .apply("Write Output", TextIO.write().to(options.getEligibilityResultFile()).withSuffix(".csv").withoutSharding());
 
         try {
             pipeline.run().waitUntilFinish();
