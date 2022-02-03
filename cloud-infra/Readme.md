@@ -1,21 +1,24 @@
-Cloud Infra (Using Terraform)
+Building Cloud Infra (Using Terraform)
 ===
 In this module we will create a GCP project from scratch and then create some infrastructure components using 
 [Terraform](https://www.terraform.io/).
 
-###1. Starting Point
+### 1. Starting Point
+
 As a starting point, you are required to create a new GCP project.
 You can use a Free Tier Account to try out the examples provided in this module.
 Let us assume that we created a project with id `ag-trial-project-a` (Please note that Project Id can be different from Project name)
 
-###2. Setting up Terraform
+### 2. Setting up Terraform
+
 In order to be able to compare the requested infrastructure with the existing state, Terraform requires a storage space 
 where it can maintain the current state of the infrastructure. On GCP environment, we can provide this space as a storage 
 bucket on `Google Cloud Storage`. 
 
 So, let us start by creating a storage space for Terraform
 
-####2.1 Create a Storage Bucket
+#### 2.1 Create a Storage Bucket
+* 
 * Enable the `Cloud Storage API`. GCP provides various ways to do this (viz. GCP Console, API or Cloud Shell). 
   As GCP Console is the easiest for a beginner, so you can use this method to enable the API
 * Create a new Cloud Storage bucket, lets call it as `ag-trial-project-a-tfstate`
