@@ -77,7 +77,7 @@ The table below lists the various services that are required to be enabled along
 Use Case | Terraform Config | API required | Role | Role Name| What this role can do?|
 -------- |----------------- |------------- |----- |--------- |---------------------- |
 Create a new Network        | [network.tf](./project1/terraform/network.tf) | N/A |roles/compute.networkAdmin  | Compute Network Admin| Full control of Compute Engine networking resources.|
-Create new Service Accounts | [service_accounts.tf](./project1/terraform/service_accounts.tf) | `Identity and Access Management (IAM) API` |roles/iam.serviceAccountAdmin  | Service Account Admin | Create and manage Service Account |
+Create new Service Accounts | [service_accounts.tf](./project1/terraform/service_accounts.tf) | Identity and Access Management (IAM) API |roles/iam.serviceAccountAdmin  | Service Account Admin | Create and manage Service Account |
 
 [comment]: <> (  roles/cloudbuild.builds.builder| Cloud Build Service Account | Can perform builds | Cloud Build API |)
 
