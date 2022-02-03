@@ -68,8 +68,7 @@ a new change is available on a given git branch. Please follow following steps t
 You can now click on the `RUN` link to manually trigger this cloud run build.
 
 ## 3) Additional permissions required per use case
-You will notice that the terraform module contains several .tf files. For e.g. [network.tf](./project1/terraform/network.tf) 
-to create a new network, and [pubsub.tf](./project1/terraform/pubsub.tf) to setup a new pubsub topic.
+You will notice that the terraform module contains several .tf files.
 
 Each of these terraform configuration files requires to enable a specific GCP service and also a specific permission to 
 be granted to the `admin-sa` account to build the instance of that service.
