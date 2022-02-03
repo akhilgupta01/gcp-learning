@@ -12,7 +12,7 @@ As a starting point, you are required to create a new GCP project.
 You can use a Free Tier Account to try out the examples provided in this module.
 Let us assume that we created a project with id `ag-trial-project-a` (Please note that Project Id can be different from Project name)
 
-## 2. Setting up Terraform
+## 2. Setting up Terraform CI/CD
 
 In order to be able to compare the requested infrastructure with the existing state, Terraform requires a storage space 
 where it can maintain the current state of the infrastructure. On GCP environment, we can provide this space as a storage 
@@ -49,13 +49,24 @@ Role | Role Name| What this role can do| API required |
 roles/cloudbuild.builds.builder| Cloud Build Service Account | Can perform builds | Cloud Build API |
  
 
+### 2.3) Create a new Cloud Build Trigger 
 
-### 3. Setup Admin Service Account, Cloud Build Trigger 
-We want to maintain the infrastructure as Code, for this we will setup a Git Repo and check-in all our changes in this
-repository. We would also like to setup an automated build process that will trigger when a new change is available on a
-given git branch. We will follow the steps as mentioned below
+Using Cloud Build Trigger, we would also like to setup an automated build process that will trigger a CI/CD pipeline when 
+a new change is available on a given git branch. Please follow following steps to setup a build trigger.
 
-* Configure a new Git repository `gcp-learning`
+* Go to `Cloud Build` > `Triggers` page from the main menu
+* Provide any name that you like for this build trigger
+* In the Source `Repository` section, select `CONNECT NEW REPOSITORY`, this will open a new form on the right hand side 
+* Select `GitHub (legacy BETA` option and connect to this git repository
+* Provide the branch that you want to use for the builds
+* Use `cloud-infra/project1/**` as included files filter
+* In the Configuration section, select type as `Cloud Build configuration file`
+* Specify cloud build configuration file location as `cloud-infra/project1/terraform/cloudbuild.yaml`
+* At the bottom of this page, select Service Account email as `admin-sa@<project id>.iam.gserviceaccount.com`
+* Save to complete setting up the Build Trigger
+
+You can now click on the `RUN` link to manually trigger this cloud run build.
+
 * Enable `Cloud Build Api` and `Identity and Access Management (IAM) API`
 * Create a new service account and name it as `DevOps Admin Service Account`
   This service account would be used by the cloud build to create any other infrastructure item like network, compute
