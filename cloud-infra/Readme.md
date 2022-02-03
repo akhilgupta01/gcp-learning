@@ -67,51 +67,29 @@ a new change is available on a given git branch. Please follow following steps t
 
 You can now click on the `RUN` link to manually trigger this cloud run build.
 
-* Enable `Cloud Build Api` and `Identity and Access Management (IAM) API`
-* Create a new service account and name it as `DevOps Admin Service Account`
-  This service account would be used by the cloud build to create any other infrastructure item like network, compute
-  nodes, service account, grant roles etc. We will assign following roles to this service Account.
+## 3) Additional permissions required per use case
+You will notice that the terraform module contains several .tf files. For e.g. [network.tf](./project1/terraform/network.tf) 
+to create a new network, and [pubsub.tf](./project1/terraform/pubsub.tf) to setup a new pubsub topic.
 
-  Role | Role Name| What this role can do| API required |
-  ---- |--------- |--------------------- |------------- |
-  roles/cloudbuild.builds.builder| Cloud Build Service Account | Can perform builds | Cloud Build API |
-  roles/iam.serviceAccountAdmin  | Service Account Admin | Create and manage Service Account | |
-  roles/iam.securityAdmin        | Security Admin | Security admin role, with permissions to get and set any IAM policy. | Cloud Resource Manager API |
-  roles/compute.networkAdmin     | Compute Network Admin| Full control of Compute Engine networking resources.| |
-  roles/bigquery.admin     | BigQuery Admin| Full control of BigQuery.| BigQuery API|
-  roles/pubsub.admin             | Pub/Sub Admin| Full control of Pub Sub.|PubSub API |
-* roles/cloudfunctions.admin             | Cloud Functions Admin| Full control of Cloud Functions.|Cloud Function API |
-* roles/iam.serviceAccountUser             | Service Account User| | |
+Each of these terraform configuration files requires to enable a specific GCP service and also a specific permission to 
+be granted to the `admin-sa` account to build the instance of that service.
+The table below lists the various services that are required to be enabled along with the required permissions per use case.
 
-* Setup a build trigger
-  * Connect Git Repository to Cloud Build
-    * Create a build trigger
-      Setup branch and the included and excluded resources to trigger a build
-      Use the Devops Admin Service Account to trigger the build
+Use Case | Terraform Config | API required | Role | Role Name| What this role can do?|
+-------- |----------------- |------------- |----- |--------- |---------------------- |
+Create a new Network        | [network.tf](./project1/terraform/network.tf) | N/A |roles/compute.networkAdmin  | Compute Network Admin| Full control of Compute Engine networking resources.|
+Create new Service Accounts | [service_accounts.tf](./project1/terraform/service_accounts.tf) | `Identity and Access Management (IAM) API` |roles/iam.serviceAccountAdmin  | Service Account Admin | Create and manage Service Account |
 
-## word-count in Dataflow
-#### Useful Links
-- Creating Dataflow Templates 
-  - https://cloud.google.com/dataflow/docs/guides/templates/creating-templates
+[comment]: <> (  roles/cloudbuild.builds.builder| Cloud Build Service Account | Can perform builds | Cloud Build API |)
 
+[comment]: <> (   |)
 
-Use following command to create a template
-```
-mvn compile exec:java -Dexec.mainClass=com.examples.beam.tx.TxReportDataflowRunner \
--Dexec.cleanupDaemonThreads=false \
--Dexec.args="--runner=DataflowRunner \
---project=ag-trial-project1-a \
---stagingLocation=gs://ag-trial-project-a_work_dir/staging \
---tempLocation=gs://ag-trial-project-a_work_dir/working \
---templateLocation=gs://ag-trial-project-a_work_dir/templates/tx_report_job_template \
---region=us-central1"
-```
+[comment]: <> (  roles/iam.securityAdmin        | Security Admin | Security admin role, with permissions to get and set any IAM policy. | Cloud Resource Manager API |)
+  
+[comment]: <> (  roles/bigquery.admin     | BigQuery Admin| Full control of BigQuery.| BigQuery API|)
 
-Use following command to create a Job from a template
-```
-gcloud dataflow jobs run txreport-1 \
---gcs-location gs://ag-trial-project-a_work_dir/templates/tx_report_job_template \
---parameters transactionFile=gs://ag-trial-project-a_work_dir/incoming/transactions.csv \
---region us-central1 \
---staging-location gs://ag-trial-project-a_work_dir/working
-```
+[comment]: <> (  roles/pubsub.admin             | Pub/Sub Admin| Full control of Pub Sub.|PubSub API |)
+
+[comment]: <> (* roles/cloudfunctions.admin             | Cloud Functions Admin| Full control of Cloud Functions.|Cloud Function API |)
+
+[comment]: <> (* roles/iam.serviceAccountUser             | Service Account User| | |)
