@@ -5,16 +5,16 @@ This module provides sample code and documentation about how to build and deploy
 
 ### The Use Case
 
-The module is used to implement a pipeline that can ingest raw data and generate a report as an output.
+The module is used to implement a pipeline that can ingest raw transaction records and generate a report as an output.
 
-___input___
+___Input___
 * A .csv file containing security transaction records
 
-## word-count in Dataflow
-#### Useful Links
-- Creating Dataflow Templates 
-  - https://cloud.google.com/dataflow/docs/guides/templates/creating-templates
-
+___Expected Output___
+* A `Trade volume report` providing total traded volume per ISIN
+* `Eligibility report` providing eligibility result along with reason for each transaction
+* `Exception report` providing any details and category of exception for any transaction record (e.g. Missing Data, Corrupt Data, Failed Enrichment etc.)
+* `Completeness report` providing count of records at each milestone
 
 Use following command to create a template
 ```
@@ -36,3 +36,7 @@ gcloud dataflow jobs run txreport-1 \
 --region us-central1 \
 --staging-location gs://ag-trial-project-a_work_dir/working
 ```
+
+#### Useful Links
+- Creating Dataflow Templates
+  - https://cloud.google.com/dataflow/docs/guides/templates/creating-templates
