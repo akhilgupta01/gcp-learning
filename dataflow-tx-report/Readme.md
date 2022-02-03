@@ -16,6 +16,13 @@ ___Expected Output___
 * `Exception report` providing any details and category of exception for any transaction record (e.g. Missing Data, Corrupt Data, Failed Enrichment etc.)
 * `Completeness report` providing count of records at each milestone
 
+#### POC Objectives
+
+Sl. No. | POC Objective | POC Finding |
+--------| --------------|-------------|
+1| How to create a small **batch** of records (limiting the max size) that can be passed to a web service to get PII data? | Using `GroupIntoBatches` option|
+2| How to generate the **Audit Milestone** for the input records as it passes through various milestones | | 
+
 Use following command to create a template
 ```
 mvn compile exec:java -Dexec.mainClass=com.examples.beam.tx.TxReportDataflowRunner \
