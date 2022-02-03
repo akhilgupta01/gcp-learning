@@ -13,6 +13,6 @@
     <modules>
         <module>hello-world-app</module>
         <module>connect-gcp</module>
-        <module>word-count</module>
+        <module>dataflow-tx-report</module>
     </modules>
 </project>
