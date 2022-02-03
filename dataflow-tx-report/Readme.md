@@ -1,7 +1,7 @@
 Dataflow Transaction Report
 ===
 
-This module provides sample code and documentation on how to build and deploy a `Dataflow` pipeline to GCP environment.
+This module provides sample code and documentation about how to build and deploy a `Dataflow` pipeline to GCP environment.
 
 ### The Use Case
 
