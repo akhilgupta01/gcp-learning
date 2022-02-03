@@ -3,13 +3,16 @@ Building Cloud Infra (Using Terraform)
 In this module we will create a GCP project from scratch and then create some infrastructure components using 
 [Terraform](https://www.terraform.io/).
 
-### 1. Starting Point
+Each directory under this module represents a project in GCP environment.
+The terraform configuration files and any source code (for e.g. cloud function code) is present as a sub project sub-directories  
+
+## 1. Starting Point
 
 As a starting point, you are required to create a new GCP project.
 You can use a Free Tier Account to try out the examples provided in this module.
 Let us assume that we created a project with id `ag-trial-project-a` (Please note that Project Id can be different from Project name)
 
-### 2. Setting up Terraform
+## 2. Setting up Terraform
 
 In order to be able to compare the requested infrastructure with the existing state, Terraform requires a storage space 
 where it can maintain the current state of the infrastructure. On GCP environment, we can provide this space as a storage 
@@ -17,35 +20,37 @@ bucket on `Google Cloud Storage`.
 
 So, let us start by creating a storage space for Terraform
 
-#### 2.1 Create a Storage Bucket
-* 
+### 2.1) Create a new Storage Bucket
+
 * Enable the `Cloud Storage API`. GCP provides various ways to do this (viz. GCP Console, API or Cloud Shell). 
   As GCP Console is the easiest for a beginner, so you can use this method to enable the API
 * Create a new Cloud Storage bucket, lets call it as `ag-trial-project-a-tfstate`
-* Refer to this bucket as the backend bucket in [main.tf](./project1/terraform/main.tf)
+* Refer to this bucket as the backend bucket in [main.tf](./project1/terraform/main.tf). 
+  
+Note: If you choose to provide a different name for your terraform storage bucket, you will need to modify the terraform configuration files to reflect that.
+
+### 2.2) Setup Admin Service Account
+
+When you create a new project, your user by default gets the `Owner` privileges on the project.
+In order to properly understand the permissions required to use a GCP service, we will not use this user to build the infrastructure.
+We will instead create a new `Service Account` and give it the necessary permissions based on our use case requirement.
+
+We will use this service account to trigger the cloud builds that will run the terraform commands to build the infra. 
+
+Please follow these steps to create this Service Account:
+
+* On the GCP Console, go to `IAM & Admin` > `Service Accounts` page
+* Click on `+ CREATE SERVICE ACCOUNT` link at the top
+* Create a new service account and name it as `admin-sa` and description as `DevOps Admin Service Account`
+* Then go to the `IAM & Admin` > `IAM` page, and edit the `admin-sa` principal to add following permissions
+ 
+Role | Role Name| What this role can do| API required |
+---- |--------- |--------------------- |------------- |
+roles/cloudbuild.builds.builder| Cloud Build Service Account | Can perform builds | Cloud Build API |
+ 
 
 
-### Introducing Terraform
-GCP offers several ways to create and configure resources on it platform, viz. UI, APIs, Cloud Shell etc.
-While the UI based approach is convenient, it is not suitable for repeatability and standardization. 
-For e.g. what if you want to create the same resource across multiple projects?
-
-For our demonstration purpose, we will take the IAAC approach, so that we can recreate our environment in a new project area.
-Moreover, it gives us a very clear understanding of various GCP resources and their associated dependencies.
-
-For IAAC, we will use Terraform, Terraform provides us the capability to capture our infrastructure details in some configuration files.
-These configuration files can be also version controlled, which in turns facilitates version controlling our infrastructure.
-
-Whenever a new version of Terraform configuration is requested for deployment, Terraform compares the actual state of the environment with the newly requested configuration.
-It modifies only the resources that have changed and does not touch the resources that remain the same.
-
-In order to be able to compare the requested configuration with the existing state, Terraform requires a storage space where it can maintain the current state of the infrastructure.
-We will provide this space on `Google Cloud Storage`. So, let us first start by creating a storage space for Terraform
-
-As this is a pre-requisite for Terraform, we will have to use one of the GCP provides methods like UI, API or Cloud Shell to create the storage bucket.
-
-
-### Setup Git Repository, Admin Service Account & Cloud Build
+### 3. Setup Admin Service Account, Cloud Build Trigger 
 We want to maintain the infrastructure as Code, for this we will setup a Git Repo and check-in all our changes in this
 repository. We would also like to setup an automated build process that will trigger when a new change is available on a
 given git branch. We will follow the steps as mentioned below
