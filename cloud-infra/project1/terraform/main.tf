@@ -1,7 +1,7 @@
 terraform {
   required_version = "1.0.7"
   backend "gcs" {
-    bucket="neat-encoder-329003-tfstate-adm"
+    bucket="ag-trial-project-a-tfstate"
   }
   required_providers {
     google = {
@@ -11,7 +11,7 @@ terraform {
 }
 
 provider "google" {
-  version = "3.86.0"
+  version = "4.8.0"
   project = var.project
   region  = var.region
   zone    = var.zone

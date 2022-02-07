@@ -1,0 +1,28 @@
+steps:
+  - id: terraform-init
+    name: hashicorp/terraform:1.0.7
+    dir: './cloud-infra/project2/terraform'
+    args:
+      - 'init'
+      - '-no-color'
+      - '-input=false'
+
+  - id: terraform-plan
+    name: hashicorp/terraform:1.0.7
+    dir: './cloud-infra/project2/terraform'
+    args:
+      - 'plan'
+      - '-no-color'
+      - '-input=false'
+
+  - id: terraform-apply
+    name: hashicorp/terraform:1.0.7
+    dir: './cloud-infra/project2/terraform'
+    args:
+      - 'apply'
+      - '-auto-approve'
+      - '-no-color'
+      - '-input=false'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

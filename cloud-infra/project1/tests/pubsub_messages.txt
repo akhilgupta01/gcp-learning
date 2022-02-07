@@ -1,0 +1,1 @@
+{"project_id":"ag-trial-project-a","zone":"us-central1-a","vm_instance":"terraform-instance", "action":"stop"}

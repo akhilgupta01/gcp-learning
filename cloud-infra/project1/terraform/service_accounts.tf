@@ -43,19 +43,42 @@ resource "google_project_iam_member" "application_sa_storage_object_viewer" {
   role = "roles/storage.objectViewer"
   member = "serviceAccount:${google_service_account.application_sa.email}"
 }
+resource "google_project_iam_member" "application_sa_bq_job_user" {
+  project = google_service_account.app_deployer.project
+  role = "roles/bigquery.jobUser"
+  member = "serviceAccount:${google_service_account.application_sa.email}"
+}
+resource "google_project_iam_member" "application_sa_bq_data_viewer" {
+  project = google_service_account.app_deployer.project
+  role = "roles/bigquery.dataViewer"
+  member = "serviceAccount:${google_service_account.application_sa.email}"
+}
+
+#Service Account to be used by cloud function to start/stop a VM
+resource "google_service_account" "vm_manager_sa" {
+  account_id = "vm-manager-sa"
+  display_name = "vm-manager-sa"
+  description = "Service account used to start/stop a VM"
+}
+resource "google_project_iam_member" "vm_manager_sa_vm_viewer" {
+  project = google_service_account.vm_manager_sa.project
+  role = "roles/compute.instanceAdmin"
+  member = "serviceAccount:${google_service_account.vm_manager_sa.email}"
+}
+
 
 #Service account to be used by cloud composer
-resource "google_service_account" "composer_sa" {
-  account_id = "composer-sa"
-  display_name = "composer-sa"
-  description = "Service account used by Cloud Composer"
-}
-resource "google_project_iam_member" "composer-worker" {
-  role   = "roles/composer.worker"
-  member = "serviceAccount:${google_service_account.composer_sa.email}"
-}
-resource "google_service_account_iam_member" "composer_sa_access_to_devops_admin" {
-  service_account_id = google_service_account.composer_sa.name
-  role = "roles/iam.serviceAccountUser"
-  member = "serviceAccount:devops-admin@ag-learn-gcp.iam.gserviceaccount.com"
-}
+#resource "google_service_account" "composer_sa" {
+#  account_id = "composer-sa"
+#  display_name = "composer-sa"
+#  description = "Service account used by Cloud Composer"
+#}
+#resource "google_project_iam_member" "composer-worker" {
+#  role   = "roles/composer.worker"
+#  member = "serviceAccount:${google_service_account.composer_sa.email}"
+#}
+#resource "google_service_account_iam_member" "composer_sa_access_to_devops_admin" {
+#  service_account_id = google_service_account.composer_sa.name
+#  role = "roles/iam.serviceAccountUser"
+#  member = "serviceAccount:devops-admin@ag-learn-gcp.iam.gserviceaccount.com"
+#}
